@@ -3,11 +3,11 @@
   <!-- scroll-with-animation滚动添加动画过渡 -->
   <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
       <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
-          <view class="nav-item {{currentTab == idx ?'active':''}}" data-id="{{ navItem.cc_id }}"  data-current="{{idx}}" bindtap="switchNav"><text>{{navItem.category_name}}</text></view>
+          <view class="nav-item {{currentTab == idx ?'active':''}}" data-id="{{ navItem.cc_id }}"  data-current="{{idx}}" bindtap="switchNav">{{navItem.category_name}}</view>
       </block>        
   </scroll-view>
   <!-- 页面内容 -->
-  <swiper class="tab-box" current="{{currentTab}}" duration="1000">        
+  <swiper class="tab-box" current="{{currentTab}}" duration="1000" style='' bindchange="switchTab">        
     <swiper-item  class="tab-content" wx:for="{{navData}}" data-index="{{index}}">
       <view class='conentList' wx:for="{{conent[index]}}">
         <image 
@@ -41,5 +41,5 @@
         </view>
       </swiper-item>
   </swiper>
-  <view class='bnt' bindtap='bindNext'>{{ btnContent }}</view> 
+  <view class='bnt' bindtap='bindNext'>下一步</view> 
 <!-- </view> -->

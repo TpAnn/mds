@@ -27,6 +27,11 @@ Page({
     collectGoods: "待收货",
     evaluate: "待评价",
     completed: "已完成",
+    flag1: false,
+    flag2: true,
+    flagImg: true,
+    membership: '',
+    user_phone: '',
     imgUrlflag1: true,
     imgUrlflag1C: false,
     imgUrlflag2: true,
@@ -88,72 +93,54 @@ Page({
     imgHoverIndex: 0,
     catalogSelect: 0,
     userPhone: '66',
-    flag1: false,
-    flag2: true,
-    membership: '',
-    user_phone: '',
+   
     flag: '',
   },
   //更换头像
   bindReplacet: function () {
     var that = this;
     let cookie = wx.getStorageSync('cookieKey');
-    // wx.chooseImage({
-    //   count: 1, // 默认9
-    //   sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-    //   sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-    //   success: function (res) {
-        wx.chooseImage({
-          success: function (res) {
-            var tempFilePaths = res.tempFilePaths
-            wx.uploadFile({
-              url: updateHeadPortrait, //仅为示例，非真实的接口地址
-              filePath: tempFilePaths[0],
-              name: 'file',
-              header: {
-                "Content-Type": "application/x-www-form-urlencoded",
-                'Cookie': cookie,
-              },
-              formData: {
-                'user': 'test'
-              },
-              success: function (res) {
-                var person = res.data;
-                var datas = JSON.parse(person);
-                var headerUrl =  datas.data.user_head_portrait_url;
-                console.log(headerUrl);
-                wx.setStorageSync('headerPortraitUrl', headerUrl)
-                that.setData({
-                  headerURl: headerUrl
-                });
-              }
-            })
-          }
-        })
-    //   }
-    // });
+      wx.chooseImage({
+        success: function (res) {
+          var tempFilePaths = res.tempFilePaths
+          wx.uploadFile({
+            url: updateHeadPortrait, //
+            filePath: tempFilePaths[0],
+            name: 'file',
+            header: {
+              "Content-Type": "application/x-www-form-urlencoded",
+              'Cookie': cookie,
+            },
+            formData: {
+              'user': 'test'
+            },
+            success: function (res) {
+              var person = res.data;
+              var datas = JSON.parse(person);
+              var headerUrl =  datas.data.user_head_portrait_url;
+              console.log(headerUrl);
+              wx.setStorageSync('headerPortraitUrl', headerUrl)
+              that.setData({
+                headerURl: headerUrl
+              });
+            }
+          })
+        }
+      })
   },
   chooseThis(e) {
-    console.log(e.currentTarget.dataset.index);
+    var id = e.currentTarget.dataset.index;
     this.setData({
       imgHoverIndex: e.currentTarget.dataset.index,
       catalogSelect: e.currentTarget.dataset.index
     })
-    if (e.currentTarget.dataset.index == 0) {
+    if (e.currentTarget.dataset.index == e.currentTarget.dataset.index) {
+      console.log(id);
       wx.navigateTo({
-        url: '/pages/payment/payment'//跳转到侍付款页面
+        url: '/pages/payment/payment?id=' + id//跳转到侍付款页面
       })
-    } else if (e.currentTarget.dataset.index == 1) {
-      console.log(1);
-    } else if (e.currentTarget.dataset.index == 3) {
-      console.log(2);
-    } else if (de.currentTarget.dataset.index == 4) {
-      console.log(3);
-    } 
+    }
   },
-
-  //payment: data.currentTarget.dataset.select
-
   //点击发送验证码
   getCode: function (options) {
     var that = this;
@@ -176,43 +163,24 @@ Page({
 
   //扫一扫
   bindQrCode: function(e) {
-    if (this.isLogin()) {
-      wx.scanCode({
-        success: (res) => {
-          if (res.errMsg == "scanCode:ok") {
-            wx.setStorageSync('tempUrl', res.result);
-            wx.navigateTo({
-              url: '/pages/customerRecommendation/customerRecommendation'
-            });
-          } else {
-            wx.showToast({
-              title: '二维码识别失败！',
-              icon: 'none',
-              duration: 2000
-            });
-          }
+    if (this.isLogin()) return;
+    wx.scanCode({
+      success: (res) => {
+        if (res.errMsg == "scanCode:ok") {
+          wx.setStorageSync('tempUrl', res.result);
+          wx.navigateTo({
+            url: '/pages/customerRecommendation/customerRecommendation'
+          });
+        }else{
+          wx.showToast({
+            title: '二维码识别失败！',
+            icon: 'none',
+            duration: 2000
+          });
         }
-      })
-    } else {
-      return;
-    }
+      }
+    })
   },
-
-  //我的预约
-  bindMyPromise: function () {
-    if (this.isLogin()) return;
-    wx.navigateTo({
-      url: '/pages/myPromise/myPromise'
-    })
-  }, 
-
-  //会员管理
-  bindVip: function () {
-    if (this.isLogin()) return;
-    wx.navigateTo({
-      url: '/pages/openAmember/openAmember'
-    })
-  }, 
 
   //完善信息
   bindMyInfo: function () {
@@ -312,7 +280,7 @@ Page({
   isLogin: () => {
     var isLogin = getApp().globalData.cookieKey = wx.getStorageSync('cookieKey');
     console.log(getApp().globalData.cookieKey, wx.getStorageSync('cookieKey'));
-    if (!!isLogin.length) {
+    if (!isLogin.length) {
       wx.navigateTo({
         url: '/pages/logs/logs'
       })
@@ -321,7 +289,6 @@ Page({
     }
   },
   onLoad: function (e) {
-    console.log(!!null)
     var that = this;
     let userId = wx.getStorageSync('userId');//登录用户Id
     let userHpone = wx.getStorageSync('user_phone');//登录用户的号码
@@ -329,12 +296,43 @@ Page({
     let userRealname = wx.getStorageSync('user_realname');//登录用户实名
     let memberName = wx.getStorageSync('memberName');//用户会员名
     let headerPortraitUrl = wx.getStorageSync('headerPortraitUrl');//头像
-    console.log(headerPortraitUrl);
+    console.log(userId);
 
-
+    //判断是否已登录 
+    if (userId == '') {
+      console.log('userId是空的');
+      that.setData({
+        flag1: false,
+        flag2: true,
+        flagImg: true,
+        username: '用户名',
+      });
+    } else {
+      console.log('不是空的');
+      that.setData({
+        flag1: true,
+        flag2: false,
+        flagImg: false,
+      });
+    }
+    
+    //判断是否是会员 如果是资深买家就不是会员
+    console.log(memberName);
+    if (memberName == '资深买家'){
+      that.setData({
+        flag1: true,
+        flag2: false,
+        flagImg: true,
+      });
+    }else{
+      that.setData({
+        flag1: true,
+        flag2: false,
+        flagImg:false,
+      });
+    }
     //如果头像是空的话就设置一个头像
-    if (headerPortraitUrl == '' || headerPortraitUrl == null) {
-      console.log(66);
+    if (headerPortraitUrl == null || headerPortraitUrl == null) {
       that.setData({
         username: userHpone,
         flag1: false,
@@ -343,42 +341,75 @@ Page({
         headerURl: '/images/hair_c.png'
       });
     } else {
-      console.log(888);
       that.setData({
         headerURl: headerPortraitUrl,
       });
     }
-    if (userNick == '' && userRealname == '') {
+    //如果用户昵称是空的话 用户名就放电话号码
+    if (userNick == null) {
+      that.setData({
+        username: userHpone ,
+        membership: memberName,
+      });
+    } else if (userRealname == null ){
+      console.log('userRealname');
       that.setData({
         username: userHpone,
-        flag1: true,
-        flag2: false,
         membership: memberName,
       });
-    }
-    //如果用户名不是空的话就直接赋值
-    if (userRealname != '') {
+    }else{
       that.setData({
-        username: userRealname,
-        flag1: true,
-        flag2: false,
+        username: userNick,
         membership: memberName,
       });
     }
+  //  // 如果用户名不是空的话就直接赋值
+  //   if (userRealname != null) {
+  //     console.log(6);
+  //    
+  //   }
 
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    var that = this;
+    let userId = wx.getStorageSync('userId');//登录用户Id
+    let userHpone = wx.getStorageSync('user_phone');//登录用户的号码
+    let userNick = wx.getStorageSync('user_nick');//登录用户的昵称
+    let userRealname = wx.getStorageSync('user_realname');//登录用户实名
+    let memberName = wx.getStorageSync('memberName');//用户会员名
+    let headerPortraitUrl = wx.getStorageSync('headerPortraitUrl');//头像
+
+    console.log(userId);
+
+    ///判断是否已登录 
+      if (userId == '') {
+        console.log('userId是空的');
+        that.setData({
+          flag1: false,
+          flag2: true,
+          flagImg: true,
+          username: '用户名',
+        });
+      }else{
+        console.log('不是空的');
+        that.setData({
+          flag1: true,
+          flag2: false,
+          flagImg: false,
+        });
+      }
+
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**

@@ -46,6 +46,7 @@ Page({
     
   switchNav: function (event) {
     var cur = event.currentTarget.dataset.current;//当前
+    console.log(cur);
 
     wx.request({
       url: indexCommodity + cur,
@@ -129,6 +130,10 @@ Page({
     var that = this;
     wx.request({
       url: indexCarouse, 
+      data: {
+        x: '',
+        y: ''
+      },
       method: "GET",
       header: {
         'content-type': 'application/json' // 默认值
@@ -144,35 +149,44 @@ Page({
     //产品分类
     wx.request({
       url: indexCategory, 
+      data: {
+        x: '',
+        y: ''
+      },
       method: "GET",
       header: {
         'content-type': 'application/json'
       },
       success: function (res) {
-        var navData = res.data;
+        var navDat = res.data;
         that.setData({
-          navData: navData// 导航nav
+          navData: navDat// 导航nav
         })
-        //首面产品
-        wx.request({
-          url: indexCommodity,
-          data: {
-            category_id: that.data.navData[0].cc_id,
-          },
-          method: "GET",
-          header: {
-            'content-type': 'application/json' // 默认值
-          },
-          success: function (res) {
-            that.setData({
-              conent: res.data.map((i) => {
-                return { cartShowFlag: i.commodity_join_number > 0 ? true : false, ...i }
-              })
-            })
-          }
+        
+      }
+    })  
+    //首面产品
+    wx.request({
+      url: indexCommodity, 
+      data: {
+        x: '',
+        y: '',
+        category_id: 1,
+      },
+      method: "GET",
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        console.log(res);
+        that.setData({
+          conent: res.data.map((i)=>{
+            return { cartShowFlag:false,...i }
+          })
         })
       }
     })
+  
   },
   //下拉加载
   onReachBottom: function () {
@@ -216,10 +230,8 @@ Page({
   bindReduce: function (e) 
   {
     var that = this
-
     //得到点击要改变的值
-    var gs = this.data.conent[index].commodity_join_number;
-
+    var gs = this.data.gs
     //得到Id
     var id = e.currentTarget.dataset.id;
 
@@ -245,40 +257,16 @@ Page({
       this.data.gs--
     }
     
-    wx.request({
-      url: getApp().globalData.localhost + '/sp/index.php/HomeCarousel/cartOperation',
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded',
-        'Cookie': getApp().globalData.cookieKey
-      },
-      data: {
-        commodity_id: id,
-        function_state: 0,
-        longitude: longitude,
-        latitude: latitude
-      },
-      success: res => {
-        //重新调用值
-        this.setData({
-          ["conent[" + index + "].commodity_join_number"]: gs,
-        });
-      },
-      fail: res => {
-        wx.showToast({
-          title: '网络连接失败！',
-          icon: 'none',
-          duration: 2000
-        });
-      }
-    })
+    //重新调用值
+    this.setData({
+      gs: this.data.gs,
+    });
   },
   //加法
   bindAdd: function (e) {
     var that = this
-
     //得到点击要改变的值
-    var gs = this.data.conent[index].commodity_join_number;
+    var gs = this.data.gs;
     
     //得到Id
     var id = e.currentTarget.dataset.id;
@@ -298,31 +286,24 @@ Page({
       });
     }
 
+    this.setData({
+      gs: this.data.gs
+    });
+
+    //减法请求
     wx.request({
-      url: getApp().globalData.localhost + '/sp/index.php/HomeCarousel/cartOperation',
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded',
-        'Cookie': getApp().globalData.cookieKey
-      },
+      url: cartOperation, //仅为示例，并非真实的接口地址
       data: {
-        commodity_id: id,
-        function_state: 1,
-        longitude: longitude,
-        latitude: latitude
+        latitude: latitude,
+        longitude: latitude,
+        function_state: id,
       },
-      success: res => {
-        //重新调用值
-        this.setData({
-          ["conent[" + index + "].commodity_join_number"]: gs,
-        });
+      header: {
+        'content-type': 'application/json' // 默认值
       },
-      fail: res => {
-        wx.showToast({
-          title: '网络连接失败！',
-          icon: 'none',
-          duration: 2000
-        });
+      method: 'POST',
+      success: function (res) {
+        console.log(res)
       }
     })
    
@@ -330,6 +311,7 @@ Page({
  //详情
   bindDetails : function (e)　{
     var shopId = e.currentTarget.dataset.id;
+    console.log(shopId);
     wx:wx.navigateTo({
       url: '/pages/mdsDetails/mdsDetails?shopId=' + shopId,
      

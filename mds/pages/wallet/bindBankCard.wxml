@@ -6,8 +6,8 @@
       <view class='labelText'>
         卡号
       </view>
-      <text>{{bankType}}</text>
-      <text>{{bankNum}}</text>
+      <text>深圳平安银行 储蓄卡</text>
+      <text>*** *** *** 5222</text>
     </view>
     <view class='list-box-item'>
       <view class='labelText'>

@@ -7,60 +7,13 @@ Page({
   data: {
     errorFlag: false,
     money: '',
-    data: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.request({
-      url: getApp().globalData.localhost + '/sp/index.php/Home/My/allBankCard/',
-      method: 'GET',
-      header: {
-        'content-type': 'application/json',
-        'Cookie': getApp().globalData.cookieKey
-      },
-      success: res => {
-        if (!!res.data.data) {
-          let data = res.data.data.map((i) => {
-            return {
-              bankCardName: i.bankName.split('-')[0],
-              bankTailNum: i.bank_card_number.substr(-4),
-              ...i
-            }
-          })
-          if ( options.id > 0 ) {
-            data.forEach((i) => {
-              if (i.bc_id == options.id) {
-                this.setData({
-                  data: [i]
-                })
-              }
-            })
-          }else{
-            this.setData({
-              data: []
-            })
-          }
-        } else {
-          return;
-        }
-      },
-      fail: res => {
-        wx.showToast({
-          title: '网络连接失败！',
-          icon: 'none',
-          duration: 2000
-        });
-      }
-    })
-  },
 
-  switchBtn: function(e) {
-    wx.redirectTo({
-      url: '/pages/wallet/bankCard?id=' + e.currentTarget.dataset.id
-    })
   },
 
   /**
@@ -72,7 +25,6 @@ Page({
   //清空输入框
   clearContent: function(e){
     this.setData({
-      errorFlag: false,
       money: ''
     })
   },

@@ -89,7 +89,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+    let types = wx.getStorageSync('types');//是否是美导
+    let userNick = wx.getStorageSync('user_nick');//登录用户的昵称
+    let headerPortraitUrl = wx.getStorageSync('headerPortraitUrl');//头像
+    let personalitySignature = wx.setStorageSync('personalitySignature');//美导个性
+    if (types == 1) {
+      that.setData({
+        titleTxt: userNick,
+        personalitySignature: personalitySignature,
+        productImg1: headerPortraitUrl,
+      });
+    }
   },
 
   /**

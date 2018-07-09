@@ -5,9 +5,90 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navData: [],
+    userInfo: {},
+    hasUserInfo: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    navData: [
+      {
+        text: '首页'
+      },
+      {
+        text: '健康'
+      },
+      {
+        text: '情感'
+      },
+      {
+        text: '职场'
+      },
+      {
+        text: '育儿'
+      },
+      {
+        text: '纠纷'
+      },
+      {
+        text: '青葱'
+      },
+      {
+        text: '上课'
+      },
+      {
+        text: '下课'
+      }
+    ],
+    currentTab: 0,
+    navScrollLeft: 0,
     conent: [],
     selectGoodsId: [],
+    // conent:[
+    //   {
+    //     "imgUrl": '../../images/payment01.png',
+    //     "conentTxt": '兰芝臻白净透水乳护肤套装',
+    //     "effect": '护肤，洁面',
+    //     "describe": '补水美白 淡斑 官方正品',
+    //     "isSelect": false,
+    //     "sold": 10,
+    //     "price1": 598,
+    //     "price2": 498,
+    //     "img1": "../../images/cars.png",
+
+
+    //   },{
+    //   "imgUrl": '../../images/payment01.png',
+    //   "conentTxt": '兰芝臻白净透水乳护肤套装',
+    //   "effect": '护肤，洁面',
+    //   "describe": '补水美白 淡斑 官方正品',
+    //   "isSelect": false,
+    //   "sold": 10,
+    //   "price1": 598,
+    //   "price2": 498,
+    //   "img1": "../../images/cars.png",
+
+
+    //   }, {
+    //     "imgUrl": '../../images/payment01.png',
+    //     "conentTxt": '兰芝臻白净透水乳护肤套装',
+    //     "effect": '护肤，洁面',
+    //     "describe": '补水美白 淡斑 官方正品',
+    //     "sold": 10,
+    //     "isSelect": false,
+    //     "price1": 598,
+    //     "price2": 498,
+    //     "img1": "../../images/cars.png",
+    //   }, {
+    //     "imgUrl": '../../images/payment01.png',
+    //     "conentTxt": '兰芝臻白净透水乳护肤套装',
+    //     "effect": '护肤，洁面',
+    //     "describe": '补水美白 淡斑 官方正品',
+    //     "sold": 10,
+    //     "price1": 598,
+    //     "isSelect": false,
+    //     "price2": 498,
+    //     "img1": "../../images/cars.png",
+    //   }
+    // ],
+
   },
   switchSelect: function (e) {
     //得到当前id
@@ -22,6 +103,30 @@ Page({
     //调用数组
     this.setData({
       conent: this.data.conent,
+    });
+  },
+  switchNav(event) {
+    var cur = event.currentTarget.dataset.current;
+    //每个tab选项宽度占1/5
+    var singleNavWidth = this.data.windowWidth / 5;
+    //tab选项居中                            
+    this.setData({
+      navScrollLeft: (cur - 2) * singleNavWidth
+    })
+    if (this.data.currentTab == cur) {
+      return false;
+    } else {
+      this.setData({
+        currentTab: cur
+      })
+    }
+  },
+  switchTab(event) {
+    var cur = event.detail.current;
+    var singleNavWidth = this.data.windowWidth / 5;
+    this.setData({
+      currentTab: cur,
+      navScrollLeft: (cur - 2) * singleNavWidth
     });
   },
   getGoods: function (params) {
@@ -75,11 +180,9 @@ Page({
         'Cookie': getApp().globalData.cookieKey
       },
       success: res => {
-        if(res.data.status == 200){
-          wx.switchTab({
-            url: '../cart/cart'
-          })
-        }
+        wx.navigateTo({
+          url: '/pages/cart/cart'
+        })
       },
       fail: res => {
         wx.showToast({
@@ -96,7 +199,6 @@ Page({
   onLoad: function (options) {
     if (wx.getStorageSync('tempUrl')){
       this.getGoods(wx.getStorageSync('tempUrl'));
-      wx.clearStorageSync('tempUrl');
     }else{
       wx.navigateBack({
         delta: 1

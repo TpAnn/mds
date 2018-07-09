@@ -53,8 +53,8 @@ Page({
   },
   //编辑地址
   bindupdata: function (e) {
-    wx.redirectTo({
-      url: '/pages/updateAddr/updateAddr?ra_id=' + e.currentTarget.dataset.id,
+    wx.navigateTo({
+      url: '/pages/updateAdd/updateAdd?ra_id=' + e.currentTarget.dataset.id,
     })
   },
  //新增地址

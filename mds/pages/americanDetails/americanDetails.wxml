@@ -28,12 +28,12 @@
 </view>
 
 <view  class='labelBox'>
-  <block>
-  <!-- wx:for='{{evaluatArrayNumberArray}}'  -->
-       <view>好<text>({{evaluatArrayNumberArray[0]}})</text></view>
-      <view>一般<text>({{evaluatArrayNumberArray[1]}})</text></view>
+  <block  wx:for='{{evaluatArrayNumberArray}}'>
+      <view><text>({{item}})</text></view>
+      <!-- <view>好<text>(11)</text></view>
+      <view>一般<text>(11)</text></view>
       <view>差<text>(11)</text></view>
-      <view>非常差<text>(11)</text></view> 
+      <view>非常差<text>(11)</text></view> -->
   </block>
 </view>
 

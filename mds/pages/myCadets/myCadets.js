@@ -5,41 +5,32 @@ Page({
    * 页面的初始数据
    */
   data: {
-    mycadets:[],
+    mycadets:[
+      {
+        "cadetsPortrait":'../../images/cadetsh.png',
+        "cadetsname":'Synchronixation',
+        "cadetslabel":'自信爱美丽'
+      }, {
+        "cadetsPortrait": '../../images/cadetsh.png',
+        "cadetsname": 'Synchronixation',
+        "cadetslabel": '自信爱美丽'
+      }, {
+        "cadetsPortrait": '../../images/cadetsh.png',
+        "cadetsname": 'Synchronixation',
+        "cadetslabel": '自信爱美丽'
+      }, {
+        "cadetsPortrait": '../../images/cadetsh.png',
+        "cadetsname": 'Synchronixation',
+        "cadetslabel": '自信爱美丽'
+      },
+    ],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.request({
-      url: getApp().globalData.localhost + '/sp/index.php/Home/My/selectMyStudent/',
-      method: 'GET',
-      header: {
-        'content-type': 'application/json',
-        'Cookie': getApp().globalData.cookieKey
-      },
-      success: res => {
-        if (res.data.status == 200) {
-          this.setData({
-            mycadets: res.data.data.map((i)=>{
-              return { tell: i.user_phone.substr(0, 3) + '****' + i.user_phone.substr(8),...i }
-            })
-          })
-        }else{
-          wx.navigateBack({
-            delta: 1
-          });
-        }
-      },
-      fail: res => {
-        wx.showToast({
-          title: '网络连接失败！',
-          icon: 'none',
-          duration: 2000
-        });
-      }
-    })
+  
   },
 
   /**

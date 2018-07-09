@@ -30,7 +30,7 @@
       </view>
       <view class='fl font'>
             <view>{{titleTxt}}</view>
-            <view>规格：{{content}}</view>
+            <view>{{personalitySignature}}</view>
       </view>
 </view>
 <view class='textaraeBox'>

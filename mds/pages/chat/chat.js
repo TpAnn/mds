@@ -8,10 +8,12 @@ var expiration = timestamp + 3000000;
 Page({
 
   data: {
-    content:[ ]
+    content:[ ],
+    mnuberhide:true,
+    righthide:true,
 
   },
-  onLoad: function (options) {
+  onLoad: function () {
     var that = this;
     let cookie = wx.getStorageSync('cookieKey');//cookie
     let index_data = wx.getStorageInfoSync('index_data');
@@ -36,51 +38,33 @@ Page({
         },
         success: function (res) {
           console.log(res);
-          that.data.content = res.data.data;
-
-          if (!!options.flag) {
-            let info = that.hasFindUserId(options.uid)
-            if (!!info) {
-              wx.redirectTo({
-                url: '/pages/chatDetails/chatDetails?id=' + info.user_id
-                + '&headerImg = ' + info.user_head_portrait_url
-                + '&types=' + info.user_type
-                + '&flag=true'
+          var content = res.data.data;
+          for(var i=0; i<content.length; i++){
+            //判断如果unread_message 没有未读的信息 则未读信息不显示
+            if (content[i].unread_message != 0){
+              that.setData({
+                mnuberhide: false,
+                righthide: false,
               });
-            } else {
-              return;
             }
           }
-
-          if (!!options.recommend) {
-            let info = that.hasFindUserId(options.uid)
-            if (!!info) {
-              wx.redirectTo({
-                url: '/pages/chatDetails/chatDetails?id=' + info.user_id
-                + '&headerImg = ' + info.user_head_portrait_url
-                + '&types=' + info.user_type
-                + '&recommend=' + options.recommend,
-              });
-            } else {
-              return;
-            }
-          }
-
           that.setData({
-            content: that.data.content,
+            content: content,
           });
-        }
+          }
       })
     }
   },
   //进入详情
   bindDateil: function (e) {
     var dataId = e.currentTarget.dataset.id;
-    var header = e.currentTarget.dataset.index;
-    var types = e.currentTarget.dataset.type;
-    
+    var headerT = {};
+    headerT.header = e.currentTarget.dataset.index;
+    headerT.types = e.currentTarget.dataset.type;
+    wx.setStorageSync('headerT', headerT);
+
     wx.navigateTo({
-      url: '/pages/chatDetails/chatDetails?id=' + dataId + '&headerImg = ' + header + '&types=' + types ,
+      url: '/pages/chatDetails/chatDetails?id=' + dataId  ,
     })
   },
  //头部进详情
@@ -121,17 +105,5 @@ Page({
         scores: this.data.scores,
         score: score
       })
-  },
-
-  //查找用户所在的对话
-  hasFindUserId: function(uid) {
-    let content = this.data.content,
-        info = null;
-    content.forEach((i)=>{
-      if(i.user_id == uid ) {
-        info = i;
-      }
-    });
-    return info;
-  },
+  }
 })

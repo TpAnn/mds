@@ -46,7 +46,7 @@ Page({
           i.membership_price = parseInt(i.membership_price);
         });
         //保存信息
-        // wx.setStorageSync('goodsInfo', JSON.stringify({ commodityArrayString: params, md_user_id: ''}));
+        wx.setStorageSync('goodsInfo', JSON.stringify({ commodityArrayString: params, md_user_id: ''}));
         this.setData({
           conetnList: this.data.conetnList,
           qrCodeUrl: res.data.data[0].qrCodeImgUrl,

@@ -15,11 +15,11 @@ Page({
         'Cookie': getApp().globalData.cookieKey
       },
       success: res => {
-        if (res.data.status == 200){
-          wx.redirectTo({
-            url: "../addreAdministration/addreAdministration",
-          });
-        }
+        // if (res.data.status == 200){
+        //   wx.redirectTo({
+        //     url: "../addreAdministration/addreAdministration",
+        //   });
+        // }
       },
       fail: res => {
         wx.showToast({

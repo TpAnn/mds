@@ -6,6 +6,7 @@ Page({
    */
   data: {
     showWechatFlag: true,
+    showBankCardFlag: false,
     data: [],
   },
 
@@ -22,26 +23,8 @@ Page({
       },
       success: res => {
         if( !!res.data.data ){
-          let data = res.data.data.map((i) => {
-            return {
-              showBankCardFlag: false,
-              bankCardName: i.bankName.split('-')[0],
-              bankTailNum: i.bank_card_number.substr(-4),
-              ...i
-            }
-          })
-          if ( options.id > 0 ) {
-            data.forEach((i,k) => {
-              if (i.bc_id == options.id ) {
-                data[k].showBankCardFlag = true;
-                this.setData({
-                  showWechatFlag: false
-                })
-              }
-            })
-          }
           this.setData({
-            data: data
+            data: res.data.data
           })
         }else{
           return;
@@ -58,12 +41,12 @@ Page({
   },
   //切换
   showFlag:function(e){
-    // this.setData({
-    //   showWechatFlag: !this.data.showWechatFlag,
-    //   showBankCardFlag: !this.data.showBankCardFlag
-    // });
+    this.setData({
+      showWechatFlag: !this.data.showWechatFlag,
+      showBankCardFlag: !this.data.showBankCardFlag
+    });
     wx.redirectTo({
-      url: '/pages/wallet/withdrawCash?id=' + e.currentTarget.dataset.id
+      url: '/pages/wallet/withdrawCash'
     })
   },
   /**

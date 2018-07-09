@@ -177,7 +177,7 @@ Page({
           duration: 2000
         });
         wx.redirectTo({
-          url: '/pages/addreAdministration/addreAdministration',
+          url: '../addreAdministration/addreAdministration',
         })
       },
       fail: () => {

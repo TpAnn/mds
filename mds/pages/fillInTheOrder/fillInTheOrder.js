@@ -30,13 +30,18 @@ Page({
   },
   onLoad: function(e){
     var that = this;
-    var trueConten = wx.getStorageSync('trueConten', trueConten);//订单中的商品信息数组
-    console.log(trueConten);
+    var conent = wx.getStorageSync('conent', conent);//订单中的商品信息数组
+    console.log(conent);
     var datas = "";
-    for (var i = 0; i < trueConten.length; i++ ){
-     var data = trueConten[i] ;
-     datas =  trueConten[i] + "|" + trueConten[i];   
+    for (var i = 0; i < conent.length; i++ ){
+     // var datas = trueConten[i] ;
+      datas += conent[i] + "|" ;   
     }
+    console.log(datas);
+    var i = datas.length;
+    console.log(i);
+    datas = datas.substr(0, i - 1);
+    console.log(datas);
 
     //获取径伟度
     wx.getLocation({
@@ -159,13 +164,13 @@ Page({
   var ra_id = that.data.ra_id;//收货地址ID
   //way_of_receiving 收货方式 0为默认物流1:店内自取
   //commodityInfoArray  订单中的商品信息数组
-  var trueConten = wx.getStorageSync('trueConten', trueConten);//订单中的商品信息数组
-  console.log(trueConten);
+  var conent = wx.getStorageSync('conent', conent);//订单中的商品信息数组
+  console.log(conent);
   var datas = "";
 
-  for (var i = 0; i < trueConten.length; i++) {
-    var data = trueConten[i];
-    datas = '"' + trueConten[0] + "|" + trueConten[1] + '"';
+  for (var i = 0; i < conent.length; i++) {
+    // var data = conent[i];
+    datas = '"' + conent[i] + "|" + conent[1] + '"';
   }
   console.log(datas); 
       var that = this;

@@ -1,141 +1,104 @@
+
+
 <!--专-->
-<view class='backgroundgary' hidden='{{showDialogFlag}}'>
+<view class='backgroundgary'>
    <view class='box'>
-      <view class='title' wx:if="{{showNumFlag==0}}">专属标志</view>
-      <view class='title' wx:if="{{showNumFlag==1}}">积分加倍</view>
-      <view class='title' wx:if="{{showNumFlag==2}}">商城兑换</view>
-      <view class='title' wx:if="{{showNumFlag==3}}">会员包邮</view>
-      <view class='title' wx:if="{{showNumFlag==4}}">生日礼</view>
-      <view class='title' wx:if="{{showNumFlag==5}}">优惠券</view>
-      <view class='list' wx:if="{{showNumFlag==0}}">
-          <view class='list-item'>享有对应的等级标志</view>
+      <view class='title'>专属标志</view>
+      <view class='list'>
+          <view class='icon'></view>
+          <text>享有对应的等级标志</text>
       </view>
-      <view class='list' wx:if="{{showNumFlag==0}}">
-          <view class='list-item'>特权标志</view>
+      <view class='list'>
+          <view class='icon'></view>
+          <text>特权标志</text>
       </view>
-      <view class='list' wx:if="{{showNumFlag==0}}">
-          <view class='list-item'>昵称颜色</view>
+      <view class='list'>
+      <view class='icon'>
       </view>
-      <view class='list' wx:if="{{showNumFlag==1}}">
-          <view class='list-item'>白银会员1元=1积分</view>
+          <text>昵称颜色</text>
       </view>
-      <view class='list' wx:if="{{showNumFlag==1}}">
-          <view class='list-item'>黄金会员1元=1.2积分</view>
-      </view>
-      <view class='list' wx:if="{{showNumFlag==1}}">
-          <view class='list-item'>白金会员1元=1.5积分</view>
-      </view>
-      <view class='list' wx:if="{{showNumFlag==1}}">
-          <view class='list-item'>钻石会员1元=2积分</view>
-      </view>
-      <view class='list' wx:if="{{showNumFlag==2}}">
-          <view class='list-item w200'>可兑换产品</view>
-      </view>
-      <view class='list' wx:if="{{showNumFlag==2}}">
-          <view class='list-item w200'>可兑换美容服务</view>
-      </view>
-      <view class='list' wx:if="{{showNumFlag==2}}">
-          <view class='list-item w200'>可兑换优惠券</view>
-      </view>
-      <view class='list' wx:if="{{showNumFlag==3}}">
-          <view class='list-item w200'>享受包邮服务</view>
-      </view>
-      <view class='list' wx:if="{{showNumFlag==4}}">
-          <view class='list-item w200'>享受会员生日礼</view>
-      </view>
-      <view class='list' wx:if="{{showNumFlag==5}}">
-          <view class='list-item'>享受定期优惠券赠送</view>
-      </view>
-      <button class='btn' type='button' bindtap='closeBtn'>确定</button>
    </view>
-</view>
 
-<view class="header" 
-      style="background-image: url('../../images/mainheader.png');background-size: cover; background-repeat: no-repeat;">
-    <view class='header-top'></view>
-    <view>{{ nickName }}</view>
-    <view hidden='{{hasVipFlag}}'>现在开通VIP,预计一年为您节省 <text class='red'>1153</text>元</view>
-     <button class='btn' type='button' hidden='{{!hasVipFlag}}'>
-      {{ info.memberName }}<image src='/images/anCrown.png'></image>
-    </button>
 </view>
-
+<view class="header" style="background-image: url('../../images/mainheader.png'); background-size: cover; background-repeat: no-repeat;">
+    <view class='header-top'> </view>
+    <view>用户名</view>
+    <view>现在开通VIP</view>
+    <view>预计一年为您节省 <text class='red'>1153</text>元</view>
+  
+</view>
 <!--会员享有6大权益-->
 <view class='navTitle'>
   - 会员专享有6大权益 -
 </view>
 
-<view class='top'>
-    <view bindtap='showDialog' data-num="0">
-        <image src='../../images/openImg1.png'/>
-        <text>专属标志</text>
-    </view>
-    <view style='margin-left:80rpx; margin-right:80rpx;' bindtap='showDialog' data-num="1">
-        <image src='../../images/openImg2.png'/>
-        <text>积分加倍</text>
-    </view>
-    <view bindtap='showDialog' data-num="2">
-        <image src='../../images/openImg3.png'/>
-        <text>商城兑换</text>
-    </view>
-    <view bindtap='showDialog' data-num="3">
-        <image src='../../images/openImg1.png'/>
-        <text>会员包邮</text>
-    </view>
-    <view style='margin-left:80rpx; margin-right:80rpx;' bindtap='showDialog' data-num="4">
-        <image src='../../images/openImg2.png'/>
-        <text>生日礼</text>
-    </view>
-    <view bindtap='showDialog' data-num="5">
-        <image src='../../images/openImg3.png'/>
-        <text>优惠券</text>
+
+<view class='box'>
+    <view class='top'>
+        <view >
+            <image src='../../images/openImg1.png'/>
+            <text>专属标志</text>
+        </view>
+        <view style='margin-left:80rpx; margin-right:80rpx;'>
+            <image src='../../images/openImg2.png'/>
+            <text>积分加倍</text>
+        </view>
+        <view >
+            <image src='../../images/openImg3.png'/>
+            <text>商城兑换</text>
+        </view>
+        <view >
+            <image src='../../images/openImg1.png'/>
+            <text>会员包邮</text>
+        </view>
+        <view style='margin-left:80rpx; margin-right:80rpx;'>
+            <image src='../../images/openImg2.png'/>
+            <text>生日礼</text>
+        </view>
+        <view >
+            <image src='../../images/openImg3.png'/>
+            <text>优惠券</text>
+        </view>
     </view>
 </view>
 
-<view class='buttom' hidden="{{hasVipFlag}}">
-  <view class="box-list {{ curr == 0 ? 'curr' : '' }}" bindtap='openMemberBtn' data-price='9.9' data-index="0">
-      <view class='lsitT'>
-          <text>月度会员</text>
-          <text class='red'>9.9</text>
-          <text class='red'>特惠价￥</text>
-      </view>
-      <view class='listB'>
-        <text>1个月优享会员（立享会员价+双倍积分）</text>
-        <text>￥15</text>
-      </view>
-  </view>
-  <view class="box-list {{ curr == 1 ? 'curr' : '' }}" bindtap='openMemberBtn' data-price='19.9' data-index="1">
-      <view class='lsitT'>
-          <text>季度会员</text>
-          <text class='red'>19.9</text>
-          <text class='red'>特惠价￥</text>
-      </view>
-      <view class='listB'>
-        <text>3个月优享会员（立享会员价+双倍积分）</text>
-        <text >￥45</text>
-      </view>
-  </view>
-  <view class="box-list {{ curr == 2 ? 'curr' : '' }}" bindtap='openMemberBtn' data-price='39.9' data-index="2">
-      <view class='lsitT'>
-          <text>半年会员</text>
-          <text class='red'>39.9</text>
-          <text class='red'>特惠价￥</text>
-      </view>
-      <view class='listB'>
-        <text>6个月优享会员（立享会员价+双倍积分）</text>
-        <text >￥90</text>
-      </view>
-  </view>
-  <view class='zf'>需支付： {{money}} 元</view>
-  <view class='wx'>
-      <image src='../../images/wx.png' />
-      <view>微信支付</view>
-      <image class="item-select" 
-              data-index="{{index}}"
-              data-id="{{index}}" 
-              src="{{isSelect?'../../images/selected.png':'../../images/seleon.png'}}"/>
-      <!-- bindtap="switchSelect" -->
-  </view>
-  <view class='btn' bindtap='sendBtn'>开通会员，立享优惠价</view>
+<view class='box-list'>
+    <view class='lsitT'>
+        <text class='bold'>月度会员</text>
+        <text class='red font25'>特惠价￥<text style='margin:0rpx;'>9.9</text></text>
+    </view>
+    <view class='listB'>
+      <text>1个月优享会员（立享会员价+双倍积分）</text>
+      <text>￥15</text>
+    </view>
 </view>
+<view class='box-list'>
+    <view class='lsitT'>
+        <text class='bold'>季度会员</text>
+        <text class='red font25'>特惠价￥<text style='margin:0rpx;'>19.9</text></text>
+    </view>
+    <view class='listB'>
+      <text>3个月优享会员（立享会员价+双倍积分）</text>
+      <text >￥45</text>
+    </view>
+</view>
+<view class='box-list'>
+    <view class='lsitT'>
+        <text class='bold'>半年会员</text>
+        <text class='red font25'>特惠价￥<text style='margin:0rpx;'>39.9</text></text>
+    </view>
+    <view class='listB'>
+      <text>6个月优享会员（立享会员价+双倍积分）</text>
+      <text >￥90</text>
+    </view>
+</view>
+<view class='zf'>需支付： 19.9元</view>
+<view class='wx'>
+    <image src='../../images/wx.png' />
+    <view>微信钱包</view>
+      <image class="item-select"   bindtap="switchSelect" data-index="{{index}}" data-id="{{index}}" src="{{isSelect?'../../images/selected.png':'../../images/seleon.png'}}" />
+
+</view>
+
+<view class='bnt'>开通会员，立享优惠价</view>
 

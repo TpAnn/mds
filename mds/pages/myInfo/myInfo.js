@@ -72,11 +72,9 @@ Page({
         user_address: this.data.address
       },
       success: res => {
-        if( res.data.status == 200){
-          wx.navigateBack({
-            delta: 1
-          });
-        }
+        wx.navigateTo({
+          url: '/pages/main/mian',
+        })
       },
       fail: res => {
         wx.showToast({

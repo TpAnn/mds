@@ -1,6 +1,6 @@
 var selectOrder = 'http://www.meidaoshuo.com///sp/index.php/Home/My/selectOrder';//根据状态查询订单详情
 var cencelOrder = 'http://www.meidaoshuo.com///sp/index.php/Home/HomeCarousel/cencelOrder/';//取消订单
-
+var get_sn = require('../../utils/util.js');
 var app = getApp()
 Page({
   data: {
@@ -42,21 +42,23 @@ Page({
   },
  
   onLoad: function (options) {
-
-    var math = Math.random() * 10 ;
-    
-
-
-    let cookie = wx.getStorageSync('cookieKey');
     // 页面初始化 options为页面跳转所带来的参数
-   var that = this;
-   let memberName = wx.getStorageSync('memberName');//会员名
-   var id = options.id;//当前页面ID
-   var order_id = that.data.order_id;
-   console.log(math + order_id);
+    var that = this;
+    let memberName = wx.getStorageSync('memberName');//会员名
+    var id = options.id;//当前页面ID
+    let cookie = wx.getStorageSync('cookieKey');//cookie
+    //生成随机的订单号
+    function pad2(n) { return n < 10 ? '0' + n : n }
+    function generateTimeReqestNumber() {
+        var date = new Date();
+        return date.getFullYear().toString() + pad2(date.getMonth() + 1) + pad2(date.getDate()) + pad2(date.getHours()) + pad2(date.getMinutes());
+    }
+    var rand = Math.floor(Math.random() * 900) + 100;
+    var order_id = generateTimeReqestNumber() + rand + id;
+    console.log(order_id);
    that.setData({
      currentTab: id,
-     danghao: math + order_id,
+     danghao: order_id,
    });
    //请求订单内容
    wx.request({
@@ -182,6 +184,7 @@ Page({
   },
   //点击切换
   clickTab: function (e) {
+    let cookie = wx.getStorageSync('cookieKey');
     var that = this; 
     if (this.data.currentTab === e.target.dataset.select) {
       return false;
@@ -190,7 +193,6 @@ Page({
         currentTab: e.target.dataset.current
       })
       var current = e.target.dataset.current;
-      console.log(current);
       wx.request({
         url: selectOrder,
         data: {

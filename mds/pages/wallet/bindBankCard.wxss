@@ -8,11 +8,6 @@
   font-size: 66rpx;
 }
 
-.container > text {
-  display:block;
-  text-align: center;
-}
-
 .container > text.tit + text {
   font-size: 26rpx;
   line-height: 30rpx;

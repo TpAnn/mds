@@ -186,11 +186,16 @@ top:10rpx;
   width: 20rpx;
   height: 40rpx;
 }
-.bnt image{
+.bnt {
   width: 279rpx;
-  height: 81rpx;
+  height: 85rpx;
   position: fixed;
-  bottom: 5rpx;
+  bottom: 0rpx;
+  background: #8dba29;
+  color: #fff;
+  line-height: 85rpx;
+  text-align: center;
+  border-radius: 50rpx; 
   left: 50%;
   transform: translateX(-50%)
 }

@@ -55,7 +55,7 @@ Page({
                 'Cookie': cookie,
               },
               success: function (res) { 
-               
+                console.log(res);
                 //是否是会员
                 var memberInfo = res.data.data.memberInfo;
                 //商品数据
@@ -202,28 +202,31 @@ Page({
 
 
   switchSelect: function (e) {
+    var that = this;
     var Allprice = 0, i = 0;
-    var carts = this.data.carts;//得到商品数据
+   
+    var carts = that.data.carts;//得到商品数据
+    console.log(carts);
 
     let id = e.target.dataset.id,
     index = parseInt(e.currentTarget.dataset.index);//当前的ID
-    this.data.carts[index].isSelect = !this.data.carts[index].isSelect;  
+    that.data.carts[index].isSelect = !that.data.carts[index].isSelect;  
     
     var totalPrice =0;//商品总价是
     var commodityPayment = 0;//商品实付
     var totalMoney = 0;//商品总价
     var member = 0; //会员优惠
 
-    console.log(this.data.carts[index].isSelect);
+    console.log(that.data.carts[index].isSelect);
     for(var i = 0; i<carts.length; i++){
       //价钱统计
       if (this.data.carts[i].isSelect) {
         //价钱*数量 =商品总价     
-        totalPrice += totalPrice + this.data.carts[i].selling_price * this.data.carts[i].commodity_join_number;  
+        totalPrice += totalPrice + that.data.carts[i].selling_price * that.data.carts[i].commodity_join_number;  
         
         //会员优惠
         // //首先判断是否是会员如果是会员，则计算会员价格，如果不是，会员优惠是0   
-        if (this.data.memberpriceText != null && this.data.memberpriceText != '') {
+        if (that.data.memberpriceText != null && that.data.memberpriceText != '') {
           var selling = carts[i].selling_price * carts[i].commodity_join_number;//所有商品的销售价总数 
           var membership = carts[i].membership_price * carts[i].commodity_join_number;//所有商品的会员价总数 
           member = selling - membership; //算法：所有商品的销售价总数 - 所有商品的销售价总数 = 优惠了多少的价格    
@@ -231,7 +234,7 @@ Page({
           member = 0;
         }
         //商品实付
-        var commodityPayment = totalPrice - member - this.data.promotion;
+        var commodityPayment = totalPrice - member - that.data.promotion;
 
         //判断如果大于99包邮，如果小于不包邮减去10元的运费
         if (totalPrice > 99) {
@@ -270,28 +273,30 @@ Page({
   //全选
   allSelect: function (e) {
     //处理全选逻辑
+    var that = this;
     let i = 0; 
     var totalPrice = 0;//商品总价是
     var commodityPayment = 0;//商品实付
     var totalMoney = 0;//商品总价
     var member = 0; //会员优惠
+    console.log(that.data.carts);
 
-    if (!this.data.isAllSelect) {
-      for (i = 0; i < this.data.carts.length; i++) {
-        this.data.carts[i].isSelect = true;
-        totalPrice += totalPrice + this.data.carts[i].selling_price * this.data.carts[i].commodity_join_number;
+    if (!that.data.isAllSelect) {
+      for (i = 0; i < that.data.carts.length; i++) {
+        that.data.carts[i].isSelect = true;
+        totalPrice += totalPrice + that.data.carts[i].selling_price * that.data.carts[i].commodity_join_number;
 
         //会员优惠
         // //首先判断是否是会员如果是会员，则计算会员价格，如果不是，会员优惠是0   
-        if (this.data.memberpriceText != null && this.data.memberpriceText != '') {
-          var selling = carts[i].selling_price * carts[i].commodity_join_number;//所有商品的销售价总数 
-          var membership = carts[i].membership_price * carts[i].commodity_join_number;//所有商品的会员价总数 
+        if (that.data.memberpriceText != null && that.data.memberpriceText != '') {
+          var selling = that.data.carts[i].selling_price * that.data.carts[i].commodity_join_number;//所有商品的销售价总数 
+          var membership = that.data.carts[i].membership_price * that.data.carts[i].commodity_join_number;//所有商品的会员价总数 
           member = selling - membership; //算法：所有商品的销售价总数 - 所有商品的销售价总数 = 优惠了多少的价格    
         } else {
           member = 0;
         }
         //商品实付
-        var commodityPayment = totalPrice - member - this.data.promotion;
+        var commodityPayment = totalPrice - member - that.data.promotion;
 
         //判断如果大于99包邮，如果小于不包邮减去10元的运费
         if (totalPrice > 99) {
@@ -329,23 +334,22 @@ Page({
     var trueConten = [];
     var dat = '';
     var conent = [];
-    for (var i = 0; i < that.data.carts.length; i++){
-        if (!that.data.carts[i].isSelect) {
-          console.log(that.data.isAllSelect);
-          }else{  
-              var ci_id = that.data.carts[i].ci_id;//商品id
-              console.log(ci_id);
-              var commodity_join_number = that.data.carts[i].commodity_join_number; //商品数量    
-              dat = that.data.carts[i].ci_id + ","+that.data.carts[i].commodity_join_number +","+2; 
-              trueConten[i] = dat ;
-              conent = trueConten[i];
-             
-              wx.setStorageSync('trueConten', trueConten[i]);//把用户信息诸存
-              wx.navigateTo({
-                url: '/pages/FillInTheOrder/FillInTheOrder',
-              });
-          }
-      }
+    for (var i = 0; i < that.data.carts.length; i++) {
+      if (!that.data.carts[i].isSelect) {//判断所有的勾是否都选中 如果选中则
+        console.log(that.data.isAllSelect);
+      } else {
+          var ci_id = that.data.carts[i].ci_id;//商品id
+          var commodity_join_number = that.data.carts[i].commodity_join_number; //商品数量    
+          dat = that.data.carts[i].ci_id + "," + that.data.carts[i].commodity_join_number + "," + 2;
+          conent[i] = dat;
+
+          wx.navigateTo({
+            url: '/pages/fillInTheOrder/fillInTheOrder',
+          });
+        }
+    }
+    console.log(conent);
+    wx.setStorageSync('conent', conent);//把用户信息诸存
   },
   // 下拉刷新
   onPullDownRefresh: function () {

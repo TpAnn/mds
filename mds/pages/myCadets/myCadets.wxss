@@ -11,10 +11,11 @@ page{
   overflow: hidden;
   padding-bottom:30rpx;
   background-color:#fff;
+  
+  padding-top: 30rpx;
 }
 .cadetsBox .cadetsL {
   float: left;
-  margin-top: 30rpx;
   border:#e2e0e0 1rpx solid;
   margin-left: 75rpx;
   width: 263rpx;

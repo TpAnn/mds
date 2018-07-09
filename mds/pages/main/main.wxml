@@ -8,9 +8,9 @@
       <view class='bottomBox' bindtap='bindLogin' hidden='{{flag1}}' style='border:#fff 1rpx solid'>
            <text > {{log}}/{{register}}</text>
       </view> 
-      <view class='bottomBox' bindtap='bindLogin' hidden='{{flag2}}' style='background:#e64340'>
+      <view class='bottomBox' hidden='{{flag2}}' style='background:#e64340'>
             <text >{{membership}}</text>
-            <image src='../../images/mainCrown.png' class='mainCrown'></image>
+            <image src='../../images/mainCrown.png' class='mainCrown' hidden='{{flagImg}}'></image>
       </view> 
 </view>
 <view class='title'>{{mds}}</view>
@@ -39,10 +39,6 @@
         <text>我的收货地址</text>
         <view></view>
     </view>
-    <view class='listBox' bindtap='bindVip'>
-        <text>会员管理</text>
-        <view></view>
-    </view>
     <view class='listBox' bindtap='bindWallet'>
         <text>我的钱包</text>
         <view></view>
@@ -53,10 +49,6 @@
     </view>
      <view class='listBox' bindtap='bindMyCadets'>
         <text>我的学员</text>
-        <view></view>
-    </view>
-     <view class='listBox' bindtap='bindMyPromise'>
-        <text>我的预约</text>
         <view></view>
     </view>
     <view class='listBox' bindtap='bindGoods'>

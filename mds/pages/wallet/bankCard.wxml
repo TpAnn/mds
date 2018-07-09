@@ -1,24 +1,24 @@
 <view class='container'>
   <view class='list-box'>
     <view class='list-box-item' bindtap='showFlag'>
-      <!-- <view class='icon wechat'>
+      <view class='icon wechat'>
         <image src='/images/wechat-icon.png'></image>
-      </view> -->
+      </view>
       <text>微信钱包</text>
       <view class='select'>
         <image class="{{ !showWechatFlag ? 'show' : '' }}"  src='/images/seleon.png'></image>
         <image class="{{ showWechatFlag ? 'show' : '' }}" src='/images/selected.png'></image>
       </view>
     </view>
-    <view class='list-box-item' bindtap='showFlag' data-id="{{item.bc_id}}" wx:for="{{data}}" wx:for-item="item">
-      <!-- <view class='icon'>
+    <view class='list-box-item' bindtap='showFlag' wx:for="data" wx:for-item="item">
+      <view class='icon'>
         <image src='/images/pinganBank-icon.png'></image>
-      </view> -->
-      <text>{{item.bankCardName}}</text>
-      <text class='gray'>尾号{{item.bankTailNum}}储蓄卡</text>
+      </view>
+      <text>平安银行</text>
+      <text class='gray'>尾号5222储蓄卡</text>
       <view class='select'>
-        <image class="{{ !item.showBankCardFlag ? 'show' : '' }}" src='/images/seleon.png'></image>
-        <image class="{{ item.showBankCardFlag ? 'show' : '' }}" src='/images/selected.png'></image>
+        <image class="{{ !showBankCardFlag ? 'show' : '' }}" src='/images/seleon.png'></image>
+        <image class="{{ showBankCardFlag ? 'show' : '' }}" src='/images/selected.png'></image>
       </view>
     </view>
   </view>

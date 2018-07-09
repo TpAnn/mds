@@ -62,7 +62,6 @@
 .all{
     width:55rpx; 
     height:55rpx; 
-    background:red; 
     border-radius:50%; 
     float:left; 
     margin: 15rpx 17rpx; 

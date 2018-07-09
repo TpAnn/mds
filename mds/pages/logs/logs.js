@@ -34,13 +34,13 @@ Page({
     tel:'123',
     code:'123',
     acitve: '#8dba29',
-    time: '点击发送验证码', //倒计时 
+    time: '点击获取验证码', //倒计时 
     currentTime: 60,
     newPswd:'',
     pswds:'',
     firstPswd1:'',
     firstPswd2:'',
-    noCode:'2',
+    noCode:'',
     longitude: '',
     password:'',
     latitude: '',
@@ -49,7 +49,7 @@ Page({
     focus2: true,
     Data:[],
     codeNo: '',//您输入的验证错误，请重新输入
-    noction: '',//../../images/noction.png
+    noction: '',///images/noction.png
 
     
   },
@@ -74,8 +74,7 @@ Page({
     })
   
   },
-
-  
+ 
   //手机号码输入
   userNameInput:function(e){
       this.setData({
@@ -85,7 +84,17 @@ Page({
 //密码输入
   blurPassword: function (e) {
     this.setData({
-      password: e.detail.value
+      password: e.detail.value,
+      codeNo: '',//您输入的验证错误，请重新输入
+      noction: '',///images/noction.png
+    })
+  },
+  //聚焦
+  paswdFocus:function(){
+    this.setData({
+      
+      codeNo: '',//您输入的验证错误，请重新输入
+      noction: '',///images/noction.png
     })
   },
 
@@ -110,12 +119,77 @@ Page({
       noPswd1: e.detail.value
     });
   },
+  //验证码
+  bindCode: function (e) {
+    this.setData({
+      noCode: e.detail.value
+    })
+  },
 
   //忘记密码2
   noPswd1: function () {
     this.setData({
       noPswd1: e.detail.value
     });
+  },
+  //清除手机号
+  cleart: function(){
+    this.setData({
+      userPhone: ""
+    })  
+  },
+  //清除登录密码
+  pswdcleart:function(){
+    this.setData({
+      password:'',
+    });
+  },
+  //清除密码
+  firstPswd1Cleart: function () {
+    this.setData({
+      firstPswd1: ""
+    })
+  },
+  //清除确认密码
+  firstPswd2Cleart: function () {
+    this.setData({
+      firstPswd2: ""
+    })
+  },
+  //验证码请求
+  getCode: function (options) {
+    var that = this;
+    var userPhone = that.data.userPhone;
+    wx: wx.request({
+      url: 'http://www.meidaoshuo.com///sp/index.php/Home/User/sendSms/',
+      data: {
+        phone: userPhone
+      },
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: function (res) {
+        console.log(res);
+      },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+    var interval;
+    var currentTime = that.data.currentTime;
+    interval = setInterval(function () {
+      currentTime--;
+      that.setData({
+        time: currentTime + '秒'
+      })
+      if (currentTime <= 0) {
+        clearInterval(interval)
+        that.setData({
+          time: '获取',
+          currentTime: 60,
+          disabled: false
+        })
+      }
+    }, 1000)
   },
 
 
@@ -203,17 +277,21 @@ Page({
 
    
     if (password == '') {
-      wx.showModal({
-        title: '提示',
-        content: '密码不能为空',
-        success: function (res) {
-          if (res.confirm) {
-            console.log('用户点击确定')
-          } else if (res.cancel) {
-            console.log('用户点击取消')
-          }
-        }
-      })
+      that.setData({
+        codeNo: '您输入的验证错误，请重新输入',//
+        noction: '/images/noction.png',//
+      });
+      // wx.showModal({
+      //   title: '提示',
+      //   content: '密码不能为空',
+      //   success: function (res) {
+      //     if (res.confirm) {
+      //       console.log('用户点击确定')
+      //     } else if (res.cancel) {
+      //       console.log('用户点击取消')
+      //     }
+      //   }
+      // })
       
     } else if (strkong.test(password)){
         wx.request({
@@ -233,9 +311,6 @@ Page({
               wx.setStorageSync('cookieKey', res.header['Set-Cookie']);  
             } 
             console.log(res);
-            //用户信息
-            wx.setStorageSync('userData', res.data.data);
-
             wx.setStorageSync('memberName', res.data.data.memberName);
             wx.setStorageSync('user_phone', res.data.data.user_phone);
             wx.setStorageSync('user_nick', res.data.data.user_nick);
@@ -243,6 +318,8 @@ Page({
             wx.setStorageSync('userId', res.data.data.user_id);
             wx.setStorageSync('memberName', res.data.data.memberName);
             wx.setStorageSync('headerPortraitUrl', res.data.data.user_head_portrait_url);
+            wx.setStorageSync('types', res.data.data.user_type);//
+            wx.setStorageSync('personalitySignature', res.data.data.personalitySignature);//美导个性
             
             if (res.data.status == 200) {
               console.log(66);
@@ -281,6 +358,8 @@ Page({
     var firstPswd1 = this.data.firstPswd1;//得到密码
     var firstPswd2 = this.data.firstPswd2;//得到密码
     var userPhone = this.data.userPhone;//得到手机号码
+    var noCode = this.data.noCode;//得到验证码
+
     that.setData({
       tel: userPhone,
     });

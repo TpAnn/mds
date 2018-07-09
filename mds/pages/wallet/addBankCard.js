@@ -40,48 +40,24 @@ Page({
       return;
     }
 
-    // wx.request({
-    //   url: getApp().globalData.localhost + '/sp/index.php/Home/My/addBankCardByCheckInfo/',
-    //   method: 'GET',
-    //   header: {
-    //     'content-type': 'application/json',
-    //     'Cookie': getApp().globalData.cookieKey
-    //   },
-    //   data: {
-    //     realname: this.data.name,
-    //     bank_card_number: this.data.bankNum,
-    //   },
-    //   success: res => {
-    //     if (res.data.status == 200) {
-          wx.navigateTo({
-            url: '/pages/wallet/bindBankCard?bankNum=' + this.data.bankNum + 
-                 '&name=' + this.data.name + 
-                 '&type=' + "中信银行-借记卡-借记卡" //res.data.data.result.bankName
-          })
-    //     } else if (res.data.status == 401) {
-    //       wx.showToast({
-    //         title: '验证失败，请确认您的卡号与持卡人是否一致！',
-    //         icon: 'none',
-    //         duration: 2000
-    //       });
-    //     } else if (res.data.status == 403) {
-          
-    //     } else {
-    //       wx.showToast({
-    //         title: '服务器繁忙！',
-    //         icon: 'none',
-    //         duration: 2000
-    //       });
-    //     }
-    //   },
-    //   fail: res => {
-    //     wx.showToast({
-    //       title: '网络连接失败！',
-    //       icon: 'none',
-    //       duration: 2000
-    //     });
-    //   }
-    // });
+    wx.navigateTo({
+      url: '/pages/wallet/bindBankCard'
+    })
+
+    //提交
+    wx.request({
+      url: '',
+      data: {
+        tel: phone,
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        var result = res.data.code;
+
+      }
+    });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -12,35 +12,23 @@ page{
     font-size: 30rpx;
     white-space: nowrap;
     background-color:#fff;
-    border-top: 1rpx solid #f5f5f5;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 99;
 }
 .nav-item {
-  padding: 0 35rpx;
-  display: inline-block;
-  text-align: center;
-  height: 97rpx;
+    width: 20%;
+    display: inline-block;
+    text-align: center;
+    height: 97rpx;
 }
-.nav-item text {
-  position: relative;
-}
-.nav-item text:after {
-  content: '';
-  position: absolute;
-  top: 150%;
-  left: 0;
-  width: 100%;
-  height: 4rpx;
-}
-.nav-item.active {
-  font-weight: 700;
-  color: #8bbb29;
-}
-.nav-item.active text:after {
-  background-color: #8bbb29;
+.nav-item.active{
+    color: #8bbb29;
+    height: 97rpx;
+    line-height: 97rpx;
+    border-bottom: 4rpx solid #8bbb29;
+   
 }
 .tab-box{
   position: relative;
@@ -50,6 +38,10 @@ page{
 .tab-content{
     overflow-y: scroll;
     margin-top:88rpx;
+}
+
+.conentList:first-child{
+  margin-top:15rpx;
 }
 .conentList{
   background-color:#fff;
@@ -82,7 +74,7 @@ page{
   float: left;
 }
 .rightFont{
-  width:57%;
+  width: 52%;
   margin-left:47rpx;
   overflow: hidden;
   margin-top:50rpx;
@@ -107,6 +99,8 @@ page{
   background-color: #e54036;
   color:#fff;
   border-radius: 10rpx;
+ 
+
 }
 .effect{
   font-size: 28rpx;
@@ -116,13 +110,14 @@ page{
   float: left;
 }
 .fr{
-  float:right;
+  flaot:right;
 }
 .gray{
-  font-size:23rpx;
-  color:#888;
-  width:100%;
-  padding-right:26rpx;
+  font-size: 23rpx;
+  color: #888;
+  overflow: hidden;
+  width: 100%;
+  position: relative
 }
 .rightImg{
   width: 60rpx;
@@ -142,9 +137,10 @@ page{
 .bottom view{
   float:left;
 }
+
 .r{
-  float:right;
-  margin-right:26rpx;
+  position: absolute;
+  right: 0rpx;
 }
 .bottom view:first-child text{
   width: 100%;

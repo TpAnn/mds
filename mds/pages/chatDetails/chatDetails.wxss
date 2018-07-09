@@ -76,13 +76,19 @@ page{
 } 
 .listR{
   font-size: 28rpx;
-  height: 80rpx;
-  line-height: 80rpx;
-  padding: 0 20rpx;
+  padding:  20rpx;
   border-radius: 20rpx;
   background: #8dba29;
   color: #fff;
   margin-left:30rpx;
+  max-width:74%;
+  display: -webkit-box;
+  line-height: 40rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:3;
+  overflow: hidden;
+  text-overflow:ellipsis;
  
 }
 .listRight {
@@ -92,7 +98,7 @@ page{
   float: right;
   margin-left: 30rpx;
 }
-.listRight view{
+.listRight view ,.listRight text {
   float: right
 }
 /*--向左的三角型--*/

@@ -52,7 +52,7 @@ Page({
         if(res.data.data.state == 200) {
           this.setData({
             signDialogFlag: false,
-            ['info.total_integral']: this.info.total_integral+res.data.data.integralCount
+            signIntegral: res.data.data.integralCount
           })
         } else if (res.data.data.state == 400) {
           wx.showToast({

@@ -11,9 +11,11 @@ Page({
     password:'',
     date: '请选择日期',
     fun_id: 2,
-    time: '获取验证码', //倒计时 
+    time: '点击获取验证码', //倒计时 
     currentTime: 60,
     userPhone:'',
+    codeNo: '您输入的验证错误，请重新输入',//
+    noction: '/images/noction.png',//
   },
   /**
  * 生命周期函数--监听页面加载
@@ -46,9 +48,10 @@ Page({
   
   //验证码请求
   getCode: function (options) {
+    
     var that = this;
     var userPhone = that.data.userPhone;
-    wx:wx.request({
+    wx.request({
       url: 'http://www.meidaoshuo.com///sp/index.php/Home/User/sendSms/',
       data: {
         phone:userPhone
@@ -57,7 +60,10 @@ Page({
       dataType: 'json',
       responseType: 'text',
       success: function(res) {
-        console.log(res);
+        console.log(res.header['Set-Cookie']);
+        if (res && res.header && res.header['Set-Cookie']) {
+          wx.setStorageSync('cookieKey', res.header['Set-Cookie']);
+        } 
       },
       fail: function(res) {},
       complete: function(res) {},
@@ -94,6 +100,8 @@ Page({
   },
   //忘记密码下一步
   noPswdNext: function (e) {
+    let cookie = wx.getStorageSync('cookieKey');
+    console.log(cookie);
     var that = this;
     var password = this.data.password;
     var newpassword = this.data.newpassword;
@@ -102,13 +110,13 @@ Page({
     //得到经伟度
     var latitude = this.data.latitude;
     var longitude = this.data.longitude;
-    if (newPswd == '') {
-      this.setData({
-        noction: '../../images/noction.png',
+    if (newpassword == '') {
+      that.setData({
+        noction: '/images/noction.png',
         codeNo: '新密码不能为空',
       });
-    } else if (pswds == '') {
-      this.setData({
+    } else if (password == '') {
+      that.setData({
         noction: '../../images/noction.png',
         codeNo: '确认密码不能为空',
       });
@@ -121,15 +129,15 @@ Page({
           verificationPassword: newpassword,
           user_phone: userPhone,
           code: noCode,
-
         },
         method: "GET",
         header: {
-          'content-type': 'application/json' // 默认值
+          'content-type': 'application/json', // 默认值
+          'Cookie': cookie,
         },
         success: function (res) {
           console.log(res.data.data);
-          if (res.statusCode == 200) {
+          if (res.status == 200) {
             wx.showToast({
               title: '更改成功！',
               icon: 'success',
@@ -143,6 +151,18 @@ Page({
         }
       })
     }
+  },
+  //清除确认密码
+  pswdCleart:function(){
+    this.setData({
+      newpassword:'',
+    });
+  },
+  //清除确认密码
+  newpswrdCleart: function () {
+    this.setData({
+      password: '',
+    });
   },
 
 

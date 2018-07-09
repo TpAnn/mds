@@ -1,9 +1,16 @@
-<view class='cadetsBox'>
-    <view class='cadetsL' wx:for="{{mycadets}}" wx:for-item="item" data-id='{{item.student_id}}'>
+<view class='cadetsBox' wx:for="{{mycadets}}" style=''>
+    <view class='cadetsL'>
         <view style='background-image:url(../../images/cadetsbj.png)'>
-            <image src='{{item.user_head_portrait_url}}'></image>
+            <image src='{{item.cadetsPortrait}}'></image>
         </view>
-        <view>{{item.user_nick != '' ? 'Tell: '+item.tell : item.user_nick }}</view>
-        <view class='green'>{{item.user_type == 0 ? '普通用户' : '美导'}}</view>
+        <view>{{item.cadetsname}}</view>
+        <view class='green'>{{item.cadetslabel}}</view>
+    </view>
+    <view class='cadetsL'>
+        <view style='background-image:url(../../images/cadetsbj.png)'>
+            <image src='{{item.cadetsPortrait}}'></image>
+        </view>
+        <view>{{item.cadetsname}}</view>
+        <view class='green'>{{item.cadetslabel}}</view>
     </view>
 </view>

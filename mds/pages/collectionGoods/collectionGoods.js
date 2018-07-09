@@ -32,22 +32,11 @@ Page({
         'Cookie': getApp().globalData.cookieKey
       },
       success: res => {
-        if(res.data.status == 200){
-          this.setData({
-            conent: res.data.data.map((i) => {
-              return { cartShowFlag: i.commodity_join_number > 0 ? true : false, ...i }
-            })
+        this.setData({
+          conent: res.data.data.map((i)=>{
+            return { cartShowFlag: i.commodity_join_number>0?true:false,...i}
           })
-        }else{
-          wx.showToast({
-            title: '网络连接失败！',
-            icon: 'none',
-            duration: 2000
-          });
-          wx.navigateBack({
-            delta: 1
-          })
-        }
+        })
       },
       fail: () => {
         wx.showToast({

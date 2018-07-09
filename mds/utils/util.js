@@ -29,7 +29,12 @@ function formatTime(number, format) {
   }
   return format;
 }
+function get_sn()
 
+{
+  return date('YmdHis').rand(100000, 999999);
+}
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  get_sn: get_sn
 }

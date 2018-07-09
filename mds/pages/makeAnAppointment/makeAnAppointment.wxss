@@ -1,1 +1,164 @@
 /* pages/makeAnAppointment/makeAnAppointment.wxss */
+page{
+  background: #f5f5f5;
+}
+.date-show{
+	position:relative;
+  width:100%;
+  font-family:PingFang-SC-Regular;
+  font-size:40rpx;
+  color:#282828;
+  text-align:center;
+  background:#fff;
+  margin:15rpx auto 10rpx;
+  padding-top:35rpx;
+
+}
+.lt-arrow,.rt-arrow{
+	position: absolute;
+	top: 1rpx;
+	width: 60rpx;
+	height: 60rpx;
+  border:red 1rpx solid;
+}
+.lt-arrow image,.rt-arrow image{
+	width: 14rpx;
+	height: 26rpx;
+}
+.lt-arrow{
+	left: -110rpx;
+	transform: rotate(180deg);
+}
+.rt-arrow{
+	right: -100rpx;
+}
+.header{
+	font-size: 0;
+	padding: 0 24rpx;
+}
+.header>view{
+	display: inline-block;
+	width: 14.285%;
+	color: #333;
+	font-size: 30rpx;
+	text-align: center;
+	border-bottom: 1px solid #D0D0D0;
+	padding: 39rpx 0;
+}
+.weekMark{
+	position: relative;
+}
+.weekMark view{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	border-bottom: 1px solid #22A7F6;
+}
+.date-box{
+	font-size:0;
+padding:10rpx 0 0 11rpx;
+
+}
+.date-box>view{
+	position:relative;
+  display:inline-block;
+  width:14.18%;
+  color:#020202;
+  font-size:40rpx;
+  text-align:center;
+  vertical-align:middle;
+  margin:15rpx 0;
+
+}
+
+.date-head{
+	height:60rpx;
+  line-height:60rpx;
+  font-size:30rpx;
+  color:#8ca2b9;
+
+}
+.activeView{
+  border-radius: 50%;
+  width: 60rpx;
+  border:#bde0a8 1rpx solid;
+  text-align: center;
+  margin: 0 auto;
+
+}
+.nowDay .date-head{
+	width: 60rpx;
+	border-radius: 50%;
+	text-align: center;
+	color: #fff;
+	background-color: #8dba29;
+	margin: 0 auto;
+}
+.nowDay1 .date-head{
+	width: 60rpx;
+	border-radius: 50%;
+	text-align: center;
+	color: #8ca2b9;
+	border: #8dba29 1rpx solid;
+	margin: 0 auto;
+}
+.date-weight{
+	font-size: 22rpx;
+	padding: 15rpx 0;
+}
+.nowDay .date-weight{
+	color: #22A7F6;
+}
+.wrap{
+  background: #fff;
+}
+.one{
+	position: absolute;
+	bottom: 0;
+	right: 5rpx;
+	width: 20rpx;
+	height: 20rpx;
+	border-radius: 50%;
+	background-color: red;
+}
+.two{
+	position: absolute;
+	bottom: 30rpx;
+	right: 5rpx;
+	width: 20rpx;
+	height: 20rpx;
+	border-radius: 50%;
+	background-color: blue;
+}
+.section{
+   background:#CABBC7;
+   margin:20rpx;
+   padding:20rpx
+
+}
+.makeAnAppointment{
+  background:#8dba29;
+  width:350rpx; 
+  line-height:68rpx; 
+  border-radius:35rpx; 
+  text-align:center; 
+  color:#fff; 
+  font-size: 28rpx;
+  margin: 0 auto;
+  margin-top:44rpx; 
+}
+.store{
+  padding-left:26rpx; 
+  width:95%; 
+  height:85rpx; 
+  font-size:28rpx; 
+  border-top:#ddd9da 1rpx solid; 
+  border-bottom:#ddd9da 1rpx solid; 
+  line-height:85rpx; 
+}
+.remarks{
+ padding:0 28rpx 35rpx 26rpx;
+ font-size:25rpx;
+ color:red;
+}

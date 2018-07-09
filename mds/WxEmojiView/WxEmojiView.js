@@ -19,7 +19,6 @@ function init(reg, emojis) {
     __emojiArray.push(key);
   }
 }
-
 function bindThis(e) {
   __this = e;
   var temObjs = {};
@@ -39,8 +38,9 @@ function buildTextObjs(e, str) {
     WxEmojiObjs: temObjs
   });
 }
-
-function buildTextAreaObjs(e, str) {
+//
+function buildTextAreaObjs(e, str) {//str是内容 这是一个进行赋值的一个方法
+  wx.setStorageSync('text', str);
   var temObjs = {};
   temObjs.showWxEmojiChooseView = 1;
   // temObjs.textAreaText = "hello test! :00: :01: :02: _03_ /04 🍉";
@@ -49,94 +49,86 @@ function buildTextAreaObjs(e, str) {
     ___text = "";
 
   }
-  
-  temObjs.WxEmojiTextArray = transEmojiStr(str);//进行赋值
+
+
+  //将内容赋值到temObjs的对象里
+  temObjs.WxEmojiTextArray = transEmojiStr(str);
   temObjs.textAreaText = ___text;
   temObjs.emojiArray = __emojiArray;
   ___Objs = temObjs;
-  wx.setStorageSync('text', ___text);//发送的信息
   __this.setData({
     WxEmojiObjs: temObjs
   });
 
 }
-
-//解析表情包
+ 
+//进行了正则比配
 function transEmojiStr(str) {
-  // var eReg = new RegExp("["+__reg+' '+"]");
+  console.log(str);
+  
   var eReg = new RegExp("[" + __reg + "]");
   var array = str.split(eReg);
-  var emojiObjs = [];
-  for (var i = 0; i < array.length; i++) {
-    var ele = array[i];
-  
+  // console.log(array);//把字符转成了数据格式
 
+  var emojiObjs = [];
+
+  for (var i = 0; i < array.length; i++) {//循环这个数据里的元素
+    var ele = array[i];
+
+    // console.log(__emojis);//这是一个对象
     var emojiObj = {};
-    if (__emojis[ele]) {
+    if (__emojis[ele]) {//把得到的内容放到一个对象里面
       emojiObj.node = "element";
       emojiObj.tag = "emoji";
-     // let data = wx.getStorageSync('data');
-      //赋值回到主健
-      console.log(__emojis[ele]);
       emojiObj.text = __emojis[ele];
-    
     } else {
       emojiObj.node = "text";
       emojiObj.text = ele;
     }
     emojiObjs.push(emojiObj);
-    // console.log(emojiObj);
+
   }
 
   return emojiObjs;
 }
 
+
+//点到textarear框之后得到内容 
 function WxEmojiTextareaBlur(target, e) {
-  console.log(666);
   __this = target;
   if (e.detail.value.length == 0) {
     return;
   }
+  let textConent = wx.setStorageSync('textConent');//返回的聊天信息
+  console.log(textConent);//返回的聊天信息;
+  buildTextAreaObjs(__this, textConent);
   console.log(e.detail.value);
-  buildTextAreaObjs(__this, e.detail.value);
+  
 }
 
-function WxEmojiTextareaFocus(target, e) {
+function WxEmojiTextareaFocus(target, e) {//获取焦点事件
   __this = target;
+  console.log(target);
+  
+
 }
 
-function wxPreEmojiTap(target, e) {
+//将内容进行赋值到表情解析后的方法
+function wxPreEmojiTap(target, e) {//
   __this = target;
   var preText = e.target.dataset.text;
+  // console.log(preText);
   if (preText.length == 0) {
     return;
   }
-
-  // wx.request({
-  //   url: _url, //仅为示例，并非真实的接口地址
-  //   data: {
-  //     chat_user_id: 2,//聊天的对象 
-  //     news_text: '666666666',//聊天的内容 f5f68f40ef594935e52d6645b3f397ab
-  //     news_type: 0,//发送类型
-  //     is_read: 0,//是否已读
-  //   },
-  //   header: {
-  //     "Content-Type": "application/x-www-form-urlencoded",
-  //     'Cookie': cookie,
-  //   },
-  //   method: 'POST',
-  //   success: function (res) {
-  //     console.log(res.data)
-  //   }
-  // })
   ___text = ___text + preText;
- 
   ___Objs.textAreaText = ___text;
-  console.log(___Objs);
+
   __this.setData({
     WxEmojiObjs: ___Objs
   });
   buildTextAreaObjs(__this, ___text);
+
 }
 
 
@@ -144,11 +136,11 @@ module.exports = {
   init: init,
   bindThis: bindThis,
   text: ___text,
-  transEmojiStr: transEmojiStr,
+  transEmojiStr: transEmojiStr, //存诸textear的内容还进行正则比配
   buildTextObjs: buildTextObjs,
-  buildTextAreaObjs, buildTextAreaObjs,
-  WxEmojiTextareaFocus: WxEmojiTextareaFocus,
-  WxEmojiTextareaBlur: WxEmojiTextareaBlur,
+  buildTextAreaObjs, buildTextAreaObjs, //将内容进行赋值到表情解析后的方法
+  WxEmojiTextareaFocus: WxEmojiTextareaFocus,//获取焦点事件
+  WxEmojiTextareaBlur: WxEmojiTextareaBlur,//失焦触发事件
   wxPreEmojiTap: wxPreEmojiTap,
 
 }

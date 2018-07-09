@@ -14,8 +14,7 @@ page {
 .list-box-item {
   position: relative;
   padding: 30rpx 0;
-  /* padding-left: 125rpx; */
-  padding-left: 26rpx;
+  padding-left: 125rpx;
   height: 75rpx;
   background-color: #fff;
   border-top: 1rpx solid #e6e6e6;

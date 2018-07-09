@@ -12,8 +12,7 @@
 <view class='conent'>
     <view class='conentList' wx:for="{{conetnList}}">
         <view>{{item.commodity_name}}</view>
-    <!-- <view style='width:200rpx; text-align:center'>{{item.quantity_sold}}</view> -->
-     <view style='width:200rpx; text-align:center'>1</view> 
+    <view style='width:200rpx; text-align:center'>{{item.quantity_sold}}</view>
     <view >￥{{item.selling_price}}</view>
     <view style='margin-left:25rpx;' class='red'>￥{{item.membership_price}}</view>
     </view>

@@ -1,0 +1,25 @@
+
+<view class='wrap'>
+	<view>
+		<view class='date-show' >
+			{{year}}年{{month}}月
+		</view>
+	</view>
+	<view class='header'>
+		<view wx:for='{{date}}' class='{{(index == 8) && isTodayWeek ? "weekMark" : ""}}' data-id="{{index}}">{{item}}<view></view></view>
+	</view>
+	<view class='date-box'>
+		<view wx:for='{{dateArr}}' class='{{isToday > item.dateNum ? "nowDay" : ""}}' data-date='{{item.isToday}}'>			
+			<view class='date-head {{item.dateNum == dIndex ? "activeView" : ""}}' bindtap='active' data-id="{{item.dateNum}}"   >
+				<view>{{item.dateNum}}</view>
+			</view>
+			 <!-- <view class='date-weight' data-id=>{{item.dateNum}}</view>  -->
+		</view>
+    
+	</view>
+  <view class='remarks'>备注：绿色为已被预约时间，圆框为您选择的预约时间</view>
+  <view style='' class='store'>预约门店：固戍门店</view>
+ 
+</view>
+ <view  class="makeAnAppointment" bindtap='confirmation' >确认预约</view>
+
