@@ -1,0 +1,61 @@
+<view class='container'>
+  <view class='conentList' wx:for="{{conent}}" wx:for-item='item' data-index="{{index}}" data-id="{{item.ci_id}}" >
+      <view class='lefImg'>
+          <image src='{{item.company_img_url1}}'></image>
+      </view>
+      <view class='rightFont'  >
+          <view bindtap='bindDetails' data-index="{{index}}" data-id="{{item.ci_id}}">
+              <view class='title' style='width:100%;'  >
+                {{item.commodity_name}}
+              </view>
+              <view 
+                class='effect'  
+                wx:for="{{item.effectInfo}}" 
+                wx:for-item="ffect_name1">功效：{{ffect_name1.effect_name}}</view>
+              <view class='gray' >
+                <block wx:for="{{item.skinInfo}}" wx:for-item="skinInfo1">
+                  <text class=''>{{skinInfo1.skin_type_name}}</text>
+                </block>
+                <text class='r'>已售{{item.quantity_sold}}件</text>
+              </view>
+          </view>
+          <view class='bottom'  data-index="{{index}}"   data-id="{{item.ci_id}}">
+              <view style='width:80%;'>
+                  <text>￥：{{item.selling_price}}</text>
+                    <text class='red' style='width:40%' >￥：{{item.membership_price}}  </text>
+                    <text class='redtitle' style='font-size:23rpx; width:30%'>会员专享</text> 
+              </view>
+              
+              <!---购物车-->
+              <view 
+                class="rightImg {{ !item.cartShowFlag ? 'show' : '' }}" 
+                data-index="{{index}}"  
+                bindtap='bindHide' >
+                  <image src='../../images/cars.png'></image>
+              </view>
+
+              <!---购物车加减-->
+              <view class="sku {{ item.cartShowFlag ? 'show' : '' }}">
+                  <view 
+                  bindtap='bindReduce'  
+                  data-index="{{index}}" 
+                  data-id="{{item.ci_id}}" >
+                    <image 
+                    src='../../images/reduce.png' 
+                    style='width:45rpx; height:45rpx;'  
+                    data-id="{{item.ci_id}}"></image>
+                  </view>
+                  <view class='center'>{{item.commodity_join_number}}</view>
+                  <view >
+                    <image 
+                      src='../../images/add.png' 
+                      style='width:45rpx; height:45rpx;' 
+                      bindtap='bindAdd'  data-id="{{item.ci_id}}" 
+                      data-index="{{index}}" 
+                      data-num="{{index}}" ></image>
+                  </view>
+              </view>
+          </view >  
+      </view>
+  </view>
+</view>

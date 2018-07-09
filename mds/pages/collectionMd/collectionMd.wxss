@@ -1,0 +1,77 @@
+/* pages/Collectionmd/Collectionmd.wxss */
+page{
+  background-color:#f5f5f5; 
+}
+.cadetsBox:first-child{
+  margin-top:15rpx;
+}
+.cadetsBox{
+  width: 100%;
+  border-bottom: #e2e0e0 1rpx solid;
+  overflow: hidden; 
+  padding-bottom:30rpx;
+  background-color:#fff;
+  padding-top: 30rpx;
+}
+
+.cadetsBox .cadetsL {
+  float:left;
+  width:243rpx;
+  height:269rpx;
+  margin-left:84rpx;
+  font-size:30rpx;
+  /* overflow: hidden; */
+  background-size:cover;
+  margin-top:24rpx;
+  text-align:center;
+  position: relative;
+  border: 1rpx solid #e6e6e6;
+  border-radius: 10rpx;
+}
+
+.cadetsL view:first-child image{
+  width: 144rpx;
+  height: 144rpx;
+  margin:0rpx;
+  
+}
+
+.cadetsL > view {
+  font-size: 30rpx;
+}
+
+.right{
+  position: absolute;
+  right: -1rpx;
+  width: 60rpx;
+  height: 60rpx;
+  top:-1rpx;
+  z-index: 10;
+}
+
+.right-line {
+  position:absolute;
+  right:-20rpx;
+  top:25rpx;
+  height:10rpx;
+  width:100rpx;
+  transform-origin:50% 50%;
+  border-bottom:1rpx solid #e6e6e6;
+  transform:rotateZ(45deg);
+  background-color:#fff;
+}
+
+.cadetsL .green{
+  font-size: 24rpx;
+  margin: 0 auto;
+  text-align: center;
+  padding:2rpx 0;
+  margin-top:10rpx;
+  margin-bottom: 30rpx;
+  border-radius: 10rpx;
+  color: #888;
+}
+
+.cadetsL .green text {
+  color: #e64340;
+}

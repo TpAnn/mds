@@ -1,0 +1,160 @@
+page {
+  background-color: #e2e0e0;
+}
+
+.container {
+  padding: 0;
+}
+
+.list-box {
+  width: 100%;
+  font-size: 28rpx;
+}
+
+.list-box-item {
+  position: relative;
+  padding: 30rpx 0;
+  /* padding-left: 125rpx; */
+  padding-left: 26rpx;
+  height: 75rpx;
+  background-color: #fff;
+  border-top: 1rpx solid #e6e6e6;
+}
+
+.list-box-item text {
+  display: block;
+  line-height: 37.5rpx;
+}
+
+.list-box-item.wechat text {
+  line-height: 75rpx;
+}
+
+.list-box-item view {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.list-box-item view.icon {
+  left: 26rpx;
+  width: 75rpx;
+  height: 39rpx;
+}
+
+.list-box-item.wechat view.icon {
+  height: 75rpx;
+}
+
+.list-box-item view.select {
+  width:20rpx;
+  height:20rpx;
+  border-right:#888 1rpx solid;
+  border-top:#888 1rpx solid;
+  transform:rotate(45deg) translateY(-50%);
+  right: 36rpx;
+}
+
+.list-box-item view.icon image {
+  width: 100%;
+  height: 100%;
+}
+
+.withdraw {
+  position: relative;
+  padding: 0 25rpx 25rpx;
+  width: calc( 100% - 50rpx );
+  border-top: 20rpx solid #e6e6e6;
+  background-color: #fff;
+}
+
+.withdraw text.tit {
+  display: block;
+  height: 80rpx;
+  font-size: 24rpx;
+  line-height: 80rpx;
+}
+
+.withdraw .inner {
+  padding-left: 50rpx;
+  font-size: 50rpx;
+  padding-bottom: 15rpx;
+  margin-bottom: 20rpx;
+  border-bottom: 1rpx solid #e6e6e6;
+}
+
+.withdraw .inner .labelText {
+  position: absolute;
+  top: 48rpx;
+  left: 26rpx;
+  width: 44rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  text-align: center;
+}
+
+.withdraw .inner .clear {
+  display: none;
+  position: absolute;
+  width: 35rpx;
+  height: 35rpx;
+  top: 50%;
+  right: 25rpx;
+  transform: translateY(-50%);
+  background-color: #888;
+  border-radius: 50%;
+}
+
+.withdraw .inner .clear.show {
+  display: block;
+}
+
+.withdraw .inner .clear:after {
+  content: '\2715';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 35rpx;
+  height: 35rpx;
+  font-size: 20rpx;
+  line-height: 35rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.withdraw .tips,
+.withdraw .error {
+  display: none;
+  font-size: 22rpx;
+}
+
+.withdraw .tips.show,
+.withdraw .error.show {
+  display: block;
+}
+
+.withdraw .tips {
+  color: #888;
+}
+
+.withdraw .error {
+  color: #e64340;
+}
+
+.withdraw input {
+  margin-top: 2rpx;
+  padding-right: 57rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+}
+
+.container button.btn {
+  padding: 0;
+  margin-top: 40rpx;
+  width: 260rpx;
+  line-height: 75rpx;
+  font-size: 30rpx;
+  border-radius: 80rpx;
+  background-color: #8cba28;
+  color: #fff;
+}

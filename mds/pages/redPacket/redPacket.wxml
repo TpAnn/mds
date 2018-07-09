@@ -1,0 +1,30 @@
+<view class='container'>
+  <view class='tips'>
+    您有<text class='fontc-red'>{{sum}}个</text>红包即将过期
+  </view>
+  <view class='list-box'>
+    <view class="list-item {{ item.state == '1' ? 'disable' : '' }}" wx:for="{{data}}" wx:for-item="item">
+      <view class='header'>
+        <view class='price'>
+          <text>¥</text>
+          {{item.re_amount}}
+        </view>
+        <view class='content'>
+          <text>{{ item.commodity_name }}</text>
+          <text>只能购买指定商品的时候使用</text>
+          <text>会员通用</text>
+          <text>限购手机号：{{ item.tell }}</text>
+        </view>
+        <view class='btn'>
+          <text class='fontc-red'>剩余{{item.remainingTime}}天</text>
+          <button bindtap='useBtn' data-id="{{item.ci_id}}" type='button'>去使用</button>
+          <button class='disable' type='button'>已失效</button>
+        </view>
+      </view>
+      <view class='footer'>
+        <text>有效期：{{ item.state=='1' ? '已'+item.state_zh : item.effectiveTime }}</text>
+        <text class="fr fontc-red">即将过期</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,121 @@
+.container {
+  padding: 0;
+}
+
+.container > text.tit {
+  margin-top: 60rpx;
+  font-weight: 700;
+  font-size: 66rpx;
+}
+
+.container > text {
+  display:block;
+  text-align: center;
+}
+
+.container > text.tit + text {
+  font-size: 26rpx;
+  line-height: 30rpx;
+}
+
+.list-box {
+  margin-top: 40rpx;
+  width: 100%;
+  font-size: 28rpx;
+}
+
+.list-box-item {
+  position: relative;
+  padding: 20rpx 0;
+  padding-left: 200rpx;
+  border-bottom: 1rpx solid #e6e6e6;
+}
+
+.list-box-item text {
+  display: block;
+  line-height: 35rpx;
+}
+
+.list-box-item input {
+  padding-right: 25rpx;
+}
+
+.list-box-item:first-child {
+  border-top: 1rpx solid #e6e6e6;
+}
+
+.list-box .labelText {
+  position: absolute;
+  top: 50%;
+  left: 25rpx;
+  transform: translateY(-50%);
+}
+
+.list-box-item:first-child .labelText {
+  top: 40rpx;
+}
+
+.list-box-item:last-child button {
+  position: absolute;
+  top: 50%;
+  right: 25rpx;
+  z-index: 10;
+  transform: translateY(-50%);
+  padding: 0;
+  width: 160rpx;
+  line-height: 50rpx;
+  border: none;
+  font-size: 22rpx;
+  background-color: #8cba28;
+  color: #fff;
+}
+
+.list-box-item:last-child button.getCodeing {
+  width: 200rpx;
+  color: #888;
+  background-color: #e6e6e6;
+}
+
+.container > button {
+  padding: 0;
+  margin-top: 80rpx;
+  width: 260rpx;
+  line-height: 75rpx;
+  font-size: 30rpx;
+  border-radius: 80rpx;
+  background-color: #8cba28;
+  color: #fff;
+}
+
+.doneToast {
+   display: none; 
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #8cba28; 
+  box-shadow: 0 0 0 750rpx #2a2a2a;
+  text-align: center;
+}
+
+.doneToast text {
+  display: block;
+  font-size: 22rpx;
+  font-weight: 400;
+  color: #fff;
+}
+
+.doneToast.show {
+  display: block;
+}
+
+.doneToast image {
+  margin: 15% 10% 3%;
+  width: 50%;
+  height: 50%;
+}

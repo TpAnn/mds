@@ -1,0 +1,25 @@
+<block wx:for="{{ addrData }}" wx:for-item="item">
+  <view class="header {{ item.defaultAddrFlag ? 'defaultAddr' : '' }} " data-index="{{index}}"  bindtap='settingDefaultAddr'>
+      <view class='headertop'>
+          <view>
+              <text class='mr'>默认</text>
+              <text>{{ item.receiving_name }}</text>
+          </view>
+          <view class='tell'>
+              {{ item.contact_number }}
+          </view>
+      </view>
+      <view class='headerbottom'>
+        <text>{{ item.provinces+item.city+item.county+item.address_detail }}</text>
+      </view>
+      <image catchtap="bindupdata" data-index="{{index}}" data-id="{{item.ra_id}}" src='{{ item.imgUrl }}'></image>
+  </view>
+  <view  class='conentList' data-index="{{index}}" data-id="{{item.ra_id}}" bindtap='settingDefaultAddr'>
+    <image 
+      class="item-allselect"  
+      src="{{ item.defaultAddrFlag ? '/images/selected.png' : '/images/seleon.png'}}" />
+      <text>默认地址</text>
+  </view>
+</block>
+
+<view class='bnt' bindtap='bindNew'>新增地址</view>

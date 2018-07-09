@@ -1,0 +1,31 @@
+ <view class='header'>
+    <view>{{sys}}</view>
+    <image src='{{qrCodeUrl}}' ></image>
+</view>
+<view class='listOne'>
+    <view>{{productName}}</view>
+    <view style='width:226rpx; text-align:center'>{{num}}</view>
+    <view style=''>{{originalPrice}}</view> 
+    <view style='margin-left:30rpx;'>{{member}}</view> 
+</view> 
+
+<view class='conent'>
+    <view class='conentList' wx:for="{{conetnList}}">
+        <view>{{item.commodity_name}}</view>
+    <!-- <view style='width:200rpx; text-align:center'>{{item.quantity_sold}}</view> -->
+     <view style='width:200rpx; text-align:center'>1</view> 
+    <view >￥{{item.selling_price}}</view>
+    <view style='margin-left:25rpx;' class='red'>￥{{item.membership_price}}</view>
+    </view>
+</view>
+
+<view class='bottomConent'>
+     <view class=' bottomList'>
+        <view>总价格：￥{{TotalPrice}}</view>
+        <view >会员价：<text class='red'>￥{{TotalMember}}</text></view>
+    </view>
+</view>
+
+<view class='bntBox' bindtap='bindHide'>
+  关闭
+ </view>

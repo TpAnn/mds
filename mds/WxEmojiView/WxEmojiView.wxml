@@ -1,0 +1,42 @@
+
+<template name="WxEmojiView">
+  <view class="WxEmojiView">
+    <block wx:for="{{WxEmojiObjs.WxEmojiTextArray}}" wx:key="">
+      <block wx:if="{{item.node == 'text'}}">{{item.text}}</block>
+      <block wx:elif="{{item.node == 'element'}}">
+        <image class="wxEmoji" src="/WxEmojiView/emojis/{{item.text}}" />
+      </block>
+    </block>
+  </view>
+</template>
+
+<template name="WxEmojiTextarea">
+  <view class="WxEmojiViewContainer">
+      <!--效果显示-->
+      <view class="WxEmojiPreView">
+            <block wx:for="{{WxEmojiObjs.WxEmojiTextArray}}" wx:key="">
+                  <block wx:if="{{item.node == 'text'}}">{{item.text}}</block>
+                  <!-- <block wx:elif="{{item.node == 'element'}}"> 
+                      <image class="wxEmoji" style='width:60rpx; height:60rpx;'  src="/WxEmojiView/emojis/{{item.text}}" />
+                  </block> -->
+            </block>
+      </view>
+
+      <!--输入框 常规下隐藏-->
+     <view class='textBox'>
+        <image style='' class='emoticon all'>66</image>
+
+        <textarea class="WxEmojiTextarea" placeholder=""  auto-height bindfocus="WxEmojiTextareaFocus" bindblur="WxEmojiTextareaBlur"  value="{{WxEmojiObjs.textAreaText}}"></textarea>
+        <view class='sendOut' hidden='{{sendouthide}}'  bindtap="sendOut" >
+            <text>发送</text>
+        </view>
+        <image class='all' bindtap='bindshow' src='/images/add.png'></image>
+     </view>
+      <view class="WxEmojiChooseChooseView" style="display:{{WxEmojiObjs.showWxEmojiChooseView == 1 ? 'block' : 'none'  }};">
+          <block wx:for="{{WxEmojiObjs.emojiArray}}" wx:key="">
+            <image bindtap="wxPreEmojiTap" data-text=":{{item}}:"  style='width:60rpx; height:60rpx;'  class="wxPreEmoji" src="/WxEmojiView/emojis/{{item}}.gif"/>
+          </block>
+      </view>
+  </view>
+</template>
+

@@ -1,0 +1,38 @@
+<view class='container'>
+  <view class='list'>
+    <view class='list-item'>
+      <text>真实姓名</text>
+      <input value='{{name}}' bindinput="listenerNameval" placeholder='请输入真实姓名(选填)' placeholder-class="p"></input>
+    </view>
+    <view class='list-item'>
+      <text>昵称</text>
+      <input value='{{ nickName }}' bindinput="listenerNickNameval" placeholder='请输入昵称(选填)' placeholder-class="p"></input>
+    </view>
+    <view class='list-item'>
+      <text>个性签名</text>
+      <input value='{{ signName }}' bindinput="listenerSignNameval" placeholder='请输入个性签名(选填)' placeholder-class="p"></input>
+    </view>
+    <view class='list-item'>
+      <text>性别</text>
+      <view class='select-sex'>
+        <image class="{{ sex ? 'show' : '' }}" src='/images/selected.png'></image>
+        <image bindtap='selectSex' class="{{ sex ? '' : 'show' }}" src='/images/seleon.png'></image>
+        <text>男</text>
+        <image class="{{ !sex ? 'show' : '' }}" src='/images/selected.png'></image>
+        <image bindtap='selectSex' class="{{ !sex ? '' : 'show' }}" src='/images/seleon.png'></image>
+        <text>女</text>
+      </view>
+    </view>
+    <view class='list-item'>
+      <text>年龄</text>
+      <input value='{{age}}' bindinput="listenerAgeval" placeholder='请输入年龄(选填)' placeholder-class="p"></input>
+    </view>
+    <view class='list-item'>
+      <text>常住地</text>
+      <picker mode="region" bindchange="bindRegionChange" value="{{address}}">
+        <input value='{{address}}' placeholder='请选择(选填)' placeholder-class="p"></input>
+      </picker>
+    </view>
+  </view>
+  <button class='btn' bindtap='sendBtn' type='button'>保存</button>
+</view>

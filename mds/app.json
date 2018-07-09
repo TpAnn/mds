@@ -1,0 +1,82 @@
+{
+  "pages": [
+    "pages/main/main",
+    "pages/chat/chat",
+    "pages/wallet/bankCard",
+    "pages/wallet/addBankCard",
+    "pages/wallet/bindBankCard",
+    "pages/wallet/wallet",
+    "pages/wallet/withdrawCash",
+    "pages/openAmember/openAmember",
+    "pages/myPromise/myPromise",
+    "pages/myCadets/myCadets",
+    "pages/pickOfTheWeek/pickOfTheWeek",
+    "pages/chatDetails/chatDetails",
+    "pages/index/index",
+    "pages/myiIntegral/myiIntegralDetailed",
+    "pages/getQrCode/getQrCode",
+    "pages/myiIntegral/myiIntegral",
+    "pages/collectionGoods/collectionGoods",
+    "pages/myInfo/myInfo",
+    "pages/redPacket/redPacket",
+    "pages/collectionMd/collectionMd",
+    "pages/customerRecommendation/customerRecommendation",
+    "pages/logs/logs",
+    "pages/addreAdministration/addreAdministration",
+    "pages/addressManagement/addressManagement",
+    "pages/updateAddr/updateAddr",
+    "pages/newAddress/newAddress",
+    "pages/american/american",
+    "pages/americanDetails/americanDetails",
+    "pages/payment/payment",
+    "pages/lookLogistics/lookLogistics",
+    "pages/evaluate/evaluate",
+    "pages/fillInTheOrder/fillInTheOrder",
+    "pages/cart/cart",
+    "pages/immediatePayment/immediatePayment",
+    "pages/confirmOfRecommend/confirmOfRecommend",
+    "pages/forgetYhePassword/forgetYhePassword",
+    "pages/mdsDetails/mdsDetails",
+    "pages/nextRecommend/nextRecommend"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index_c.png"
+      },
+      {
+        "pagePath": "pages/american/american",
+        "text": "美导",
+        "iconPath": "images/hair.png",
+        "selectedIconPath": "images/hair_c.png"
+      },
+      {
+        "pagePath": "pages/chat/chat",
+        "text": "聊天",
+        "iconPath": "images/liao.png",
+        "selectedIconPath": "images/liao_c.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "images/car.png",
+        "selectedIconPath": "images/car_c.png"
+      },
+      {
+        "pagePath": "pages/main/main",
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my_c.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+.conentList{
+   padding:0 26rpx; 
+   height: 152rpx;
+   position: relative;
+}
+.conentList view{
+  float:left;
+}
+.listL view{
+  width:52rpx;
+  height:52rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+  line-height: 52rpx;
+  background-size:cover;
+  position:absolute;
+  top:10rpx;
+  left:90rpx;
+  z-index:1;
+
+}
+.listL{
+  width: 15%;
+
+}
+.listL image{
+  width: 102rpx;
+  height: 102rpx;
+  margin-left:10rpx;
+  margin-top:25rpx;
+}
+
+.listR{
+  width: 80%;
+  font-size: 30rpx;
+  border-bottom:#e5e5e5 1rpx solid;
+  margin-left: 30rpx;
+  overflow: hidden; 
+  height: 152rpx;
+}
+.listT{
+ margin-top: 35rpx;
+ margin-bottom: 10rpx;
+ width: 100%;
+}
+
+.listT image{
+  width: 23rpx;
+  height: 23rpx;
+  float: right;
+}
+.listB{
+  margin-bottom: 35rpx;
+  width: 100%;
+}
+.listB view:first-child{
+  color:#888;
+}
+.listB view:last-child{
+  float:right;
+  color: #c9d6df;
+}

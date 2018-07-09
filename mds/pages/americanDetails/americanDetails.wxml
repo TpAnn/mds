@@ -1,0 +1,83 @@
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+          <swiper-item current-item-id="">
+                <image src="{{item}}" class="slide-image" width="100%" mode="widthFix"/>
+          </swiper-item>
+      </block>
+</swiper>
+
+<view class='conentTitle'>
+    <view class='conent-l'>
+        <image src='../../images/mdheader.png' ></image>
+    </view>
+    <view class='conent-c'>
+        <text class='sc'>{{realname}}</text>
+        <view>{{mdname}}</view>
+        <view>{{personalitySignature}}</view>
+    </view>
+    <view class='conent-r'>
+        <text>{{category_name}}：</text>
+        <text>{{categoryState}}%</text>
+    </view>
+</view>
+
+<view class='allComments'>
+   <text>全部评论</text>
+   <text>({{shopContnetnum}})</text>
+</view>
+
+<view  class='labelBox'>
+  <block>
+  <!-- wx:for='{{evaluatArrayNumberArray}}'  -->
+       <view>好<text>({{evaluatArrayNumberArray[0]}})</text></view>
+      <view>一般<text>({{evaluatArrayNumberArray[1]}})</text></view>
+      <view>差<text>(11)</text></view>
+      <view>非常差<text>(11)</text></view> 
+  </block>
+</view>
+
+
+<view class='reviewArea' wx:for="{{evaluatArray}}">
+    <view class='reviewArea-top'>
+        <view class='top-l'>
+            <view>
+              <image src='../../images/userheader.png' style="width:124rpx;height:124rpx;"></image>
+              <image src='../../images/headerwg.png' class='headerWg'></image>
+            </view>
+            <view class='red' >{{item.user_nick}}</view>
+            <view class='backgroundRed'>{{item.memberName}}</view>
+            <view>
+                <image src='../../images/anCrown.png' class='wg'></image>
+            </view  >
+        </view>
+        <view class='top-r' wx:for="star">
+              <!-- <image src='../../images/star.png'></image>
+              <image src='../../images/star.png'></image>
+              <image src='../../images/star.png'></image>
+              <image src='../../images/star.png'></image>
+              <image src='../../images/noStar.png'></image> -->
+        </view>
+    </view>
+    <view class='reviewArea-center'>
+        {{item.evaluate_content}}
+    </view>
+    <view class='reviewArea-bottom'>
+        <image src='{{item.evaluate_img_url1}}'></image>
+        <!-- <image src='{{americanImg2}}' ></image>
+        <image src='{{americanImg3}}'></image> -->
+    </view>
+    <view class='date'>
+        <view>
+           <text>美导师</text>
+           <text>{{item.user_nick}}</text>
+        </view>
+        <view>
+            <text>{{item.evaluate_time}}</text>
+        </view>
+    </view>
+</view>
+<view class='fixeBottom'>
+    <view>无需等待 立即沟通变美丽</view>
+    <view class='bnt'>立即沟通</view>
+</view>

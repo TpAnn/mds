@@ -1,0 +1,5 @@
+<view class='container'>
+    <image src='../../images/address.png'></image>
+    <text>您还没有收货地址哦</text>
+    <view class='bindNew' bindtap='bindNew'>新增收货地址</view>
+</view>

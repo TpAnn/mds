@@ -1,0 +1,83 @@
+<!-- tab导航栏 -->
+    <!-- scroll-left属性可以控制滚动条位置 -->
+    <!-- scroll-with-animation滚动添加动画过渡 -->
+    <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+        <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+            <view class="nav-item {{currentTab == idx ?'active':''}}"  data-current="{{idx}}" data-id='{{}}' bindtap="switchNav"><text>{{navItem.category_name
+}}</text></view>
+        </block>        
+    </scroll-view>
+     <swiper class='mySwiper' indicator-dots="{{indicatorDots}}"  
+                      autoplay="{{autoplay}}" interval="{{interval}}" current="{{currentTab}}" style='height:237rpx; margin-top:100rpx;' duration="{{duration}}" >
+                     <block wx:for="{{imgUrls}}">  
+                      <swiper-item>  
+                        <navigator url="{{item.link}}" hover-class="navigator-hover">  
+                          <image mode="aspectFix" src="{{item}}" class="slide-image" style='height:273rpx; width:100%;' />  
+                        </navigator>   
+                      </swiper-item>  
+                    </block>    
+              </swiper> 
+    <!-- 页面内容 -->
+    <swiper class="tab-box" current="{{currentTab}}" duration="1000" style='backgound:blue;' bindchange="switchTab">        
+        <swiper-item  class="tab-content">
+              <view wx:if="{{flag1}}" class='bottomList'> 
+              <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;"  class="list" bindscrolltolower="bindDownLoad" bindscrolltoupper="topLoad"  bindscroll="scroll">
+
+                    <!--内容-->
+                    <view class='conentList' wx:for="{{conent}}" wx:for-item='item' data-id="{{index}}" >
+                        <view class='lefImg'>
+                            <image src='{{item.company_img_url1}}'></image>
+                        </view>
+                        <view class='rightFont'  >
+                            <view bindtap='bindDetails' data-id="{{index}}">
+                                <view class='title' style='width:100%;'  >
+                                  {{item.commodity_name}}
+                                </view>
+                                <view class='effect'  wx:for="{{item.effectInfo}}" wx:for-item="ffect_name1">功效：{{ffect_name1.effect_name}}</view>
+                                <view class='gray' >
+                                  <block wx:for="{{item.skinInfo}}" wx:for-item="skinInfo1">
+                                    <text class=''>{{skinInfo1.skin_type_name}}</text>
+                                  </block>
+                                  <text class='r'>已售{{item.quantity_sold}}件</text>
+                                </view>
+                           </view>
+                            <view class='bottom'  data-index="{{item.ci_id}}"   data-id="{{index}}">
+                                <view style='width:80%;'>
+                                    <text>￥：{{item.selling_price}}</text>
+                                      <text class='red' style='width:40%' >￥：{{item.membership_price}}  </text>
+                                      <text class='redtitle' style='font-size:23rpx; width:30%'>会员专享</text> 
+                                </view>
+                                
+                                <!---购物车-->
+                                <view class="rightImg {{ !item.cartShowFlag ? 'show' : '' }}" data-index="{{index}}"  bindtap='bindHide' >
+                                    <image src='../../images/cars.png'></image>
+                                </view>
+
+
+                                <!---购物车加减-->
+                                <view class="sku {{ item.cartShowFlag ? 'show' : '' }}">
+                                    <view bindtap='bindReduce'  data-index="{{index}}" data-id="{{index}}" >
+                                      <image src='../../images/reduce.png' style='width:45rpx; height:45rpx;'  data-id="{{item.ci_id}}"></image>
+                                    </view>
+                                    <view class='center'>{{item.commodity_join_number}}</view>
+                                    <view >
+                                      <image src='../../images/add.png' style='width:45rpx; height:45rpx;' bindtap='bindAdd'  data-id="{{item.ci_id}}" data-index="{{index}}" data-num="{{index}}" ></image>
+                                    </view>
+                                </view>
+                            </view >  
+                        </view>
+                    </view>
+                </scroll-view>
+          </view>
+        </swiper-item>
+        <swiper-item  class="tab-content">
+            5545454545545444444444
+        </swiper-item>
+        <swiper-item  class="tab-content">
+            5545454545545444444444
+        </swiper-item>
+        <swiper-item  class="tab-content">
+            5545454545545444444444
+        </swiper-item>
+    </swiper>
+<!-- </view> -->

@@ -1,0 +1,50 @@
+<!--pages/recommendedToUsers/recommendedToUsers.wxml-->
+<!--pages/makeAnAppointment/makeAnAppointment.wxml-->
+<!-- tab导航栏 -->
+<!-- scroll-left属性可以控制滚动条位置 -->
+<!-- scroll-with-animation滚动添加动画过渡 -->
+<scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+    <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+            <view class="nav-item {{currentTab == idx ?'active':''}}"  data-current="{{idx}}" bindtap="switchNav">{{navItem.text}}</view>
+    </block>        
+</scroll-view>
+<!-- 页面内容 -->
+<swiper class="tab-box" current="{{currentTab}}" duration="1000" style='' bindchange="switchTab">        
+<swiper-item  class="tab-content">
+    <view class='conentList' wx:for="{{conent}}">
+    <image class="item-select"  bindtap="switchSelect" data-index="{{index}}" data-id="{{index}}" src="{{item.isSelect?'../../images/selected.png':'../../images/seleon.png'}}" />
+          <view class='lefImg'>
+              <image src='{{item.imgUrl}}' ></image>
+          </view>
+          <view class='rightFont'>
+                <view class='title'> {{item.conentTxt}}</view>
+                <view class='effect'>功效：{{item.effect}}</view>
+                <view class='gray'>
+                      <text class=''>{{item.describe}}</text>
+                      <text class='r'>已售{{item.sold}}件</text>
+                </view>
+                <view class='bottom'>
+                      <view style='width:80%;'>
+                          <text>￥：{{item.price1}}</text>
+                          <text class='red' style='width:40%' >￥：{{item.price1}}  </text>
+                          <text class='redtitle' style='font-size:23rpx; width:35%'>会员专享</text> 
+                      </view>
+                </view >     
+          </view>
+    </view>
+</swiper-item>
+<view class='bnt' bindtap='bindNext'>下一步</view> 
+
+<swiper-item  class="tab-content">
+    5545454545545444444444
+</swiper-item>
+  <swiper-item  class="tab-content">
+    5545454545545444444444
+</swiper-item>
+  <swiper-item  class="tab-content">
+    5545454545545444444444
+</swiper-item>
+</swiper>
+<!-- </view> -->
+
+

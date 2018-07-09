@@ -1,0 +1,101 @@
+/* pages/newAddress/newAddress.wxss */
+page{
+  background-color: #f5f5f5;
+}
+.conentList{
+  width: 100%;
+  height: 87rpx;
+  background-color: #fff;
+  color: #888;
+  font-size: 30rpx;
+  border-top:#e2e0e0 solid 1rpx;
+}
+.conentList:last-child{
+  margin-top:15rpx;
+}
+.conentList view{
+  float: left;
+  line-height: 87rpx;
+  overflow: hidden
+}
+.conentList > view:first-child{
+  padding-left: 26rpx;
+  color:#555;
+}
+.conentList view:first-child{
+  width:25%;
+  float: left;
+  
+}
+.conentList text{
+  color: #353535;
+
+}
+.conentList switch{
+  margin-left:50rpx;
+}
+.conentList input{
+  float: left;
+  height: 87rpx;
+  line-height: 87rpx;
+  font-size: 30rpx;
+  color: #888
+}
+.inputClass{
+   font-size: 30rpx;
+   color: #888;
+}
+.ssq{
+  width: 50%;
+  border:blue 1rpx solid;
+  float:left;
+}
+.bs{
+  width: 280rpx;
+  height: 82rpx;
+  text-align: center;
+  line-height: 82rpx;
+  background-color: #8cba28;
+  color: #fff;
+  margin: 0 auto;
+  margin-top:60rpx;
+  border-radius: 30rpx;
+  font-size: 30rpx;
+}
+
+/*--下拉样式--*/
+.picker-view {
+  width: 100%;
+  display: flex;
+  z-index:12;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  height: 40vh;
+}
+
+.picker-item {
+  line-height: 70rpx;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  text-align: center;
+}
+
+
+
+.box{width: 59%; }
+picker-view{
+  width: 100%;
+  height: 87rpx;
+  /* border:red rpx solid; */
+  float: left;
+  line-height:37rpx
+}
+picker-view-column view{
+  line-height: 87rpx;
+  color:#555;
+}

@@ -1,0 +1,45 @@
+<!-- tab导航栏 -->
+  <!-- scroll-left属性可以控制滚动条位置 -->
+  <!-- scroll-with-animation滚动添加动画过渡 -->
+  <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+      <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+          <view class="nav-item {{currentTab == idx ?'active':''}}" data-id="{{ navItem.cc_id }}"  data-current="{{idx}}" bindtap="switchNav"><text>{{navItem.category_name}}</text></view>
+      </block>        
+  </scroll-view>
+  <!-- 页面内容 -->
+  <swiper class="tab-box" current="{{currentTab}}" duration="1000">        
+    <swiper-item  class="tab-content" wx:for="{{navData}}" data-index="{{index}}">
+      <view class='conentList' wx:for="{{conent[index]}}">
+        <image 
+          class="item-select"
+          bindtap="switchSelect" 
+          data-childindex="{{index}}"
+          data-id="{{item.ci_id}}" 
+          src="{{item.isSelect?'../../images/selected.png':'../../images/seleon.png'}}" />
+          <view class='lefImg'>
+              <image src='{{item.company_details_html_url}}' ></image>
+          </view>
+          <view class='rightFont'>
+            <view class='title'>
+              {{item.commodity_name}}
+            </view>
+            <view class='effect'>
+              功效：<text wx:for="{{item.effectInfo}}" wx:for-item="effect">{{ effect.effect_name }}</text>
+            </view>
+            <view class='gray'>
+                <text wx:for="{{item.skinInfo}}" wx:for-item="skin">{{ skin.skin_type_name }}</text>
+                <text class='r'>已售{{item.quantity_sold}}件</text>
+            </view>
+            <view class='bottom'>
+              <view style='width:80%;'>
+                <text>￥：{{item.selling_price}}</text>
+                <text class='red' style='width:50%' >￥：{{item.membership_price}}  </text>
+                <text class='redtitle' style='font-size:23rpx; width:35%'>会员专享</text> 
+              </view>
+            </view > 
+          </view>
+        </view>
+      </swiper-item>
+  </swiper>
+  <view class='bnt' bindtap='bindNext'>{{ btnContent }}</view> 
+<!-- </view> -->

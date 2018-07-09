@@ -1,0 +1,41 @@
+/* pages/immediatePayment/immediatePayment.wxss */
+.contnet{
+  text-align: center;
+  margin-top:30%;
+}
+.iconTop{
+  width: 150rpx;
+  height: 150rpx;
+  margin:0 auto;
+}
+.iconTop image{
+  width: 100%;
+  height: 100%;
+}
+.line{
+  line-height: 80rpx;
+  padding-top:30rpx;
+}
+.repayment{
+  width: 280rpx;
+  height: 80rpx;
+  margin : 0 auto;
+  border-radius: 50rpx;
+  background-color:#8cba28;
+  color:#fff;
+  line-height: 80rpx;
+  margin-top:70rpx;
+}
+.returns{
+   width: 280rpx;
+  height: 80rpx;
+  margin : 0 auto;
+  border-radius: 50rpx;
+  background-color:#edeaea;
+  color:#353535;
+  line-height: 80rpx;
+  margin-top:20rpx;
+}
+.gray{
+  color: #4b4b4b;
+}

@@ -1,0 +1,18 @@
+<view class='container'>
+  <view class="list {{ !item.state ? 'disable' : '' }}" wx:for="{{data}}" wx:for-item="item">
+    <view class='list-item'>
+      <view class='content'>
+        门店信息：<text>{{item.shop_name}}</text>
+      </view>
+      <view class='content'>
+        预约日期：<text>{{item.date}}</text>
+      </view>
+       <view class='status' hidden='{{!item.state}}'>
+        进行中
+      </view>
+      <view class='status' hidden='{{item.state}}'>
+        已失效
+      </view>
+    </view>
+  </view>
+</view>

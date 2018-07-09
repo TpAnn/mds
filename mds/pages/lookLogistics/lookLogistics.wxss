@@ -1,0 +1,72 @@
+/* pages/lookLogistics/lookLogistics.wxss */
+page{
+  background: #f5f5f5;
+}
+.header{
+  width: 100%;
+  background-color: #fff ;
+  border-bottom : #efeff4 1rpx solid;
+  border-top : #efeff4 1rpx solid;
+  font-size: 28rpx;
+  padding-top:20rpx;
+  overflow: hidden
+}
+.header text{
+  padding-left: 20rpx;
+  line-height: 50rpx;
+  color: #353535;
+}
+.headerBottom{
+  padding-bottom:20rpx
+}
+.containerBox{
+  width: 100%;
+  overflow: hidden;
+  border-top:#f5f5f5 20rpx solid; 
+  padding-top:30rpx;
+}
+.containerList{
+  width: 100%;
+  overflow: hidden;
+
+}
+.containerList view{
+   float:left;
+}
+.containerList view text{
+  width: 100%;
+  display: block;
+}
+.imgBox{
+    width: 70rpx;
+    height: 115rpx;
+    margin: 0 20rpx;
+    position: relative;
+}
+.imgBox image{
+  width: 100%;
+  height: 100%;
+  margin : 0 auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.first text:first-child{
+  font-size:28rpx;
+
+   
+}
+.first{
+  width: 80rpx;
+  text-align: right;
+  padding-right:30rpx;
+}
+.first text:last-child{
+  font-size: 26rpx;
+  line-height: 15rpx;
+}
+.last text{
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #929292;
+}

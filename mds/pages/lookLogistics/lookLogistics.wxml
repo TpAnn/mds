@@ -1,0 +1,105 @@
+<!--pages/lookLogistics/lookLogistics.wxml-->
+<view class='header'>
+    <view>
+        <text>{{logisticsName}}:</text>
+        <text>{{name}}</text>
+    </view>
+    <view class='headerBottom'>
+        <text>{{logisticsOdd}}:</text>
+        <text>{{oddNumbers}}</text>
+    </view>
+
+    <view class='containerBox'>
+        <view class='containerList'>
+            <view class='first'>
+                <text>06-01</text>
+                <text>09:49</text>
+            </view>
+            <view class='imgBox'>
+                <image src="{{lookUrl1}}"></image>
+            </view>
+            <view class='last'>
+                <text>已发货</text>
+                <text>卖家已发货</text>
+            </view>
+        </view>
+       <view class='containerList'>
+            <view class='first'>
+                <text>06-01</text>
+                <text>09:49</text>
+            </view>
+            <view class='imgBox'>
+                <image src="{{lookUrl2}}" style='height:137rpx;'></image>
+            </view>
+            <view class='last'>
+                <text>运输中</text>
+                <text>湖南省长沙市 已收</text>
+            </view>
+        </view>
+         <view class='containerList'>
+            <view class='first'>
+                <text>06-01</text>
+                <text>09:49</text>
+            </view>
+            <view class='imgBox'>
+                <image src="{{lookUrl3}}" style='width:12px; '></image>
+            </view>
+            <view class='last'>
+                <text>湖南省长沙市xxx公司 已发出</text>
+                <text>下一站 深圳转运中心</text>
+            </view>
+        </view>
+         <view class='containerList'>
+            <view class='first'>
+                <text>06-01</text>
+                <text>09:49</text>
+            </view>
+            <view class='imgBox'>
+                <image src="{{lookUrl3}}" style='width:12px; '></image>
+            </view>
+            <view class='last'>
+                <text>湖南省长沙市xxx公司 已发出</text>
+                <text>下一站 深圳转运中心</text>
+            </view>
+        </view> 
+         <view class='containerList'>
+            <view class='first'>
+                <text>06-01</text>
+                <text>09:49</text>
+            </view>
+            <view class='imgBox'>
+                <image src="{{lookUrl3}}" style='width:12px; '></image>
+            </view>
+            <view class='last'>
+                <text>湖南省长沙市xxx公司 已发出</text>
+                <text>下一站 深圳转运中心</text>
+            </view>
+        </view> 
+         <view class='containerList'>
+            <view class='first'>
+                <text>06-01</text>
+                <text>09:49</text>
+            </view>
+            <view class='imgBox'>
+                <image src="{{lookUrl4}}"></image>
+            </view>
+            <view class='last'>
+                <text>派送中</text>
+                <text>派送员：130xxxxxxxx正在为您派件</text>
+            </view>
+        </view> 
+         <view class='containerList'>
+            <view class='first'>
+                <text>06-01</text>
+                <text>09:49</text>
+            </view>
+            <view class='imgBox'>
+                <image src="{{lookUrl5}}" style='width70rpx; height:71rpx;'></image>
+            </view>
+            <view class='last'>
+                <text>已签收</text>
+                <text>签收人：xxx</text>
+            </view>
+        </view> 
+    </view >
+</view>

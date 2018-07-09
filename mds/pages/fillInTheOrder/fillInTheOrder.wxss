@@ -1,0 +1,295 @@
+page{
+  background-color:#f5f5f5;
+}
+.header{
+  width: 100%;
+  height: 118rpx;
+  background-color: #fff;
+  position: relative;
+  margin-top: 10rpx;
+}
+.bjred{
+  background: red;
+}
+.header image{
+  width: 49rpx;
+  height: 49rpx;
+  position: absolute;
+  right: 31rpx;
+  bottom: 20rpx;
+}
+.mr{
+  background-color: #e64340;
+  font-size: 28rpx;
+  color: #fff;
+  padding:1rpx 15rpx; 
+  border-radius: 8rpx;
+  margin-left: 20rpx;
+  margin-right: 10rpx;
+}
+.headertop{
+  overflow: hidden;
+  padding-top:10rpx;
+  line-height: 50rpx;
+}
+.headertop view{
+  font-size: 28rpx;
+  float: left
+}
+.headertop view:last-child{
+  color: #888888;
+  margin-left: 150px;
+}
+.headerbottom {
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  line-height: 60rpx;
+}
+.cart_container {
+  display: flex;
+  margin-bottom: 2rpx;
+  flex-direction: row;
+  height: 235rpx;
+  background-color:#fff;
+}
+.scroll {
+  margin-bottom: 120rpx;
+}
+.effect{
+  font-size: 28rpx;
+  color:#8dba29;
+
+}
+.item-select {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 140rpx;
+  margin-left: 26rpx;
+}
+.hr{
+  background-color: #fff;
+  height: 25rpx;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 10rpx;
+}
+.hr image{
+  width: 100%;
+  height: 4rpx;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+}
+.gray{
+  color:#888;
+  font-size: 26rpx;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  margin-left:45rpx;
+  width: 67%;
+}
+.row {
+  height: 118rpx;
+  position: relative;
+  overflow: hidden
+}
+.row view{
+  float: left;
+}
+.row view:last-child{
+  position: absolute;
+  right: 20rpx;
+  width: 50rpx;
+  top:50rpx;
+  color: #888;
+}
+.row view:last-child text{
+  font-size: 28rpx;
+}
+
+.jk {
+    margin-top: 50rpx;
+    width: 300rpx;
+    font-size: 30rpx;
+}
+ .sku {
+  float: right;
+}
+.sku view{
+   float:left;
+}
+.center{
+  margin:0 23rpx;
+}
+.sku-price {
+  color: red;
+  position: relative;
+  margin-top: 70rpx;
+  font-size: 28rpx;
+}
+.price {
+  color: red;
+  position: relative;
+}
+.title {
+  font-size: 30rpx;
+  margin-top: 36rpx;
+  color: #353535;
+  font-weight: bold;
+}
+.small_text {
+  font-size: 28rpx;
+  margin-right: 40rpx;
+  margin-left: 20rpx;
+  line-height: 87rpx;
+}
+.item-select {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 140rpx;
+  margin-left: 20rpx;
+}
+.item-allselect {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+}
+.item-image {
+  width: 153rpx;
+  height: 153rpx;
+  margin-left: 45rpx;
+  margin-top: 50rpx;
+}
+.bottom_line {
+  width: 100%;
+  height: 2rpx;
+  background: lightgray;
+}
+.bjwithe{
+  background: #ccc;
+}
+.gray{
+  color:#888;
+}
+.bottom_total {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  bottom: 0rpx;
+  width: 100%;
+  height: 120rpx;
+  line-height: 120rpx;
+  background: white;
+  line-height: 120rpx;
+}
+.button-red {
+  background-color: #f44336; /* 红色 */
+}
+.button-red image{
+  width: 38rpx;
+  height: 31rpx;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  right: 60rpx;
+
+}
+.cred{
+  color: red;
+}
+button {
+  position: fixed;
+  right: 0;
+  bottom: 0rpx;
+  color: #fff;
+  text-align: left;
+  padding-left: 60rpx;
+  display: inline-block;
+  font-size: 32rpx;
+  border-radius: 0rpx;
+  width: 35%;
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.jk  .sku-price{
+  color: #353535
+}
+.red {
+  font-size: 20rpx;
+  color:#fff;
+  background-color: #de2500;
+  padding:5rpx 15rpx;
+  margin-left:10rpx;
+  border-radius:25rpx;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+  overflow: hidden
+}
+.conentList{
+   width: 100%;
+   background-color:#fff;
+   font-size: 28rpx;
+   color: #353535;
+   overflow: hidden;
+   height: 87rpx;
+   line-height: 87rpx;
+   border-bottom: #d7d6d6 1rpx solid;
+   position: relative
+}
+.conentList:last-child{
+  margin-bottom: 100rpx;
+}
+
+.conentList view{
+  margin-left:26rpx;
+  margin-right: 26rpx;
+}
+.conentList image{
+  width:26rpx;
+  height: 38rpx;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  
+}
+.icon{
+  width: 18rpx;
+  height: 18rpx;
+  border-top:#888888 1rpx solid;
+  border-right: #888888 1rpx solid;
+  flaot:left;
+  transform: rotate(45deg);
+  margin-top:35rpx;
+ 
+}
+.fr view{
+  float: right;
+  color: #888888;
+}
+.conentBottom{
+  overflow: hidden
+}
+.conentBottom view{
+  float: left
+}
+.center1{
+  width: 30%;
+}
+.center1 view{
+  width: 100%;
+  font-size: 28rpx;
+  height: 40rpx;
+  line-height: 35rpx;
+}
+.center1 view:first-child{
+   margin-top:20rpx;
+}
+.center1 view text{
+  float: left;
+}

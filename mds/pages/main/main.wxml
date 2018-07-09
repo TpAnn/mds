@@ -1,0 +1,73 @@
+<view class="header" style="background-image: url('../../images/mainheader.png'); background-size: cover; background-repeat: no-repeat;">
+      <image src='/images/scan.png' class='scan' bindtap='bindQrCode'></image>
+      <view class='header-top' bindtap='bindReplacet'>      
+             <image src="{{headerURl}}" style='width:150rpx; height:150rpx; border-raduis:50%;'></image>
+      </view>
+      <image src='/images/set.png' class='set' bindtap='bindMyInfo'></image>
+      <view style='line-height:30px;'>{{username}}</view>
+      <view class='bottomBox' bindtap='bindLogin' hidden='{{flag1}}' style='border:#fff 1rpx solid'>
+           <text > {{log}}/{{register}}</text>
+      </view> 
+      <view class='bottomBox' bindtap='bindLogin' hidden='{{flag2}}' style='background:#e64340'>
+            <text >{{membership}}</text>
+            <image src='../../images/mainCrown.png' class='mainCrown'></image>
+      </view> 
+</view>
+<view class='title'>{{mds}}</view>
+      <view class='nav' >
+      <!--待收款-->
+      <view class='navBox '   wx:for='{{imgLIst}}'  wx:key='img'>
+            <view class='test' bindtap='chooseThis'  data-index='{{index}}'>
+                  <image src='{{imgHoverIndex == index ?item.hoverUrl:item.url}}' ></image> 
+            </view>
+            <view  data-select="{{item.select}}" bindtap='chooseCatalog'  >
+                  <text class="{{catalogSelect == index ? 'active':''}}" >{{item.payment}} </text> 
+            </view>
+      </view>       
+</view>
+
+<view class='content-list'>
+    <view class='listBox' bindtap='bindCollectionGoods'>
+        <text>收藏的商品</text>
+        <view></view>
+    </view>
+     <view class='listBox' bindtap='bindMd'>
+        <text>收藏的美导</text>
+        <view></view>
+    </view>
+    <view class='listBox' bindtap='bindAddre'>
+        <text>我的收货地址</text>
+        <view></view>
+    </view>
+    <view class='listBox' bindtap='bindVip'>
+        <text>会员管理</text>
+        <view></view>
+    </view>
+    <view class='listBox' bindtap='bindWallet'>
+        <text>我的钱包</text>
+        <view></view>
+    </view>
+    <view class='listBox' bindtap='bindMyiIntegral'>
+        <text>我的积分</text>
+        <view></view>
+    </view>
+     <view class='listBox' bindtap='bindMyCadets'>
+        <text>我的学员</text>
+        <view></view>
+    </view>
+     <view class='listBox' bindtap='bindMyPromise'>
+        <text>我的预约</text>
+        <view></view>
+    </view>
+    <view class='listBox' bindtap='bindGoods'>
+        <text>给用户推荐商品</text>
+        <view></view>
+    </view>
+    <view class='listBox line ' bindtap='bindContact'>
+        <text>联系我们</text>
+        <view></view>
+    </view>
+    
+</view> 
+
+

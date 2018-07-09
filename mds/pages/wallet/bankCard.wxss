@@ -1,0 +1,90 @@
+page {
+  background-color: #e2e0e0;
+}
+
+.container {
+  padding: 0;
+}
+
+.list-box {
+  width: 100%;
+  font-size: 28rpx;
+}
+
+.list-box-item {
+  position: relative;
+  padding: 30rpx 0;
+  padding-left: 26rpx;
+  /* padding-left: 125rpx; */
+  height: 75rpx;
+  background-color: #fff;
+  border-top: 1rpx solid #e6e6e6;
+}
+
+.list-box-item text {
+  display: block;
+  line-height: 37.5rpx;
+}
+
+.list-box-item text.gray {
+  color: #888;
+}
+
+.list-box-item:first-child text {
+  line-height: 75rpx;
+}
+
+.list-box-item view {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.list-box-item view.icon {
+  left: 26rpx;
+  width: 75rpx;
+  height: 39rpx;
+}
+
+.list-box-item view.icon.wechat {
+  height: 75rpx;
+}
+
+.list-box-item view.select {
+  right: 26rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.list-box-item view.select image {
+  display: none;
+}
+
+.list-box-item view.select image.show {
+  display: block;
+}
+
+
+.list-box-item view.select image,
+.list-box-item view.icon image {
+  width: 100%;
+  height: 100%;
+}
+
+.container button.btn {
+  padding: 0;
+  margin-top: 40rpx;
+  width: 260rpx;
+  line-height: 75rpx;
+  font-size: 30rpx;
+  border-radius: 80rpx;
+  background-color: #8cba28;
+  color: #fff;
+}
+
+.container button.btn image {
+  width: 31rpx;
+  height: 31rpx;
+  margin-top: -5rpx;
+  vertical-align: middle;
+}

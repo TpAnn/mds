@@ -1,0 +1,199 @@
+/*pages/chatDetails/chatDetails.wxss */
+ @import "../../WxEmojiView/WxEmojiView.wxss"; 
+page{
+  background-color: #f4f4f4;
+}
+.conent{
+  overflow: hidden;
+  height: 781rpx;
+}
+
+
+/**表情包**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.WxEmojiTextarea{
+    border: 2rpx solid #eee;
+    margin: 10rpx;
+    width: 57%;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+/* .listL{
+  width: 
+} */
+ .title{
+  width: 321rpx;
+  height: 60rpx;
+  background-color:#dcdcdc;
+  border-radius: 25rpx;
+  margin: 0 auto;
+  font-size: 27rpx;
+  line-height: 58rpx;
+  text-align: center;
+  margin-top: 30rpx;
+
+}
+.list{
+  padding:0 26rpx;
+  overflow:hidden;
+  margin-top:28rpx;
+  width:93%;
+
+}
+.firstList view{
+  float: left;
+}
+
+.listL{
+  border-radius: 50%;
+  overflow: hidden;
+  width: 74rpx;
+  height: 74rpx;
+  background: #fff;
+}
+ .listL image{
+  width: 74rpx;
+  height: 74rpx;
+
+} 
+.listR{
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 20rpx;
+  border-radius: 20rpx;
+  background: #8dba29;
+  color: #fff;
+  margin-left:30rpx;
+ 
+}
+.listRight {
+  position: relative;
+}
+.listRight .listL{
+  float: right;
+  margin-left: 30rpx;
+}
+.listRight view{
+  float: right
+}
+/*--向左的三角型--*/
+.triangle_border_left{
+    width:0;
+    height:0;
+    border-width:8px 8px 8px 0;
+    /* border-style:solid; */
+    border-color:transparent transparent transparent transparent;/*透明 灰 透明 透明 */
+    /* margin:40px auto; */
+     position:relative; 
+}
+.triangle_border_left span{
+    display:block;
+    width:0;
+    height:0;
+    border-width:8px 8px 8px 0;
+     border-style:solid; 
+    border-color:transparent #fff transparent transparent;/*透明 黄 透明 透明 */
+    position:absolute;
+    top:25rpx;
+    left:15rpx;
+}
+/*向右*/
+.triangle_border_right{
+    width:0;
+    height:0;
+    border-width:8px 0 8px 8px;
+    /* border-style:solid; */
+    border-color:transparent transparent transparent transparent;/*透明 透明 透明 灰*/
+    /* margin:40px auto; */
+   
+}
+.triangle_border_right span{
+    display:block;
+    width:0;
+    height:0;
+    border-width:8px 0 8px 8px;
+     border-style:solid; 
+    border-color:transparent transparent transparent #8dba29;/*透明 透明 透明 黄*/
+    position:absolute;
+    top:14px;
+    right:116rpx;
+    border-radius: 10rpx;
+}
+.bottomBox{
+  width: 100%;
+  position: absolute;
+  bottom: 0rpx;
+  height: 404rpx;
+  /* z-index: 11; */
+}
+
+.messageBox{
+  border:#d9dbdd 1rpx solid;
+  overflow: hidden;
+  padding-bottom: 10rpx;
+  position: relative;
+}
+
+.input{
+  margin-top:17rpx;
+  width:550rpx; 
+  line-height: 55rpx;
+  border:#d9dbdd 1rpx solid; 
+  background:#fff;
+  float:left;
+  border-radius: 15rpx;
+  padding:10rpx 5rpx;
+  word-wrap:break-word ;
+  overflow: hidden;
+  font-size:28rpx;
+
+}
+.iconBox{
+  width:100%;
+  overflow:hidden;
+  background:#fff;
+  position:absolute;
+  bottom:0
+}
+.iconBox view{
+  margin-left: 70rpx;
+  margin-top:60rpx;
+  margin-bottom:80rpx;
+  text-align: center;
+  width: 105rpx;
+  float: left;
+}
+.iconBox view:first-child{
+   margin-left: 60rpx;
+}
+.iconBox view:last-child{
+   margin-left: 60rpx;
+}
+.iconBox image{
+  width:105rpx; 
+  height:105rpx; 
+}
+.iconBox text{
+  color: #888888;
+  font-size: 28rpx;
+ 
+}

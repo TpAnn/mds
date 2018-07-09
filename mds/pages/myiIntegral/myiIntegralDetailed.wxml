@@ -1,0 +1,27 @@
+<view class='container'>
+  <view class='header'>
+    我的积分: <text>{{integral}}</text>
+  </view>
+  <view class='nav'>
+    <view class="inner {{ showFlag == 0 ? 'active' : '' }}" data-index="0" bindtap='navBtn'>
+      <text>积分收入</text>
+    </view>
+    <view class="inner {{ showFlag == 1 ? 'active' : '' }}" data-index="1" bindtap='navBtn'>
+      <text>积分支出</text>
+    </view>
+  </view>
+  <view class="list {{ showFlag == index ? 'active' : '' }}" wx:for="{{data}}" wx:for-item="item" data-index="index">
+    <view class='list-box'>
+      <view class='list-item'>
+      <text>{{ item.date }}</text>
+      <view class='inner-box' wx:for="{{item.data}}" wx:for-item="childItem">
+        <view class='inner-item'>
+          <text>{{ childItem.source }}</text>
+          <text>{{ childItem.month }}</text>
+        </view>
+        <text class='fr'>{{ (index==0? '+' : '-') + childItem.integral }}</text>
+      </view>
+      </view>
+    </view>
+  </view>
+</view>

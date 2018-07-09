@@ -1,0 +1,61 @@
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item current-item-id="">
+      <image src="{{item}}" class="slide-image" width="100%" height="237"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+ <view class="swiper-tab" >
+  <block wx:for="{{titleConent}}" data-id="{{uc_id}}" data-index="{{index}}">
+    <view class="swiper-tab-item {{currentTab == index ?'active':''}}" data-current="0" bindtap="clickTab">{{item.category_name}}</view>
+   
+  </block>
+
+</view> 
+<!--待付款-->
+  
+ <swiper current="{{currentTab}}" duration="1000" style='height:1000rpx; '  bindchange="swiperTab"> 
+     <swiper-item >
+       <view class='mdBox' wx:for="{{conent}}" bindtap='bindDetails' data-id='{{index}}' style='background-image:url(../../images/mdBox.png); ' >
+            <image src='{{item.headerImg}}' class='firstImg'></image>
+            <view class='mdBoxL'>
+                <image src='{{item.shop_img_url1}}' style='width:205rpx; height:205rpx;'></image>
+            </view>
+            <view class="mdBoxR">
+                <view>{{item.user_nick}} </view>
+                <view class='red'>{{item.user_realname}}</view>
+                <view class='gray'>{{item.personalitySignature}}</view>
+                <view><text>{{item.user_realname}}:</text><text class='colorRed'> {{item.praise}}%</text></view>
+
+                <view class='bnt'>
+                    <view>立即沟通</view>
+                    <view>
+                        <block class='npm'>
+                           <image src='../../images/npm.png' style='width:23rpx; height:28rpx;'></image> 
+                        </block>
+                        <view>{{item.km}}km</view>
+                    </view>
+                </view>
+            </view>
+       </view>   
+      
+    </swiper-item> 
+
+     <!--待发货-->
+     <swiper-item> 
+     2121313 
+
+    </swiper-item>
+
+     <!--待收货-->
+     <swiper-item>
+         2121313
+
+    </swiper-item> 
+     
+
+    
+      
+</swiper> 

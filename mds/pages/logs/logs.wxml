@@ -1,0 +1,86 @@
+  <!--手机验证-->
+
+
+  <view class='ioginBox ' hidden='{{flag1}}'>
+       
+        <view class='loginContent'>
+             <input placeholder="请输入手机号码" type='number' focus="{{focus}}" placeholder-class="phcolor" bindinput ="userNameInput" value='{{userPhone}}'  />
+        </view>
+         <view class='loginBottom' bindtap="bindLogin">
+            <view class='active' bindtap='next'>{{next}}</view>
+        </view>
+    </view>
+
+
+     <!--号码登录-->
+    <view class='ioginBox '  hidden='{{login}}' >
+        <view class='loginContent'>
+             <view class='content-title'>请输入该账号的密码{{tel}}</view>
+             <input placeholder="请输入密码" placeholder-class="phcolor" value ="{{password}}" type='idcard'  focus="{{focus}}" password  bindinput = 'blurPassword' />
+           
+             <view class='titleTxt'>
+                <image  src='{{noction}}' ></image>
+                <text >{{codeNo}} </text>
+                 <view style='color:#9c9c9c' bindtap='forgetThepswd'>忘记密码</view>
+             </view>
+        </view>
+         <view class='loginBottom' bindtap="bindLogin">
+            <view class='active' bindtap='bindLoginNext'>{{next}}</view>
+        </view>
+    </view>
+
+    <!--手机号码首次登录-->
+   <view class='ioginBox '  hidden='{{firstLogin}}'>
+        <view class='loginContent'>
+             <view class='content-title'>{{firstTelTxt}}</view>
+             <input placeholder="请输入密码" password value='{{firstPswd1}}' focus="{{focus}}" placeholder-class="phcolor" bindblur='firstPswd1' bindinput='firstPswd1'  />
+             <input placeholder="请输入确认密码" password value='{{firstPswd2}}' focus="{{focus}}" placeholder-class="phcolor" bindblur='firstPswd2' bindinput='firstPswd2' />
+             <view class='titleTxt' >
+                <image  src='{{noction}}'></image>
+                <text bindtap='next2'>{{codeNo}}</text>
+             </view>  
+         </view>
+         <view class='loginBottom' bindtap="bindLogin">
+            <view class='active' bindtap='firstLoginNext'>{{next}}</view>
+        </view>
+    </view>
+
+     <!--忘记密码-->
+    <view class='ioginBox '  hidden='{{noPswd}}' >
+      
+        <view class='loginContent'>
+             <input placeholder="请输入新密码" placeholder-class="phcolor" value="{{newPswd}}"  focus="{{focus}}" bindinput='noPswd1' />
+              <!-- <input placeholder="这个只有在按钮点击的时候才聚焦" focus="{{focus}}" /> -->
+             <input placeholder="确认密码" placeholder-class="phcolor" value="{{pswds}}" auto-focus bindinput='noPswd2'  />
+             <input placeholder="请输入验证码" style='width:310rpx; float:left; margin-left:9%' value='{{noCode}}' placeholder-class="phcolor"  />
+             <button class="buttonget" disabled='{{disabled}}' data-id="2" bindtap="getVerificationCode"> {{time}}</button>
+             <view class='titleTxt'>
+                <image  src='{{noction}}'></image>
+                <text>{{codeNo}}</text> 
+             </view>  
+        </view>
+         <view class='loginBottom' bindtap="bindLogin">
+            <view bindtap='noPswdReturn'>{{returns}}</view>
+            <view class='active' bindtap='noPswdNext'>{{next}}</view>
+        </view>
+    </view> 
+
+    <!--登录成功 -->
+    <view class='bBox ' hidden='{{flagLoginSuccess}}' >
+       <view>
+            <image class='loginFailure' src='{{loginFailure}}'></image>
+       </view>
+       <view>   
+         <text>{{loginSuccess}}</text> 
+       </view>
+    </view>
+
+    <!--重置成功-->
+     <view class='bBox '  hidden='{{resetting}}'>
+       <view>
+            <image class='loginFailure' src='{{loginFailure}}'></image>
+       </view>
+       <view>   
+         <text>{{resettingSuccess}}</text> 
+       </view>
+    </view>

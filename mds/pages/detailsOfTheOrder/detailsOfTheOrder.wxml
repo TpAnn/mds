@@ -1,0 +1,95 @@
+<!--pages/detailsOfTheOrder/detailsOfTheOrder.wxml-->
+<view class='boxTop'>
+      <view>状态：{{buyerPayment}}</view>
+      <image src='../../images/pendingPayment.png' style='width:99rpx; height:93rpx;'></image>
+</view>
+
+
+<!--到店自取-->
+<view class='getToTheShop'>
+      <view class='leftIcon'>
+          <image src='../../images/location.png'></image>
+          <text>到店自取</text>
+      </view>
+      <view class='rightTel'>13145454</view>
+</view>
+
+
+<!--交易单号-->
+<view class='transaction'>
+   <text>交易单号：</text>
+   <text>24545454554</text>
+</view>
+
+<!--数据内容-->
+<view >
+    <view class="cart_container">
+          <image class="item-image" src="{{item.company_details_html_url}}"></image>
+          <view class="column">
+                <text class="title">5454544</text>
+                <view class='gray'>规格：<text>555656465</text></view>
+                <view class="row">
+                      <view class='jk'>
+                            <text class="sku-price1">￥: </text>
+                            <text class="sku-price">2456565665</text>
+                      </view>  
+                      <view class='leftNumber'>X<text>12</text></view>
+                </view>
+          </view>
+    </view>
+    <view class="cart_container">
+          <image class="item-image" src="{{item.company_details_html_url}}"></image>
+          <view class="column">
+                <text class="title">5454544</text>
+                <view class='gray'>规格：<text>555656465</text></view>
+                <view class="row">
+                      <view class='jk'>
+                            <text class="sku-price1">￥: </text>
+                            <text class="sku-price">2456565665</text>
+                      </view>  
+                      <view class='leftNumber'>X<text>12</text></view>
+                </view>
+          </view>
+    </view>
+</view>
+
+<!--底部商品价格-->
+<view class='commodityPriceBox'>
+    <view class='list'>
+        <text>商品总价</text>
+        <text>￥158</text>
+    </view>
+    <view class='list'>
+        <text>优惠券</text>
+        <text>使用优惠券抵扣 ￥325</text>
+    </view>
+    <view class='list'>
+        <text>会员优惠</text>
+        <text>-￥485</text>
+    </view>
+    <view class='list'>
+        <text>商品实付</text>
+        <text>￥785</text>
+    </view>
+    <view class='list'>
+        <text>运费</text>
+        <text>包邮</text>
+    </view>
+ 
+    <view class='topBox'>
+          共
+          <text>{{count}}</text> 
+          件
+          <text class='left50'>合计</text>
+          <text>￥{{total}}(含运费10)</text>
+    </view>
+
+</view>
+<!--222-->
+<view class='contentBottom'>         
+        <view class='bottomBox'>
+              <text>{{cancel}}</text>
+              <text class='left50 bRed' bindtap='bindImmdeiately'>{{immediately}}</text>
+        </view > 
+</view>   
+

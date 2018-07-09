@@ -1,0 +1,11 @@
+<!--pages/immediatePayment/immediatePayment.wxml-->
+<view class='contnet'>
+    <view class='iconTop'>
+        <image src='{{immUrl}}'></image>
+    </view>
+    <view class='line'>支付失败</view>
+    <view class='gray'>订单未完成拍卖会，请重新支付</view>
+    <view class='repayment'>{{repayment}}</view>
+    <view class='returns'>{{returns}}</view>
+
+</view>

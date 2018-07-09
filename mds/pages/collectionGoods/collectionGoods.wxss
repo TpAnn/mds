@@ -1,0 +1,161 @@
+.conentList{
+  background-color:#fff;
+  overflow: hidden;
+  border-bottom:#e2e0e0 1rpx solid;
+  padding-bottom:50rpx; 
+}
+.conentList:first-child {
+  margin-top: 20rpx;
+}
+.conentList view{
+  float: left;
+}
+.lefImg {
+  width: 27%;
+  margin-left: 26rpx;
+}
+.lefImg image{
+  width: 215rpx;
+  height: 175rpx;
+  margin-top:75rpx;
+  
+}
+.rightFont{
+  width: 63%;
+  margin-left:47rpx;
+  overflow: hidden;
+  margin-top:50rpx;
+}
+.rightFont > view {
+  width:100%;
+}
+.red{
+  color:#e64340;
+  float:left;
+  width: 50%;
+}
+.title {
+  font-size: 30rpx;
+  color: #353535
+}
+.redtitle{
+  padding:2prx 15rpx;
+  text-align: center;
+  float:left;
+  background-color: #e54036;
+  color:#fff;
+  border-radius: 10rpx;
+}
+.effect{
+  font-size: 28rpx;
+  color: #8dba29;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float:right;
+}
+.gray{
+  font-size: 23rpx;
+  color: #888;
+  width: 100%;
+  padding-right: 26rpx;
+}
+.rightImg{
+  display: none;
+  width: 60rpx;
+}
+.rightImg.show {
+  display: block;
+}
+.rightImg image{
+   width:60rpx;
+   height: 60rpx;
+   position: absolute;
+   right: 26rpx;
+}
+.bottom{
+  overflow: hidden;
+  width: 100%;
+  margin-top:40rpx;
+  position: relative
+}
+.bottom view{
+  float:left;
+}
+
+.r{
+  float: right;
+  margin-right: 26rpx;
+}
+.bottom view:first-child text{
+  width: 100%;
+  display: block;
+  font-size:28rpx;
+}
+/*---头部的切换样式---*/
+.conent{
+  width: 100%;
+  height:100rpx;
+  background:#fff ;
+}
+.conentTop{
+  overflow: hidden
+}
+.conentTop view{ 
+  width: 18.5%;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 30rpx;
+  float: left
+}
+/* .active{
+  color:#8bbb29;
+  border-bottom:4rpx solid #8bbb29;
+  line-height:87rpx;
+} */
+page{
+  background-color:#f4f4f4;
+}
+.conentBottom{
+  width: 100%;
+   height: 100%;
+   background: blue;
+}
+.conentBottom .bottomList{
+  width: 100%;
+  height: 100rpx;
+  background-color: red;
+}
+.conentTop view:first-child{
+  width: 22%;
+}
+.conentTop view:last-child{
+  width: 22%;
+}
+/*--加入购物车--*/
+ .sku {
+  display: none;
+  float: right;
+  position: absolute;
+  right: 26rpx;
+  top: 25rpx;
+  z-index: 11;
+}
+
+.sku.show {
+  display: block;
+}
+
+.sku view{
+   float:left;
+}
+.center{
+  margin:0 10rpx;
+}
+
+container{
+  width: 100%;
+  height: 100%;
+}
