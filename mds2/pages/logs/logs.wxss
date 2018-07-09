@@ -1,0 +1,184 @@
+/* pages/logs/logs.wxss */
+pages{
+  background-color: #fff;
+}
+.ioginBox{
+  width: 100%;
+  position: absolute;
+  background-color:#fff;
+  border-radius:10rpx;
+  font-size: 30rpx;
+   border-top: #dbdbdb 1rpx solid;
+ 
+}
+.header_title{
+  font-size: 45rpx;
+  color: #000;
+  text-align: center;
+  margin-top: 50rpx;
+}
+.header_text{
+  font-size: 28rpx;
+  color: #000;
+  text-align: center
+}
+
+.loginTitle image{
+  width: 25rpx;
+  height: 25rpx;
+  float: right;
+  margin-right: 30rpx;
+  font-size: 30rpx;
+  margin-top:30rpx;
+}
+
+.loginContent{
+  /* border-bottom: #dbdbdb 1rpx solid; */
+  /* padding-top:30rpx; */
+  /* padding-bottom:30rpx; */
+  position: relative;
+}
+.loginContent image{
+  width:26rpx;
+  height:26rpx;
+  background:blue;
+  position:absolute;
+  right:75rpx;
+  bottom:30rpx;
+
+}
+.loginContent input{
+   border-bottom:#eee 1px solid; 
+  width: 80%;
+  margin: 0 auto;
+  height: 60rpx;
+  padding-bottom: 10rpx ;
+  line-height: 60rpx;
+  text-align: left;
+  margin-bottom:20rpx;
+   padding-left:10rpx; 
+  color:#888;
+ 
+}
+.phcolor{
+  padding-left:10rpx;
+  color:#888;
+}
+.loginBottom{
+  width: 100%;
+  background: #fff;
+  height: 100rpx;
+  padding-top: 60rpx;
+   
+}
+.loginBottom view{
+  width: 280rpx;
+  line-height: 80rpx;
+  height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+   background-color: #8cba28;
+  color: #fff;
+  border-radius: 40rpx;
+  margin:0 auto;
+}
+
+.code{
+  width: 150rpx;
+  float: left;
+  line-height: 60rpx;
+  background-color:red;
+  margin-left: 15rpx;
+  font-size: 25rpx;
+}
+.content-title{
+  width: 60%;
+  margin:0 auto;
+  margin-bottom:20rpx;
+  text-align: center;
+}
+.titleTxt{
+  color:#e85656;
+  width:90%;
+  overflow:hidden;
+  font-size:25rpx;
+  text-align:left;
+  padding-left:10%;
+  padding-bottom:21rpx;
+  line-height:30rpx;
+position: relative;
+}
+.titleTxt image{
+  width:32rpx;
+  height:30rpx;
+  backgorund:red;
+  margin-right:10rpx;
+}
+
+.buttonget{  
+  width:168rpx;
+  /* height:63rpx; */
+  line-height:35rpx;
+  font-size:25rpx;
+  background-color:#f0f0f0;
+  border-top-style:none;
+  border-right-style:none;
+  border-bottom-style:none;
+  border-left-style:none;
+  border-radius:10rpx;
+  position:absolute;
+  right:66rpx;
+  padding:5rpx 30rpx;
+  top:-21rpx;
+
+}
+
+/*隐藏Button按钮本身的边框*/
+
+button[class="buttonget"]::after {
+  border: 0;
+} 
+.bBox{
+ width: 200rpx;
+ height: 200rpx;
+ background-color:#8dba29;
+ border-radius:50%;
+ position: absolute;
+ top:30%;
+ left: 50%;
+ transform: translate(-50%);
+ color:#fff;
+ font-size: 30rpx;
+ text-align: center
+}
+.bBox image{
+  width: 68rpx;
+  height: 68rpx;
+  margin-top:20px;
+}
+.login_title{
+  width: 100%;
+  overflow: hidden;
+  margin-top: 35rpx;
+   margin-bottom: 20rpx;
+}
+.login_title image{
+  width: 28rpx;
+  height: 32rpx;
+  float: left;
+  margin-left: 69rpx;
+  margin-right: 10rpx;
+}
+.login_title text{
+  line-height: 44rpx;
+  float: left;
+  font-size: 26rpx;
+  color: #8cba28
+}
+.nopssword{
+  color: #888;
+  position: absolute;
+  right: 72rpx;
+  top: 0rpx;
+  text-decoration: underline
+}

@@ -1,0 +1,31 @@
+<view class='container'>
+  <text class='tit'>银行卡验证</text>
+  <text>填写银行卡预留信息进行验证</text>
+  <view class='list-box'>
+    <view class='list-box-item'>
+      <view class='labelText'>
+        卡号
+      </view>
+      <text>深圳平安银行 储蓄卡</text>
+      <text>*** *** *** 5222</text>
+    </view>
+    <view class='list-box-item'>
+      <view class='labelText'>
+        手机号
+      </view>
+      <input type='text' placeholder='请输入手机号' bindinput="listenerTellval" value="{{ tell }}"></input>
+    </view>
+    <view class='list-box-item'>
+      <view class='labelText'>
+        验证码
+      </view>
+      <input type='text' placeholder='请输入验证码' bindinput="listenerCodeval" value="{{ code }}" ></input>
+      <button type='button' class="{{ getCodeFlag ? 'getCodeing' : '' }}" bindtap='getCodeTap'>{{ getCodeText }}</button>
+    </view>
+  </view>
+  <button type='button' bindtap='sendTap'>下一步</button>
+  <view class="doneToast {{ bindFlag ? 'show' : '' }}">
+    <image src='/images/bind-icon.png'></image>
+    <text>绑定成功</text>
+  </view>
+</view>

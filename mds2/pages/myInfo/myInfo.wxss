@@ -1,0 +1,65 @@
+page {
+  background-color: #f4f4f4;
+}
+
+.list {
+  width: calc(100%-52rpx);
+  padding: 0 26rpx;
+  background-color: #fff;
+}
+
+.list .list-item {
+  position: relative;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.list .list-item text {
+  position: absolute;
+  font-size: 24rpx;
+}
+
+.list .list-item input {
+  padding-left: 215rpx;
+  font-size: 26rpx;
+  height: 90rpx;
+}
+
+.p {
+  color: #888;
+}
+
+.list-item .select-sex {
+  padding-left: 215rpx;
+}
+
+.list-item image {
+  display: none;
+  float: left;
+  margin-top: 28rpx;
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.list-item image + text {
+  float: left;
+  margin-left: 15rpx;
+}
+
+.list-item text ~ image {
+  margin-left: 150rpx;
+}
+
+.list-item image.show {
+  display: block;
+}
+
+.container > .btn {
+  margin-top: 50rpx;
+  width: 350rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-radius:50rpx;
+  background-color: #8dba29;
+  color: #fff;
+}

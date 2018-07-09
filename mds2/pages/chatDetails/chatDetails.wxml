@@ -1,0 +1,51 @@
+<import src="../../WxEmojiView/WxEmojiView.wxml"/>
+<template is="WxEmojiView" data="{{WxEmojiObjs}}"/>
+  <scroll-view  class='conent' scroll-y style="height: 781rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll"  scroll-top="{{scrollTop}}">
+      <view class='title'>您好， 很高兴为您服务!</view>
+      <view  style="text-align: center;margin: 20px;background-color: #ddd;">下面是WxEmojiTextarea 输入</view>
+      <view wx:for="{{conent}}" data-index="{{index}}" wx:for-item="item">
+            <view class='list firstList' wx:if="{{item.around == 0}}">
+                  <view class='listL ' data-index="{{item.showType}}" >
+                        <image src="{{item.user_head_portrait_url}}"></image>
+                  </view>
+                  <view class="triangle_border_left" data-id="555">
+                        <span></span>
+                  </view>
+                  <text class='listR'  style="background:#fff; color:#353535; margin-left:100rpx"  data-id="{{item.tiem}}" data-index="{{left.user_id}}"  > {{item.news_text}}</text>
+            </view> 
+            <view class='list listRight'  wx:if="{{item.around == 1}}">
+                <view class='listL ' >
+                      <image src="{{headerImg}}"></image>
+                </view>
+                <view class="triangle_border_right">
+                      <span></span>
+                </view>
+                <text class='listR ' data-index="{{item.user_id}}" > {{item.news_text}}</text>
+          </view>  
+     </view>
+
+ </scroll-view> 
+
+ <view class='bottomBox'>
+    <template is="WxEmojiTextarea" data="{{WxEmojiObjs}}" /> 
+     <view class='messageBox'>  </view>
+
+     <view class='iconBox' hidden='{{flaghide}}'  style='width:100%;'>
+            <view hidden='{{listHide}}'>
+                  <image src='../../images/lttj.png' style=' '></image>
+                  <text>推荐</text>
+            </view>
+        <view hidden='{{listHide}}'>
+              <image src='../../images/lthb.png' ></image>
+              <text>红包</text>
+        </view>
+        <view hidden='{{listHide}}' bindtap='makeAnAppointment'>
+              <image src='../../images/ltyy.png'></image>
+              <text>预约</text>
+        </view>
+        <view bindtap='bindEvaluation'>
+            <image src='../../images/ltpj.png'></image>
+            <text>评价</text>
+        </view>
+     </view>
+  </view>

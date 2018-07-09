@@ -1,0 +1,142 @@
+swiper{
+  width: 100%;
+  height: 237rpx;
+}
+.slide-image{
+  width: 100%;
+  height: 237rpx;
+}
+.tabBox{
+  width: 100%;
+  overflow: hidden;
+  border-bottom:#efeff4  1rpx solid;
+}
+/* .titleTab{
+  width: 80%;
+  height: 80rpx;
+  margin:0 auto
+
+}
+.titleTab view{
+  font-size: 30rpx;
+  color: #353535;
+  width: 33.3%;
+  float: left;
+  line-height: 82rpx;
+   
+  text-align: center;
+}
+.titleTab view text{
+  line-height: 80rpx;
+  display: block;
+
+
+} */
+
+.swiper-tab{
+    width: 100%;
+    text-align: center;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-top:#efeff4 1rpx solid;
+    background-color: #fff;
+}
+
+.swiper-tab-item{
+    display: inline-block;
+    width: 20%;
+    color:#353535;
+    font-size: 30rpx;
+}
+.active{
+    color:#8bbb29;
+    border-bottom: 4rpx solid #8bbb29;
+    line-height: 80rpx;
+    
+}
+swiper-item{
+  width: 100%;
+  height: 100%;
+}
+.mdBox{
+  width: 700rpx;
+  height: 283rpx;
+  margin-left: 25rpx;
+   background-repeat:no-repeat; 
+    background-size: cover; 
+   position: relative; 
+   margin-bottom: 30rpx;
+  
+   
+}
+.mdBoxL{
+  width: 30%;
+  float:left;
+  margin-top:30rpx;
+  margin-right: 10rpx;
+  margin-left: 10rpx;
+}
+.mdBoxR{
+  width: 67%;
+  float:left;
+  font-size:28rpx;
+  position: relative;
+}
+
+.firstImg{
+   width:60rpx; 
+  height:64rpx;
+  position: absolute;
+  right: 0rpx;
+}
+.red{
+  color: red;
+  font-size: 24rpx;
+  position: absolute;
+  left: 120rpx;
+  top:20rpx;
+}
+.mdBoxR view:first-child{
+  margin-top:30rpx;
+}
+.gray{
+  color: #888;
+  line-height: 50rpx;
+}
+.colorRed{
+  color:red;
+}
+.bnt{
+  width: 100%;
+  overflow: hidden;
+}
+
+.bnt view:last-child{
+  width: 20%;
+  float: right;
+  margin-right:20rpx;
+}
+.bnt view:last-child view{
+  width: 100%;
+}
+.bnt view:last-child block{
+  width: 100%;
+}
+.npm image{
+  margin-right:10rpx;
+   width:23rpx; 
+   height:28rpx;
+   margin-right:0rpx;
+}
+.bnt view:first-child{
+  background-color:#8cba28;
+  color: #fff;
+  text-align: center;
+  line-height: 46rpx;
+  margin-top:45rpx;
+  height: 46rpx;
+  float: left;
+  width:158rpx;
+  border-radius: 20rpx;
+  font-size: 28rpx
+}

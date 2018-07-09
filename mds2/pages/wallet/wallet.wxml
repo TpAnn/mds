@@ -1,0 +1,25 @@
+<view class='container'>
+  <view class='card-box'>
+    <view class='card-box-item'>
+      <text class='tit'>今日收益</text>
+      <text class='fc-red'>¥ {{ info.todayIncome }}</text>
+      <text class='fc-gray'>美导说储蓄余额：</text><text>{{ info.total_amount }}</text>
+    </view>    
+  </view>
+  <view class='card-box'>
+    <view class='card-box-item gt-icon'>
+      <navigator url='/pages/wallet/withdrawCash'>
+        <image class='icon first' src='/images/money-icon.png'></image>
+        <text class='tit'>可提现金额</text>
+        <text>¥ {{ info.extractableMoney }}</text>
+      </navigator>
+    </view>
+    <view class='card-box-item gt-icon'>
+      <navigator url='/pages/wallet/bankCard'>
+        <image class='icon last' src='/images/bankCard-icon.png'></image>
+        <text class='tit'>银行卡</text>
+        <text class='bold'>{{ info.bankCardTotalNumber<1? '0' : info.bankCardTotalNumber }}</text><text> 张</text>
+      </navigator>
+    </view>
+  </view>
+</view>

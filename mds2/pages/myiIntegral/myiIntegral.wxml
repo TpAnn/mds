@@ -1,0 +1,130 @@
+<view class='container'>
+  <view class='header'>
+    <button class='shareBtn' open-type="share"><image bindtap='shareBtn' src='/images/icon-share.png'></image></button>
+    <navigator url='/pages/myiIntegral/myiIntegralDetailed'><text>你的可用积分 > </text></navigator>
+    <text class='integral'>{{ info.total_integral > 0 ? info.total_integral : '0' }}</text>
+    <button class='btn' type='button'>
+      {{ info.memberName }}<image hidden="{{ info.memberName == '资深买家' }}" src='/images/anCrown.png'></image>
+    </button>
+  </view>
+  <view class='integral-exchange'>
+    <view class='tit'>
+      <text>积分兑换</text>
+    </view>
+    <view class='inner-box'>
+      <view class="arrow-left {{ !arrowFlag ? 'disable' : '' }}" bindtap='arrowLeftBtn'></view>
+      <scroll-view 
+        class='inner-inbox' 
+        scroll-x="{{true}}" 
+        bindscrolltoupper="upper" 
+        bindscrolltolower="lower"
+        scroll-left="{{scrollLeft}}">
+        <view class='inner-item' bindtap='integralBtn' data-integral='199'>
+          <text>199 积分兑换</text>
+          <text>白银会员</text>
+        </view>
+        <view class='inner-item' bindtap='integralBtn' data-integral='599'>
+          <text>599 积分兑换</text>
+          <text>黄金会员</text>
+        </view>
+        <view class='inner-item' bindtap='integralBtn' data-integral='1999'>
+          <text>1999 积分兑换</text>
+          <text>白金会员</text>
+        </view>
+        <view class='inner-item' bindtap='integralBtn' data-integral='5999'>
+          <text>5999 积分兑换</text>
+          <text>钻石会员</text>
+        </view>
+      </scroll-view>
+      <view class="arrow-right {{ arrowFlag ? 'disable' : '' }}" bindtap='arrowRightBtn'></view>
+    </view>
+  </view>
+  <view class='signIn'>
+    <view class='inner-box'>
+      <view class="inner-item {{ info.sign_in_count > 0 ? 'active' : '' }}">
+        <text>已签到</text>
+         <view class='icon'>
+          +1
+        </view> 
+        <view class='dot'></view>
+        <text>第一天</text>
+      </view>
+      <view class="inner-item {{ info.sign_in_count > 1 ? 'active' : '' }}">
+        <text>已签到</text>
+        <view class='icon'>
+          +2
+        </view>
+        <view class='dot'></view>
+        <text>第二天</text>
+      </view>
+      <view class="inner-item {{ info.sign_in_count > 2 ? 'active' : '' }}">
+        <text>已签到</text>
+        <view class='icon'>
+          +3
+        </view>
+        <view class='dot'></view>
+        <text>第三天</text>
+      </view>
+      <view class="inner-item {{ info.sign_in_count > 3 ? 'active' : '' }}">
+        <text>已签到</text>
+        <view class='icon'>
+          +4
+        </view>
+        <view class='dot'></view>
+        <text>第四天</text>
+      </view>
+      <view class="inner-item {{ info.sign_in_count > 4 ? 'active' : '' }}">
+        <text>已签到</text>
+        <view class='icon'>
+          +6
+        </view>
+        <view class='dot'></view>
+        <text>第五天</text>
+      </view>
+      <view class="inner-item {{ info.sign_in_count > 5 ? 'active' : '' }}">
+        <text>已签到</text>
+        <view class='icon'>
+          +8
+        </view>
+        <view class='dot'></view>
+        <text>第六天</text>
+      </view>
+      <view class="inner-item {{ info.sign_in_count > 6 ? 'active' : '' }}">
+        <text>已签到</text>
+        <view class='icon'>
+          +10
+        </view>
+        <view class='dot'>
+          <image src='/images/signInDay7.png'></image>
+        </view>
+        <text>第七天</text>
+      </view>
+    </view>
+    <view class='step'></view>
+    <button 
+      class="btn {{ info.signInState == 400 ? 'disable' : '' }}" 
+      bindtap='signBtn' 
+      type='button'>{{info.signInState_zh}}</button>
+  </view>
+  <view class='sign-dialog' hidden="{{signDialogFlag}}">
+    <image src='/images/sign-dialog-bg.png'></image>
+    <view class='inner'>
+      <text>恭喜今日签到成功！</text>
+      <text>+{{signIntegral}}积分</text>
+      <button class='btn' bindtap='signShareBtn' type='button'>分享获得额外积分</button>    
+    </view>
+    <button class='close' bindtap='closeBtn' type='button'></button>    
+  </view>
+  <view class='integral-source'>
+    <view class='tit'>
+      <text>积分来源</text>
+    </view>
+    <view class='inner-box'>
+      <text>1. 消费一元获得1积分，不同等级获得积分不一样</text>  
+      <text>2. 朋友通过分享的绑定链接注册可以获得20积分，以此类推一直20积分</text>  
+      <text>3. 每日签到有积分，一天1积分，第二天2积分，直到当天的积分为10分，以后连续每天签到10积分</text>  
+      <text>4. 不规则积分来源，特定商品，会有成倍积分加成</text>  
+      <text>5. 不定时会有赚取积分的任务</text>  
+    </view>
+  </view>
+</view>

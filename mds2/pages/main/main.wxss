@@ -1,0 +1,262 @@
+/* pages/main/main.wxss */
+
+.header{
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  height: 400rpx;
+  color: #fff;
+  font-size:30rpx; 
+  letter-spacing: 2rpx;
+}
+.bottomBox{
+  /* border:#fff 1px solid; */
+  border-radius: 20rpx;
+  height: 35rpx;
+  width: 200rpx;
+  line-height: 30rpx;
+  margin:0 auto;
+ 
+}
+.bottomBox text{
+    font-size:20rpx ;
+}
+.mainCrown{
+  width: 26rpx;
+  height: 26rpx;
+  margin-left: 5rpx;
+}
+.header-top{
+ width: 150rpx;
+ height: 150rpx;
+ background: #fff;
+ border-radius: 50%;
+ margin:0 auto;  
+ overflow: hidden;
+ margin-top:50rpx;
+ border:#d7e8b2 5px solid;
+}
+/* .header text{
+  font-size: 24rpx;
+
+} */
+.title{
+  font-size:30rpx;
+  padding-left:35rpx;
+  border-bottom:2rpx solid #eee;
+  height:40rpx;
+  line-height:5rpx;
+}
+.nav{
+  width: 100%;
+  height: 140rpx;
+  border-bottom:#f5f5f5 20rpx solid;
+  border-top: #eee 1rpx solid;
+  overflow: hidden;
+  color:#353535;
+}
+ .nav .navBox{
+   width:15%;
+float:left;
+position:relative;
+text-align:center;
+margin-left:4.2%;
+
+   
+} 
+
+ .nav view text{
+   font-size: 28rpx;
+   width: 100%;
+   text-align: center;
+   
+ }
+ .active{
+   color: #8dba29;
+   font-weight: bold
+ }
+.navBox image{
+  width: 38rpx;
+  height: 38rpx;
+  padding:25rpx 0 5rpx 0 ;
+ 
+}
+.contnet-list{
+  width: 100%;
+
+}
+.listBox{
+  width:93%;
+  padding:0 26rpx;
+  border-bottom:#eee 1px solid;
+  font-size:30rpx;
+  line-height:100rpx;
+
+ 
+}
+.listBox view{
+  width: 20rpx;
+  height: 20rpx;
+  border-right:#888 1rpx solid;
+  border-top: #888 1rpx solid;
+  transform: rotate(45deg);
+  float: right;
+  margin-top:40rpx; 
+
+}
+.line{
+  border-top:20rpx solid #f5f5f5;
+  border-bottom:30rpx solid #f5f5f5;
+}
+
+/*--蒙层样式--*/
+.backgroundOpctiy{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color:rgba(000,000,000,0.5);
+  z-index: 6;
+  text-align: center
+}
+.ioginBox{
+  width: 80%;
+  position: absolute;
+  top:30%;
+  left: 50%;
+  transform: translate(-50%);
+  background-color:#fff;
+  border-radius:10rpx;
+  font-size: 30rpx;
+ 
+}
+.loginTitle{
+  text-align: center;
+  color:#000; 
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom:#dbdbdb solid 1rpx ;
+  margin-bottom: 30rpx;
+}
+.loginTitle image{
+  width: 25rpx;
+  height: 25rpx;
+  float: right;
+  margin-right: 30rpx;
+  font-size: 30rpx;
+  margin-top:30rpx;
+}
+
+.loginContent{
+  border-bottom: #dbdbdb 1rpx solid;
+  padding-bottom:30rpx;
+}
+.loginContent input{
+  border:#eee 1px solid;
+  width: 80%;
+  margin: 0 auto;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color:#f0f0f0;
+  text-align: left;
+  margin-bottom:10rpx;
+  color:#363636;
+ 
+}
+.phcolor{
+  padding-left:10rpx;
+  color:#878787;
+}
+.loginBottom{
+  width: 100%;
+}
+.loginBottom view{
+  width: 49.5%;
+  line-height: 80rpx;
+  float: left;
+  text-align: center;
+  font-size: 30rpx;
+}
+.loginBottom view:first-child{
+  border-right: #dbdbdb 1rpx solid;
+}
+.code{
+  width: 150rpx;
+  float: left;
+  line-height: 60rpx;
+  background-color:red;
+  margin-left: 15rpx;
+  font-size: 25rpx;
+}
+.content-title{
+  width: 60%;
+  margin:0 auto;
+  margin-bottom:20rpx;
+}
+.titleTxt{
+  color:#e85656;
+  width: 90%;
+  overflow: hidden;
+  font-size: 25rpx;
+  text-align: left; 
+  padding-left:10%;
+  padding-bottom:30rpx;
+  line-height: 30rpx;
+}
+.titleTxt image{
+  width: 20rpx;
+  height: 20rpx;
+  backgorund:red;
+  margin-right:5rpx;
+  
+}
+.buttonget
+{  
+    width:150rpx;
+   height:60rpx; 
+   line-height: 60rpx;
+   font-size: 25rpx;
+   background-color:#f0f0f0;
+   border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+    border-radius: 0rpx;
+}
+
+/*隐藏Button按钮本身的边框*/
+
+button[class="buttonget"]::after {
+  border: 0;
+} 
+.bBox{
+ width: 200rpx;
+ height: 200rpx;
+ background-color:#8dba29;
+ border-radius:50%;
+ position: absolute;
+ top:50%;
+ left: 50%;
+ transform: translate(-50%);
+ color:#fff;
+ font-size: 30rpx;
+ text-align: center
+}
+.bBox image{
+  width: 68rpx;
+  height: 68rpx;
+  margin-top:20px;
+}
+.scan{
+  width:45rpx;
+  height:40rpx; 
+  position: absolute;
+  left: 26rpx;
+  top:30rpx;
+}
+.set{
+  width: 39rpx;
+  height: 39rpx;
+  position: absolute; 
+  right: 26rpx;
+  top:30rpx;
+}

@@ -1,0 +1,140 @@
+ <view class='headerTitle'>
+      <text><text hidden='{{openmemberHide}}'>开通会员</text>，本单可省<text hidden='{{memberpriceHide}}'>{{memberpriceText}}</text> 元+返<text hidden='{{backHide}}'>{{back}}</text> 元</text>
+ </view>
+ <view class='hr'>
+    <image src='../../images/carheadertitle.png'></image>
+ </view>
+ <scroll-view class="scroll" scroll-y="true"> 
+  <view class="separate"></view>
+  <view wx:for="{{carts}}" data-id="{{index}}" wx:for-item='item' data-shopId="{{item.cart_id}}">
+        <view class="cart_container">
+              <image class="item-select"  bindtap="switchSelect" data-index="{{index}}" data-id="{{index}}" src="{{item.isSelect?'../../images/selected.png':'../../images/seleon.png'}}" />
+
+          <image class="item-image" src="{{item.company_img_url1}}"></image>
+
+          <view class="column" data-redEnvelopesArray="{{item.redEnvelopesArray}}">
+                <text class="title">{{item.commodity_name}}</text>
+                <view class='effect' wx:for="{{item.effectInfo}}" wx:for-item="ffect_name1">功效:{{ffect_name1.effect_name}}</view>
+                <view class='fontgreen'>
+                    <block wx:for="{{item.skinInfo}}" wx:for-item="skinInfo1">
+                      <text>{{skinInfo1.skin_type_name}}</text>
+                    </block>
+                    <text >已售100件</text>
+                </view>
+                <view class="row">
+                  <view class='jk'>
+                    <view>
+                          <text class="sku-price1">￥: </text>
+                          <text class="sku-price">{{item.selling_price}}</text>
+                    </view>
+                    <view>
+                          <text class="sku-price1">￥: </text>
+                          <text class="sku-price" style="color:#e64340">{{item.membership_price}}</text>
+                          <text class='red'>会员专享</text>
+                    </view>  
+                  </view>
+              
+                  <view class="sku">
+                      <view bindtap='bindReduce' data-index="{{index}}" data-num="{{item.commodity_join_number}}"  >
+                        <image src='../../images/reduce.png' style='width:45rpx; height:45rpx;'></image>
+                      </view>
+                      <view class='center'>{{item.commodity_join_number}}</view>
+                      <view >
+                        <image src='../../images/add.png' style='width:45rpx; height:45rpx;' bindtap='bindAdd' data-index="{{index}}" data-num="{{item.commodity_join_number}}" ></image>
+                      </view>
+                  </view>
+                </view>
+          </view>
+    </view>
+    <view class="separate"></view>
+  </view>
+
+  <view class='conentList' style='margin-top:10rpx'>
+    <view class='fl'>
+        <text>商品总价</text>
+    </view>
+    <view class='fr cred'>
+        <text>￥</text>
+        <text>{{totalPrice}}</text>
+    </view>
+  </view>
+  <view class='conentList'>
+    <view class='fl '>
+        <image src='../../images/redEnvelopes.png'></image>
+        <text style='margin-left:40rpx;'>红包</text>
+    </view>
+    <view class='fr ' style='color:#888' >
+        <text> 差<text>{{redEnvelopes}}</text>元可以使用红包</text>
+    </view>
+  </view>
+  <view class='conentList'>
+    <view class='fl'>
+        <text>会员优惠</text>
+    </view>
+    <view class='fr cred'>
+        <text>-￥</text>
+        <text>{{member}}</text>
+    </view>
+  </view>
+  <view class='conentList' hidden='{{PromotionHide}}'>
+    <view class='fl'>
+        <text>促销价</text>
+    </view>
+    <view class='fr cred'>
+        <text>-￥</text>
+        <text>{{promotion}}</text>
+    </view>
+  </view>
+  <view class='conentList'>
+    <view class='fl'>
+        <text>商品实付</text>
+    </view>
+    <view class='fr cred'>
+        <text>￥</text>
+        <text>{{commodityPayment}}</text>
+    </view>
+  </view>
+  <view class='conentList'>
+    <view class='fl'>
+        <text>运费</text>
+    </view>
+    <view class='fr '>
+        <text style='color:#888'>{{freight}}</text>
+    </view>
+  </view>
+  <view class='conentList'>
+    <view class='fl'>
+        <text></text>
+    </view>
+  <view class='fr '>
+        <text style='color:red;padding-right:20rpx;'>￥<text>{{totalMoney}}</text></text>
+        <text style='color:#353535'>合计</text>
+    </view>
+  </view>
+</scroll-view> 
+ 
+<view class="bottom_total">
+  <view class="bottom_line"></view>
+  <view class="conentBottom">
+    <view>
+         <image class="item-allselect" bindtap="allSelect" src="{{isAllSelect?'../../images/selected.png':'../../images/seleon.png'}}" />
+    
+    </view>
+    <view>
+       <text class="small_text">全选</text>
+    </view>
+    <view class='center1'>
+        <view >
+            <text >合计</text>
+            <text class="price">￥{{totalMoney}}</text>
+        </view>
+        <view>
+          <text class="gray">运费：</text>
+          <text class="gray">10元</text>
+        </view>
+    </view>
+  
+    
+    <button class="button-red" bindtap="toBuy" formType="submit" data-id="{{}}">去支付<image src='../../images/zfIcon.png'></image></button>
+  </view>
+</view>

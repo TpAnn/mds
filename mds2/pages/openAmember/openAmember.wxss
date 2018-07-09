@@ -1,0 +1,211 @@
+/* pages/openAmember/openAmember.wxss */
+
+.header{
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  height: 400rpx;
+  color: #fff;
+  letter-spacing: 2rpx;
+}
+.bottomBox{
+  border:#fff 1px solid;
+  border-radius: 20rpx;
+  height: 28rpx;
+  width: 200rpx;
+  line-height: 25rpx;
+  margin:0 auto;
+
+}
+.bottomBox text{
+    font-size:11rpx ;
+}
+.header view{
+  font-size: 28rpx;
+}
+.header-top{
+ width: 150rpx;
+ height: 150rpx;
+ background: #fff;
+ border-radius: 50%;
+ margin:0 auto;  
+ margin-top:50rpx;
+ border:#d7e8b2 5px solid;
+}
+
+.reds{
+  padding: 0 10rpx;
+}
+.red{
+  color: red;
+}
+.navTitle{
+  text-align: center;
+  margin-top:35rpx;
+  font-weight: bold
+}
+.box{
+  width: 100%;
+  text-align: center;
+}
+.top{
+  overflow: hidden;
+   width: 520rpx;
+   margin: 0 auto;
+   margin-bottom: 45rpx;
+}
+.top view{
+  float: left;
+  width: 120rpx;
+  height: 136rpx;
+  margin-top: 35rpx;
+  font-size: 28rpx;
+  
+}
+.top image{
+  width: 94rpx;
+  height: 94rpx;
+  border-radius: 50%;
+  margin: 0 12rpx;
+}
+.top text{
+  margin-bottom: 10rpx;
+  font-size: 27rpx;
+  color: #343434;
+  
+}
+.box-list{
+  width: 92%;
+  border:#dcdcdc 1rpx solid;
+  border-radius: 20rpx;
+  margin: 0 26rpx;
+  margin-bottom:20rpx;
+}
+.lsitT{
+  margin: 40rpx 0 0 30rpx;
+  font-size: 30rpx;
+  overflow: hidden;
+}
+.listB{
+  font-size: 20rpx;
+  color: #888;
+  margin:0 0 40rpx 30rpx;
+  overflow: hidden
+  
+}
+.bold{
+  font-weight: bold
+}
+.font25{
+  font-size: 25rpx;
+  line-height: 50rpx;
+}
+.listB text:last-child,.lsitT text:last-child{
+  float: right;
+  margin-right:26rpx;
+}
+.listB text:last-child{
+    text-decoration: line-through;
+}
+
+.lsitT text text{
+  font-size: 30rpx;
+}
+page{
+  font-size: 30rpx;
+}
+.bnt{
+  width: 100%;
+  height: 98rpx;
+  background-color: #8cba28;
+  font-size: 30rpx;
+  position: fixed;
+  bottom: 0rpx;
+  font-weight: bold;
+  letter-spacing: 2rpx;
+  line-height: 98rpx;
+  text-align: center;
+  color: #fff;
+
+}
+.zf{
+  padding-left: 26rpx;
+  font-size: 30rpx;
+  color: #010101;
+  line-height: 114rpx;
+  height: 114rpx;
+  width: 97%;
+}
+.wx{
+  width: 100%;
+  line-height: 100rpx;
+  height: 100rpx;
+  border-top:#e7e7e7 1rpx solid;
+  border-bottom:#e7e7e7 1rpx solid;
+  margin-bottom: 100rpx;
+  position: relative;
+}
+.wx image ,.wx view{
+  float: left;
+  line-height: 100rpx;
+}
+.wx image:first-child{
+  margin: 25rpx 10rpx 0 26rpx;
+  width:57rpx; height:57rpx; 
+  border-radius: 50%;
+}
+.item-select {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 26rpx;
+  top:30rpx;
+ 
+}
+/*---弹--*/
+.backgroundgary{
+  position: fixed;
+  z-index: 11;
+  background-color:rgba(000,000,000,0.3);
+  width: 100%;
+  height: 100%;
+}
+.box{
+  background-color: #fff;
+  width: 530rpx;
+  height: 354rpx;
+  border-radius: 20rpx;
+  position: absolute;
+  top:40%;
+  left: 50%;
+  transform: translate(-50%)
+}
+.title{
+  font-size: 30rpx;
+  color: #000000;
+  font-weight: bold;
+  margin-top:25rpx;
+  margin-bottom: 30rpx;
+}
+.list{
+  width: 100%;
+  overflow: hidden;
+  /* background: blue; */
+  margin-top: 10rpx;
+}
+.icon{
+  width: 12rpx;
+  height: 12rpx;
+  background-color:#78ac02;
+  border-radius: 50%;
+  margin-left: 99rpx;
+  margin-top: 15rpx;
+  float: left;
+}
+.list text{
+  float:left;
+  line-height:40rpx;
+  text-align:left;
+  margin-left:26rpx;
+
+}

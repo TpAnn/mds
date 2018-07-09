@@ -1,0 +1,42 @@
+<view class='container'>
+  <view class='list-box'>
+     <navigator url='/pages/wallet/bankCard'>
+        <view class='list-box-item wechat'>
+          <view class='icon'>
+            <image src='/images/wechat-icon.png'></image>
+          </view>
+          <text>微信钱包</text>
+          <view class='select'></view>
+        </view>
+     </navigator>
+    <!-- <navigator url='/pages/wallet/bankCard'>
+      <view class='list-box-item'>
+        <view class='icon'>
+          <image src='/images/pinganBank-icon.png'></image>
+        </view>
+        <text>平安银行</text>
+        <text>尾号5222储蓄卡</text>
+        <view class='select'></view>
+      </view>
+    </navigator> -->
+  </view>
+  <view class='withdraw'>
+    <text class='tit'>提现金额</text>
+    <view class='inner'>
+      <text class='labelText'>
+        ¥
+      </text>
+      <input type='number' value="{{ money }}" placeholder='请输入提取金额' bindinput="listenerMoneyval"></input>
+      <view class="clear {{ money>0 ? 'show' : '' }} " data-index="1" bindtap="clearContent"></view>
+    </view>
+    <view class="tips {{ !errorFlag ? 'show' : '' }}">
+      可提取余额 120.0元
+    </view>
+    <view class="error {{ errorFlag ? 'show' : '' }}" >
+      金额已超过可提现金额
+    </view>
+  </view>
+  <button type='button' class='btn' bindtap='sendTap'>
+      马上提现
+  </button>
+</view>

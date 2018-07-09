@@ -1,0 +1,178 @@
+/* pages/detailsOfTheOrder/detailsOfTheOrder.wxss */
+pages{
+  background-color:#ccc;
+}
+.boxTop{
+  margin-top:10rpx;
+  height: 135rpx;
+  line-height: 135rpx;
+  color: #fff;
+  font-size: 30rpx;
+  width: 100%;
+  background-color:#8cba28; 
+  position: relative;
+  overflow: hidden;
+}
+.boxTop image{
+  position: absolute;
+  right: 80rpx;
+  top:23rpx
+}
+.boxTop view{
+  margin-left:70rpx;
+}
+
+/*--到店自取--*/
+.getToTheShop{
+  width: 100%;
+  height: 132rpx;
+  background: #fff;
+  font-size: 30rpx;
+  line-height: 132rpx;
+  position: relative;
+}
+.leftIcon image{
+  width: 34rpx;
+  height: 46rpx;
+  margin-left:35rpx;
+  margin-top:46rpx;
+  margin-right: 20rpx;
+
+}
+.rightTel{
+  position: absolute;
+  right: 26rpx;
+  top:0rpx;
+}
+
+/*--交易单号--*/
+.transaction{
+  width: 100%;
+  height: 65rpx;
+  background-color: #fff;
+  margin-top:10rpx;
+  font-size: 28rpx;
+  /* border-bottom: #d7d6d6 1rpx solid; */
+}
+.transaction text{
+  color:#888;
+  line-height: 65rpx;
+  
+}
+.transaction text:first-child{
+  margin-left: 26rpx;
+}
+
+/*--数据内容--*/
+.cart_container {
+  display: flex;
+  margin-bottom: 2rpx;
+  flex-direction: row;
+  height: 250rpx;
+  background-color:#fff;
+  font-size: 30rpx;
+  position: relative;
+  border-top: #d7d6d6 1rpx solid;
+ 
+}
+.item-image {
+  width: 153rpx;
+  height: 153rpx;
+  margin-left: 45rpx;
+  margin-top: 50rpx;
+  border:red 1px solid;
+}
+.title {
+  font-size: 30rpx;
+  margin-top: 36rpx;
+  color: #353535;
+  font-weight: bold;
+
+}
+.gray{
+  color:#888;
+  font-size: 28rpx;
+}
+.jk{
+  margin-top:60rpx;
+}
+.jk  .sku-price{
+  color: #353535;
+}
+.leftNumber{
+  position: absolute;
+  right: 26rpx;
+  bottom: 18rpx;
+}
+.column{
+  margin-top: 36rpx;
+  margin-left: 33rpx;
+}
+
+/*--底部--*/
+.commodityPriceBox{
+  width: 100%;
+  background: #fff;
+  border-top: #d7d6d6 1rpx solid;
+  padding: 10rpx 0;
+}
+.list{
+  width: 100%;
+  line-height: 40rpx;
+  color: #888;
+  font-size: 28rpx;
+  position: relative;
+  margin:5rpx 0;
+}
+.list text:first-child{
+  margin-left: 26rpx;
+}
+.list text:last-child{
+  position: absolute;
+  right: 26rpx;
+}
+
+.topBox{
+  padding-top: 10rpx;
+  font-size: 28rpx;
+  color: #888;
+  position: absolute;
+  right: 26rpx;
+}
+.red{
+  color: red;
+}
+
+.contentBottom{
+  width: 100%;
+  position: fixed;
+  bottom: 0rpx;
+  background: #fff;
+  height: 100rpx;
+  z-index: 11;
+}
+.bottomBox{
+  width: 100%;
+  background: #fff;
+  height: 100%;
+  position: relative;
+}
+.bottomBox text{
+  padding:6rpx 25rpx;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+}
+.bottomBox text:first-child{
+   border:#d7d7d7 1rpx solid;
+   color: #888;
+   position: absolute;
+   right: 210rpx;
+   top:25rpx;
+}
+.bottomBox text:last-child{
+ color: #fff;
+  background: #e64340;
+  position:absolute;
+  right: 26rpx;
+   top:25rpx;
+}

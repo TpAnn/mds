@@ -1,0 +1,12 @@
+<!--pages/Collectionmd/Collectionmd.wxml-->
+<view class='cadetsBox'>
+  <view class='cadetsL' data-id="item.admin_user_id" bindtap='urlToAmerican' wx:for="{{mycadets}}" wx:for-item="item" style='background-image:url(../../images/collBox.png)'>
+    <view >
+        <image src='{{item.mdUser.user_head_portrait_url}}'></image>
+    </view>
+    <image src='/images/sjx.png' class='right'></image>
+    <view class='right-line'></view>
+    <view>{{item.mdUser.user_realname}}</view>
+    <view class='green'>好评：<text>{{ item.good_rate }}</text>%</view>
+  </view>
+</view>

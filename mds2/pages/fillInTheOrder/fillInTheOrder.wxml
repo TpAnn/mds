@@ -1,0 +1,118 @@
+<view class='header' bindtap='bindxq'>
+    <view class='headertop'>
+      <view>
+          <text class='mr'>默认</text>
+          <text>{{receiving_name}}</text>
+      </view>
+      <view>
+          {{contact_number}}
+      </view>
+    </view>
+    <view class='headerbottom'>
+        <text>{{city}}-{{provinces}}-{{county}}</text>
+        <text>{{address_detail}}号</text>
+    </view>
+<image src='../../images/bj.png'></image>  
+</view>
+<view class='hr'>
+  <image src='../../images/carheadertitle.png'></image>
+</view>
+<scroll-view class="scroll" scroll-y="true"> 
+    <view class="separate"></view>
+    <view wx:for="{{carts}}">
+          <view class="cart_container">
+                <image class="item-image" src="{{item.company_details_html_url}}"></image>
+                <view class="column">
+                      <text class="title">{{item.commodity_name}}</text>
+                      <view class='gray'>规格：<text>{{item.company_spec}}</text></view>
+                      <view class="row">
+                            <view class='jk'>
+                                  <text class="sku-price1">￥: </text>
+                                  <text class="sku-price">{{item.selling_price}}</text>
+                            </view>  
+                            <view>X<text>{{item.quantity_number}}</text></view>
+                      </view>
+                </view>
+          </view>
+          <view class="separate"></view>
+    </view>
+
+    <view class='conentList' style='margin-top:10rpx'>
+    <view class='fl'>
+          <text>商品总价</text>
+    </view>
+    <view class='fr cred'>
+          <text>￥</text>
+          <text>{{totalPrice}}</text>
+    </view>
+    </view>
+    <view class='conentList'>
+      <view class='fl ' style='color:#888'>
+    <image src='../../images/redEnvelopes.png'></image>
+    <text style='margin-left:40rpx;'>红包</text>
+    </view>
+    <view class='fr ' >
+    <text >差<text>{{redEnvelopesInfo}}</text>元可以使用红包</text>
+    </view>
+    </view>
+    <view class='conentList'>
+    <view class='fl'>
+    <text>会员优惠</text>
+    </view>
+    <view class='fr cred'>
+    <text>-￥</text>
+    <text>{{member}}</text>
+    </view>
+    </view>
+    <view class='conentList'>
+    <view class='fl'>
+          <text>商品实付</text>
+    </view>
+    <view class='fr cred'>
+          <text>￥</text>
+          <text>{{commodityPayment}}</text>
+    </view>
+    </view>
+    <view class='conentList'>
+        <view class='fl'>
+              <text>运费</text>
+        </view>
+        <view class='fr ' style='color:#888'>
+              <text>包邮</text>
+        </view>
+    </view>
+    <view class='conentList'>
+        <view class='fl'>
+              <text></text>
+        </view>
+          <view class='fr '>
+                <text style='color:red; padding-right:20rpx;' >￥<text>{{totalMoney}}</text></text>
+                <text style='color:#353535'>合计</text>
+          </view>           
+    </view>
+</scroll-view> 
+ 
+<view class="bottom_total">
+  <view class="bottom_line"></view>
+  <view class="conentBottom">
+    <view>
+         <image class="item-select"  bindtap="switchSelect" data-index="{{index}}" data-id="{{index}}" src="{{flag?'/images/selected.png':'/images/seleon.png'}}" />
+    </view>
+    <view>
+       <text class="small_text">店内自取</text>
+    </view>
+    <view class='center1'>
+        <view>
+            <text>合计</text>
+            <text class="price">￥{{totalMoney}}</text>
+        </view>
+        <view>
+          <text class="gray">运费：</text>
+          <text class="gray">10元</text>
+        </view>
+    </view>
+  
+    
+    <button class="button-red {{bjwithe ?'bjwithe':'bjred'}}" bindtap="toBuy" formType="submit" >去付款<image src='../../images/zfIcon.png'></image></button>
+  </view>
+</view>

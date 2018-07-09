@@ -1,0 +1,53 @@
+/* pages/myCadets/myCadets.wxss */
+page{
+  background-color:#f5f5f5 ; 
+}
+.cadetsBox:first-child{
+  margin-top:15rpx;
+}
+.cadetsBox{
+  width: 100%;
+  border-bottom: #e2e0e0 1rpx solid;
+  overflow: hidden;
+  padding-bottom:30rpx;
+  background-color:#fff;
+  
+  padding-top: 30rpx;
+}
+.cadetsBox .cadetsL {
+  float: left;
+  border:#e2e0e0 1rpx solid;
+  margin-left: 75rpx;
+  width: 263rpx;
+  font-size: 30rpx;
+  text-align: center
+}
+.cadetsL image{
+  width: 144rpx;
+  height: 144rpx;
+  margin:0rpx;
+  margin-top:15rpx;
+  
+}
+.cadetsL view:first-child{
+    width:170rpx;
+    height:170rpx;
+    background-size:cover;
+    margin:0 auto;
+    border-radius:50%;
+    overflow:hidden;
+    margin-top:24rpx;
+
+}
+.green{
+  font-size: 20rpx;
+  background-color:#8cba28;
+  width: 127rpx;
+  margin: 0 auto;
+  text-align: center;
+  padding:2rpx 10rpx;
+  margin-top:15rpx;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  color: #fff;
+}

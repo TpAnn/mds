@@ -1,0 +1,29 @@
+  <view class="tab-box">        
+    <view  class="tab-content">
+      <view class='conentList' wx:for="{{conent}}">
+          <view class='lefImg'>
+              <image src='{{item.company_details_html_url}}' ></image>
+          </view>
+          <view class='rightFont'>
+            <view class='title'>
+              {{item.commodity_name}}
+            </view>
+            <view class='effect'>
+              功效：<text wx:for="{{item.effectInfo}}" wx:for-item="effect">{{ effect.effect_name }}</text>
+            </view>
+            <view class='gray'>
+                <text wx:for="{{item.skinInfo}}" wx:for-item="skin">{{ skin.skin_type_name }}</text>
+                <text class='r'>已售{{item.quantity_sold}}件</text>
+            </view>
+            <view class='bottom'>
+              <view style='width:80%;'>
+                <text>￥：{{item.selling_price}}</text>
+                <text class='red' style='width:50%' >￥：{{item.membership_price}}  </text>
+                <text class='redtitle' style='font-size:23rpx; width:35%'>会员专享</text> 
+              </view>
+            </view > 
+          </view>
+        </view>
+      </view>
+  </view>
+  <view class='bnt' bindtap='bindRecommend'>确认给客户推荐</view> 

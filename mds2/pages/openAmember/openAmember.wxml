@@ -1,0 +1,104 @@
+
+
+<!--专-->
+<view class='backgroundgary'>
+   <view class='box'>
+      <view class='title'>专属标志</view>
+      <view class='list'>
+          <view class='icon'></view>
+          <text>享有对应的等级标志</text>
+      </view>
+      <view class='list'>
+          <view class='icon'></view>
+          <text>特权标志</text>
+      </view>
+      <view class='list'>
+      <view class='icon'>
+      </view>
+          <text>昵称颜色</text>
+      </view>
+   </view>
+
+</view>
+<view class="header" style="background-image: url('../../images/mainheader.png'); background-size: cover; background-repeat: no-repeat;">
+    <view class='header-top'> </view>
+    <view>用户名</view>
+    <view>现在开通VIP</view>
+    <view>预计一年为您节省 <text class='red'>1153</text>元</view>
+  
+</view>
+<!--会员享有6大权益-->
+<view class='navTitle'>
+  - 会员专享有6大权益 -
+</view>
+
+
+<view class='box'>
+    <view class='top'>
+        <view >
+            <image src='../../images/openImg1.png'/>
+            <text>专属标志</text>
+        </view>
+        <view style='margin-left:80rpx; margin-right:80rpx;'>
+            <image src='../../images/openImg2.png'/>
+            <text>积分加倍</text>
+        </view>
+        <view >
+            <image src='../../images/openImg3.png'/>
+            <text>商城兑换</text>
+        </view>
+        <view >
+            <image src='../../images/openImg1.png'/>
+            <text>会员包邮</text>
+        </view>
+        <view style='margin-left:80rpx; margin-right:80rpx;'>
+            <image src='../../images/openImg2.png'/>
+            <text>生日礼</text>
+        </view>
+        <view >
+            <image src='../../images/openImg3.png'/>
+            <text>优惠券</text>
+        </view>
+    </view>
+</view>
+
+<view class='box-list'>
+    <view class='lsitT'>
+        <text class='bold'>月度会员</text>
+        <text class='red font25'>特惠价￥<text style='margin:0rpx;'>9.9</text></text>
+    </view>
+    <view class='listB'>
+      <text>1个月优享会员（立享会员价+双倍积分）</text>
+      <text>￥15</text>
+    </view>
+</view>
+<view class='box-list'>
+    <view class='lsitT'>
+        <text class='bold'>季度会员</text>
+        <text class='red font25'>特惠价￥<text style='margin:0rpx;'>19.9</text></text>
+    </view>
+    <view class='listB'>
+      <text>3个月优享会员（立享会员价+双倍积分）</text>
+      <text >￥45</text>
+    </view>
+</view>
+<view class='box-list'>
+    <view class='lsitT'>
+        <text class='bold'>半年会员</text>
+        <text class='red font25'>特惠价￥<text style='margin:0rpx;'>39.9</text></text>
+    </view>
+    <view class='listB'>
+      <text>6个月优享会员（立享会员价+双倍积分）</text>
+      <text >￥90</text>
+    </view>
+</view>
+<view class='zf'>需支付： 19.9元</view>
+<view class='wx'>
+    <image src='../../images/wx.png' />
+    <view>微信钱包</view>
+      <image class="item-select"   bindtap="switchSelect" data-index="{{index}}" data-id="{{index}}" src="{{isSelect?'../../images/selected.png':'../../images/seleon.png'}}" />
+
+</view>
+
+<view class='bnt'>开通会员，立享优惠价</view>
+

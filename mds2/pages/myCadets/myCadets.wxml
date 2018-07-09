@@ -1,0 +1,16 @@
+<view class='cadetsBox' wx:for="{{mycadets}}" style=''>
+    <view class='cadetsL'>
+        <view style='background-image:url(../../images/cadetsbj.png)'>
+            <image src='{{item.cadetsPortrait}}'></image>
+        </view>
+        <view>{{item.cadetsname}}</view>
+        <view class='green'>{{item.cadetslabel}}</view>
+    </view>
+    <view class='cadetsL'>
+        <view style='background-image:url(../../images/cadetsbj.png)'>
+            <image src='{{item.cadetsPortrait}}'></image>
+        </view>
+        <view>{{item.cadetsname}}</view>
+        <view class='green'>{{item.cadetslabel}}</view>
+    </view>
+</view>

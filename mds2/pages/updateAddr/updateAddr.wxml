@@ -1,0 +1,47 @@
+<!--pages/updateAdd/updateAdd.wxml-->
+<view class='conentList'>
+    <view>收货人</view>
+    <view>
+       <input placeholder='请输入收货人的姓名' bindinput="listenerUserNameval" value='{{userName}}'/>
+    </view>
+</view>
+<view class='conentList'>
+    <view>手机号码</view>
+    <view>
+       <input placeholder='请输入收货人的手机号码' bindinput="listenerTellval" value="{{userTel}}"/>
+    </view>
+</view>
+<view class='conentList '>
+    <view>省市区</view>
+    <view class="box">
+        <picker-view indicator-style="height: 87rpx; "  value="{{value}}" bindchange="bindChange">
+            <picker-view-column>
+                <view wx:for="{{provinces}}" style='width:100%;'>{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{citys}}" style='width:100%'>{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{areas}}" style='width:100%;'>{{item}}</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+</view>
+<view class='conentList'>
+    <view>详细地址</view>
+    <view>
+      <input placeholder='请输入收货人的详细地址' bindinput="listenerAdrDetailval" value='{{addressDetail}}'/>
+    </view>
+</view>
+
+<view class='bottom' >
+   <view bindtap='bindDelBtn'>删除地址</view>
+   <view bindtap='bindSendBtn'>保存地址</view>
+</view>
+
+
+<!-- <view class='backgroundBox'>
+  <view class='conentBox' bindtap=''>
+
+  </view>
+</view> -->

@@ -1,0 +1,49 @@
+  <view class='conentList'>
+    <view>收货人</view>
+    <view>
+        <input placeholder='请输入收货人的姓名' bindinput="listenerUserNameval" value='{{userName}}'/>
+    </view>
+</view>
+<view class='conentList'>
+    <view>手机号码</view>
+    <view>
+        <input placeholder='请输入收货人的手机号码' bindinput="listenerTellval" value="{{userTel}}"/>
+    </view>
+</view>
+<view class='conentList '>
+    <view>省市区</view>
+    <view class="box">
+        <picker-view indicator-style="height: 87rpx; "  value="{{value}}" bindchange="bindChange">
+            <picker-view-column>
+                <view wx:for="{{provinces}}" style='width:100%;'>{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{citys}}" style='width:100%'>{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{areas}}" style='width:100%;'>{{item}}</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+
+<!-- <view class="box">{{name}}</view> -->
+</view>
+<view class='conentList'>
+    <view>详细地址</view>
+    <view>
+        <input placeholder='请输入收货人的详细地址' bindinput="listenerAdrDetailval" value='{{addressDetail}}'/>
+    </view>
+</view>
+
+<!-- <view class='conentList' >
+    <view>默认地址</view>
+    <view>
+        <text>每次下单默认使用该地址</text>
+        <switch type="switch" checked="{{ defaultAddrFlag }}" color="#8cba28" bindchange="listenerSwitch"/>
+    </view>
+</view> -->
+
+<view class='bs' bindtap='bindPreservation'>
+  保存地址
+</view > 
+

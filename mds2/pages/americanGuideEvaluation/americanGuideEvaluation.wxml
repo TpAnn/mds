@@ -1,0 +1,55 @@
+<!--pages/americanGuideEvaluation/americanGuideEvaluation.wxml-->
+<!--pages/evaluate/evaluate.wxml-->
+<view class='header'>
+      <view class='topBox'>
+            <image src="{{avaluateImg1}}" style='width:49rpx; height:44rpx;'></image>
+            <text>订单评分</text>
+      </view>
+      <view class='evaluate_contant'>
+            <!--外层循环控制有几个评价条目  -->
+            <block wx:for='{{evaluate_contant}}' wx:key='' wx:for-index='idx'>
+                  <view class='evaluate_item'>
+                        <view class='evaluate_title ' >{{item.text}}</view>
+                        <!--星星评价-->
+                        <view class='evaluate_box' >
+                          <!--内层循环展示每个评价条目的星星  -->
+                        <block wx:for="{{stars}}" wx:key='' > 
+                              <image class="star-image" style="left: {{item*80}}rpx"  src="{{scores[idx] > item ?(scores[idx]-item == 1?halfSrc:selectedSrc) : normalSrc}}">
+                                    <view class="item" style="left:0rpx" data-score="{{item +1}}" data-idx='{{idx}}' bindtap="selectLeft"></view>
+                                    <view class="item" style="left:20rpx" data-score="{{item + 1}}" data-idx='{{idx}}' bindtap="selectRight"></view>
+                              </image>
+                        </block>    
+                  </view> 
+                  </view>
+                   <view style=' float:left; color:#8888; font-size:24rpx; '>{{item.ev1}}</view> 
+            </block>
+           
+            <!-- <view style=' float:left; color:#8888; font-size:24rpx;'>{{ev1}}</view>  -->
+      </view>
+</view>
+<view class='conentList'>
+      <view class='fl Img'>
+            <image src="{{productImg1}}" style='width:95rpx; height:90rpx; border-radius:50%; ' ></image>
+      </view>
+      <view class='fl font'>
+            <view>{{titleTxt}}</view>
+            <view>{{personalitySignature}}</view>
+      </view>
+</view>
+<view class='textaraeBox'>
+      <textarea placeholder-class="textPlaceholder" style='font-size:30rpx' bindblur='bindTextAreaBlur'  value='{{chatText}}' placeholder="美导的满足你的期待么？ 说说你的体验，分享给他们吧" />
+      <view >
+            <view class='imgBox'>
+            <view  wx:for="{{imgs}}">
+                <image  src='{{item}}'></image>
+                <view bindtap='deleImg'>x</view>
+            </view>
+          </view> 
+        <image src='{{upImg}}' bindtap='upImg' style=""></image>
+    </view>
+</view>
+<view class='bnt' bindtap='bindConfirmation'>
+      确认发布
+     
+</view>
+  

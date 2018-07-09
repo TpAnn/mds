@@ -1,0 +1,16 @@
+<view class="conentList" wx:for="{{content}}" bindtap='bindDetails' >
+    <view class="listL" >
+        <image src='{{item.user_head_portrait_url}}' style='width:102rpx; height:102rpx;'></image>
+        <view style='background-image:url(../../images/iconbg.png)' hidden='{{mnuberhide}}'>{{item.unread_message}}</view>
+    </view>
+    <view class="listR" bindtap='bindDateil' data-id="{{item.user_id}}" data-type='{{item.user_type}}' data-index="{{item.user_head_portrait_url}}">
+        <view class='listT'>
+            <view>{{item.user_nick}}</view>
+             <image src='../../images/iconl.png' hidden='{{righthide}}'></image>
+        </view>
+        <view class='listB'>
+            <view>{{item.personalitySignature}}</view>
+            <view>{{item.min}}</view>
+        </view>
+    </view>
+</view>

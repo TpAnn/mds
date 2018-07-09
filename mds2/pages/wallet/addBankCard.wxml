@@ -1,0 +1,19 @@
+<view class='container'>
+  <text class='tit'>添加银行卡</text>
+  <text>请绑定持卡人本人的银行卡</text>
+  <view class='list-box'>
+    <view class='list-box-item'>
+      <view class='labelText'>
+        持卡人
+      </view>
+      <input type='text' placeholder='请输入持卡人姓名' bindinput="listenerNameval" value="{{ name }}"></input>
+    </view>
+    <view class='list-box-item'>
+      <view class='labelText'>
+        卡号
+      </view>
+      <input type='text' placeholder='请输入银行卡卡号' bindinput="listenerBankNumval" value="{{ bankNum }}"></input>
+    </view>
+  </view>
+  <button type='button' bindtap='sendTap'>下一步</button>
+</view>

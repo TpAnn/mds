@@ -1,0 +1,65 @@
+<swiper indicator-dots="{{indicatorDots}}"  
+        autoplay="{{autoplay}}" indicator-color='rgba(0, 0, 0, .2)' indicator-active-color='#8bbb29' interval="{{interval}}" duration="{{duration}}">  
+      <block wx:for="{{imgUrls}}">  
+            <swiper-item>  
+                  <navigator url="{{item}}" hover-class="navigator-hover">  
+                        <image src="{{item}}"  class="slide-image" width="100%" mode="widthFix" />  
+                  </navigator>   
+            </swiper-item>  
+      </block>  
+</swiper>  
+
+<view class='conent' >
+    <view class='bold'>{{shopName}}</view>
+          <image class="copyLink" bindtap='bindCopyLink' src='/images/share.png'></image>
+          <button type="default" plainplain disabled="{{disabled}}"  open-type="share" bindtap="default" hover-class="other-button-hover" class='forward'> default </button>
+    <view class='gray'>{{company_monologue}}</view>
+    <bolck wx:for="{{effectInfo}}" >
+          <view class='green'>{{item.effect_name}}</view>
+    </bolck>
+    
+    <view class='jk'>
+          <view>￥{{selling_price}}</view>
+          <view class='red'>￥{{membership_price}}</view>
+          <view class='backgrundRed'>会员专享</view>
+          <view class='right' style='float: right;'>已售{{quantity_sold}}件</view>
+    </view  >
+    <view class='conentBottom'>
+          <view class='rudes'></view>
+          <view>100%品控检测</view>
+          <view class='rudes'></view>
+          <view >企业认证</view>
+          <view class='rudes'></view>
+          <view>担保交易</view>
+    </view>
+</view>
+
+<view class='fenlaiBox'>
+      <view class='bold'>详情</view>
+      <view class='fz'>
+            <view>
+              <text>适合肤质：</text>
+              <bolck wx:for="{{skinInfo}}">
+                  <text>{{item.skin_type_name}}</text>
+              </bolck>
+            </view>
+            <view>
+              <text>分类：</text>
+              <bolck wx:for="{{effectInfo}}">
+                  <text>{{item.effect_name}}</text>
+              </bolck>
+            </view>
+      </view>
+      <view class='specifications'>规格:{{company_spec}}</view>
+</view>
+<view class='imgBox'>
+      <block wx:for="{{imgD}}" id='{{index}}' data-key="key">
+            <image src="{{item.url}}" class="slide-image" width="355" height="150"/>  
+      </block>
+</view>
+<view class='cart'>
+      <view bindtap='joinCollection' >
+           <image src="../../images/greestar.png"  class="slide-image" width="355" height="150"/>
+      </view>
+      <view bindtap='joinCarts'>加入购物车</view>
+</view>
